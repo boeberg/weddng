@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Roboto", sans-serif;
+        background: #f7f5f2;
+        color: #333;
+      }
+
+      .container {
+        max-width: 480px;
+        margin: 40px auto;
+        background: white;
+        padding: 32px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      h1 {
+        font-family: "Playfair Display", serif;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 8px;
+      }
+
+      .subtitle {
+        text-align: center;
+        font-size: 14px;
+        color: #777;
+        margin-bottom: 32px;
+      }
+
+      label {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 6px;
+        margin-top: 20px;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+      }
+
+      input:focus,
+      select:focus {
+        outline: none;
+        border-color: #b89b5e;
+      }
+
+      button {
+        width: 100%;
+        margin-top: 30px;
+        padding: 14px;
+        background: #b89b5e;
+        color: white;
+        font-size: 15px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #a88b4f;
+      }
+
+      .language-switch {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .language-switch button {
+        width: auto;
+        background: none;
+        border: none;
+        color: #777;
+        margin: 0 5px;
+        cursor: pointer;
+      }
+
+      .language-switch button.active {
+        color: #000;
+        font-weight: 500;
+      }
+    </style>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wedding RSVP</title>
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 1rem;
+      }
+      label {
+        display: block;
+        margin-top: 1rem;
+      }
+      input,
+      select,
+      textarea,
+      button {
+        width: 100%;
+        margin-top: 0.5rem;
+        padding: 0.5rem;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Wedding RSVP</h1>
+    <div class="container">
+      <h1 data-i18n="title">Babette & Felix</h1>
+      <div class="subtitle" data-i18n="subtitle">
+        We would love to celebrate with you
+      </div>
+      <div class="language-switch">
+        <button onclick="setLanguage('en')" class="active">EN</button>
+        <button onclick="setLanguage('de')">DE</button>
+      </div>
+
+      <form id="rsvp-form">
+        <label for="guestName" id="labelGuestName">Guest Name</label>
+        <input name="entry.108083471" id="guestName" required />
+
+        <label for="attending" id="labelAttending">Will you attend?</label>
+        <select name="entry.1418582323" id="attending" required>
+          <option value="" id="attendingPlaceholder" disabled selected>
+            -- Please choose --
+          </option>
+          <option value="Yes" id="attendingYes">Yes</option>
+          <option value="No" id="attendingNo">No</option>
+        </select>
+
+        <label for="plusOne" id="labelPlusOne">Plus One Name (optional)</label>
+        <input name="entry.2029894852" id="plusOne" />
+
+        <label for="children" id="labelChildren">Number of Children</label>
+        <select name="entry.49562044" id="children">
+          <option value="" id="childrenPlaceholder" disabled selected>
+            -- Please choose --
+          </option>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+
+        <label for="meal" id="labelMeal">Meal Preference</label>
+        <select name="entry.314159265" id="meal">
+          <option value="" id="mealPlaceholder" disabled selected>
+            -- Please choose --
+          </option>
+          <option value="meat" id="mealMeat">Meat</option>
+          <option value="vegetarian" id="mealVeg">Vegetarian</option>
+        </select>
+        <button type="submit">Send RSVP</button>
+      </form>
+    </div>
+
+    <form
+      id="rsvpForm"
+      action="https://docs.google.com/forms/d/1eV14AgFXLGabdGzHrBHquWLiP-aAkAuaweCw5LsJkDE/formResponse"
+      method="POST"
+    ></form>
+
+    <p id="thanks" class="hidden">Thank you! 💕</p>
+
+    <script>
+      // ---- TRANSLATIONS ----
+      const translations = {
+        en: {
+          guestName: "Guest Name",
+          attending: "Will you attend?",
+          yes: "Yes",
+          no: "No",
+          plusOne: "Plus One Name (optional)",
+          numChildren: "Number of Children",
+          select: "Please choose...",
+          meal: "Meal Preference",
+          meat: "Meat",
+          vegetarian: "Vegetarian",
+          send: "Send RSVP",
+          thankYou: "Thank you! 💕",
+        },
+        de: {
+          guestName: "Dein Name",
+          attending: "Wirst du teilnehmen?",
+          yes: "Ja",
+          no: "Nein",
+          plusOne: "Name deiner Begleitperson (optional)",
+          numChildren: "Anzahl der Kinder (optional)",
+          select: "Bitte wählen...",
+          meal: "Essenswahl",
+          meat: "Fleisch",
+          vegetarian: "Vegetarisch",
+          send: "RSVP absenden",
+          thankYou: "Danke! 💕",
+        },
+      };
+
+      // ---- LANGUAGE SWITCH (buttons) ----
+      const langButtons = Array.from(
+        document.querySelectorAll(".language-switch button")
+      );
+
+      function applyLanguage(lang) {
+        const t = translations[lang] || translations.en;
+        const setIf = (id, value) => {
+          const el = document.getElementById(id);
+          if (el) el.textContent = value;
+        };
+
+        setIf("labelGuestName", t.guestName);
+        setIf("labelAttending", t.attending);
+        setIf("attendingYes", t.yes);
+        setIf("attendingNo", t.no);
+        setIf("labelPlusOne", t.plusOne);
+        setIf("labelChildren", t.numChildren);
+
+        const selectText = t.select;
+        setIf("attendingPlaceholder", selectText);
+        setIf("childrenPlaceholder", selectText);
+        setIf("mealPlaceholder", selectText);
+
+        setIf("labelMeal", t.meal);
+        setIf("mealMeat", t.meat);
+        setIf("mealVeg", t.vegetarian);
+
+        // submit button inside visible form
+        const submitBtn = document.querySelector(
+          '#rsvp-form button[type="submit"]'
+        );
+        if (submitBtn) submitBtn.textContent = t.send;
+
+        const thanksEl = document.getElementById("thanks");
+        if (thanksEl) thanksEl.textContent = t.thankYou;
+      }
+
+      function setActiveButton(lang) {
+        langButtons.forEach((b) => {
+          const buttonLang = (b.dataset.lang || b.textContent || "")
+            .toString()
+            .trim()
+            .toLowerCase();
+          if (buttonLang === lang) b.classList.add("active");
+          else b.classList.remove("active");
+        });
+      }
+
+      // attach handlers
+      langButtons.forEach((btn) => {
+        // ensure a dataset.lang exists (EN/DE -> en/de)
+        if (!btn.dataset.lang) {
+          btn.dataset.lang = (btn.textContent || "").trim().toLowerCase();
+        }
+        btn.addEventListener("click", () => {
+          const lang = (btn.dataset.lang || "en").toLowerCase();
+          applyLanguage(lang);
+          setActiveButton(lang);
+        });
+      });
+
+      // initialize language: prefer browser, fallback to en
+      const userLang = (
+        navigator.language ||
+        navigator.userLanguage ||
+        "en"
+      ).toLowerCase();
+      const initial = userLang.startsWith("de") ? "de" : "en";
+      applyLanguage(initial);
+      setActiveButton(initial);
+
+      // ---- SHOW/HIDE CHILDREN + PLUS ONE LOGIC ----
+      const attending = document.getElementById("attending");
+      const plusOne = document.getElementById("plusOne");
+      const children = document.getElementById("children");
+      const meal = document.getElementById("meal");
+      const labelMeal = document.getElementById("labelMeal");
+      const labelPlusOne = document.getElementById("labelPlusOne");
+      const labelChildren = document.getElementById("labelChildren");
+      const guestNameInput = document.getElementById("guestName");
+
+      function toggleExtras() {
+        const nameFilled = guestNameInput && guestNameInput.value.trim() !== "";
+        const attendingValue = attending && attending.value;
+
+        function hideAll() {
+          labelPlusOne.style.display = "none";
+          plusOne.style.display = "none";
+          labelChildren.style.display = "none";
+          children.style.display = "none";
+          labelMeal.style.display = "none";
+          meal.style.display = "none";
+        }
+
+        if (!nameFilled) {
+          hideAll();
+          return;
+        }
+
+        if (attendingValue === "Yes") {
+          labelPlusOne.style.display = "block";
+          plusOne.style.display = "block";
+          labelChildren.style.display = "block";
+          children.style.display = "block";
+          labelMeal.style.display = "block";
+          meal.style.display = "block";
+        } else {
+          hideAll();
+        }
+      }
+
+      if (guestNameInput)
+        guestNameInput.addEventListener("input", toggleExtras);
+      if (attending) attending.addEventListener("change", toggleExtras);
+      toggleExtras();
+
+      // ---- FORM SUBMISSION ----
+      // Submit the visible form and then navigate to the thank-you page.
+      // Uses the hidden form's action (Google Forms URL) if present.
+      const hiddenTarget = document.getElementById("rsvpForm")?.action || null;
+      const visibleForm = document.getElementById("rsvp-form");
+      if (visibleForm) {
+        visibleForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const formData = new FormData(visibleForm);
+          if (hiddenTarget) {
+            fetch(hiddenTarget, {
+              method: "POST",
+              mode: "no-cors",
+              body: formData,
+            }).finally(() => {
+              window.location.href = "thankyou.html";
+            });
+          } else {
+            // If no external target configured, just go to the thank-you page.
+            window.location.href = "thankyou.html";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
