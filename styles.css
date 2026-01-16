@@ -1,0 +1,318 @@
+/* ========================================
+   WEDDING RSVP - SHARED STYLES
+   
+   How to customize:
+   1. Update CSS variables below to change colors, spacing, fonts
+   2. Modify .container for the main card styling
+   3. Update .btn-primary and .btn-secondary for button styles
+   4. Adjust typography in the h1, h2, p sections
+   
+   All pages use these same styles for consistency.
+   ======================================== */
+
+/* CSS VARIABLES - Easy to customize! */
+:root {
+  /* Colors */
+  --color-primary: #b89b5e;
+  --color-primary-dark: #a88b4f;
+  --color-text: #1f1f1f;
+  --color-text-light: #777;
+  --color-background: #faf9f6;
+  --color-card-bg: linear-gradient(135deg, rgba(246, 230, 166, 0.95), rgba(226, 180, 44, 0.95));
+  --color-card-shadow: rgba(226, 180, 44, 0.35);
+  
+  /* Fonts */
+  --font-primary: "Roboto", sans-serif;
+  --font-size-base: 14px;
+  --font-size-h1: 36px;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 600;
+  
+  /* Spacing */
+  --spacing-small: 6px;
+  --spacing-medium: 12px;
+  --spacing-large: 20px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  
+  /* Layout */
+  --container-max-width: 520px;
+  --container-padding: 48px 36px;
+  --container-border-radius: 6px;
+  --container-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+  
+  /* Transitions */
+  --transition: 0.3s ease;
+}
+
+/* ======== GLOBAL STYLES ======== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-primary);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* ======== TYPOGRAPHY ======== */
+
+h1, h2, h3 {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  margin-bottom: var(--spacing-medium);
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: var(--spacing-large);
+}
+
+p {
+  margin: 0;
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+}
+
+/* ======== CONTAINER & LAYOUT ======== */
+
+.container {
+  position: relative;
+  max-width: var(--container-max-width);
+  margin: 80px auto;
+  padding: var(--container-padding);
+  text-align: center;
+  
+  background: var(--color-card-bg);
+  border-radius: var(--container-border-radius);
+  box-shadow: var(--container-shadow);
+}
+
+/* Decorative background layers */
+.container::before {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  background: var(--color-card-shadow);
+  z-index: -2;
+  transform: rotate(-2.5deg);
+  filter: blur(1px);
+  border-radius: inherit;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  background: 
+    linear-gradient(135deg, rgba(246, 230, 166, 0.95), rgba(226, 180, 44, 0.95)),
+    repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.03) 0, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 2px),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0, rgba(255, 255, 255, 0.03) 1px, transparent 1px, transparent 3px);
+  z-index: -1;
+  transform: rotate(2deg);
+  filter: blur(0.6px);
+  border-radius: inherit;
+}
+
+/* ======== SUBTITLE / DESCRIPTION ======== */
+
+.subtitle {
+  font-size: var(--font-size-base);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-xl);
+  font-weight: var(--font-weight-normal);
+}
+
+/* ======== FORMS & INPUTS ======== */
+
+label {
+  display: block;
+  margin-top: 22px;
+  margin-bottom: var(--spacing-small);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  font-weight: var(--font-weight-medium);
+  text-align: left;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: var(--font-size-base);
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-primary);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(184, 155, 94, 0.1);
+}
+
+input::placeholder {
+  color: var(--color-text-light);
+}
+
+/* ======== BUTTONS ======== */
+
+button,
+.btn,
+a.btn {
+  display: inline-block;
+  width: 100%;
+  margin-top: var(--spacing-xl);
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--transition), transform var(--transition);
+  font-family: var(--font-primary);
+}
+
+button:active,
+.btn:active,
+a.btn:active {
+  transform: translateY(1px);
+}
+
+/* Primary Button (CTA) */
+.btn-primary,
+button[type="submit"] {
+  background-color: var(--color-text);
+  color: var(--color-background);
+}
+
+.btn-primary:hover,
+button[type="submit"]:hover {
+  background-color: #000;
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(246, 230, 166, 0.3);
+}
+
+/* ======== LANGUAGE SWITCH ======== */
+
+.language-switch {
+  text-align: center;
+  margin-bottom: var(--spacing-large);
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.language-switch button {
+  display: inline-block;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 4px 12px;
+  color: var(--color-text-light);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  transition: color var(--transition);
+}
+
+.language-switch button:hover {
+  color: var(--color-text);
+}
+
+.language-switch button.active {
+  color: var(--color-text);
+  font-weight: var(--font-weight-bold);
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: 2px;
+}
+
+/* ======== UTILITY CLASSES ======== */
+
+.hidden {
+  display: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: var(--color-text-light);
+}
+
+.mt-small { margin-top: var(--spacing-small); }
+.mt-medium { margin-top: var(--spacing-medium); }
+.mt-large { margin-top: var(--spacing-large); }
+
+.mb-small { margin-bottom: var(--spacing-small); }
+.mb-medium { margin-bottom: var(--spacing-medium); }
+.mb-large { margin-bottom: var(--spacing-large); }
+
+/* ======== BUTTON GROUP (for multiple buttons) ======== */
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-large);
+  margin-top: var(--spacing-xl);
+}
+
+/* ======== RESPONSIVE DESIGN ======== */
+
+@media (max-width: 768px) {
+  :root {
+    --container-padding: 32px 24px;
+    --font-size-h1: 28px;
+  }
+  
+  .container {
+    margin: 40px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 24px 16px;
+    --font-size-h1: 24px;
+  }
+  
+  .button-group {
+    flex-direction: column;
+  }
+}

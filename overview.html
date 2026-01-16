@@ -3,155 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Babette & Felix - Wedding</title>
 
-    <title>Babette & Felix</title>
-
+    <!-- Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
 
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="styles.css" />
+
     <style>
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        font-family: "Roboto", sans-serif;
-        background: linear-gradient(180deg, #f7f5f2, #ece9e4);
-        color: #333;
-      }
-
-      .container {
-        position: relative;
-        max-width: 520px;
-        margin: 80px auto;
-        padding: 48px 36px;
-        text-align: center;
-
-        background: linear-gradient(
-          135deg,
-          rgba(246, 230, 166, 0.95),
-          rgba(226, 180, 44, 0.95)
-        );
-
-        border-radius: 6px; /* less smooth */
-        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
-      }
-      .container::before,
-      .container::after {
-        content: "";
-        position: absolute;
-        inset: -14px;
-        background: rgba(226, 180, 44, 0.35);
-        z-index: -1;
-        filter: blur(1px);
-      }
-
-      .container::before {
-        transform: rotate(-2.5deg);
-      }
-
-      .container::after {
-        transform: rotate(2deg);
-        background: rgba(246, 230, 166, 0.45);
-      }
-
-      h1 {
-        font-family: "Roboto", sans-serif;
-        font-weight: 600;
-        margin-bottom: 10px;
-      }
-
-      .subtitle {
-        font-size: 14px;
-        color: #777;
-        margin-bottom: 40px;
-      }
-
-      .language-switch {
-        text-align: center;
-        margin-bottom: 20px;
-      }
-
-      .language-switch button {
-        display: inline-block;
-        width: auto;
-        background: none;
-        border: none;
-        color: #777;
-        margin: 0 5px;
-        cursor: pointer;
-      }
-
-      .language-switch button.active {
-        color: #000;
-        font-weight: 500;
-      }
-
-      .button-group {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-      }
-
-      a.button {
-        display: block;
-        text-decoration: none;
-        padding: 14px;
-        border-radius: 10px;
-        font-size: 15px;
-        font-weight: 500;
-        text-align: center;
-      }
-
-      .primary {
-        background: #b89b5e;
-        color: white;
-      }
-
-      .primary:hover {
-        background: #a88b4f;
-      }
-
-      .secondary {
-        border: 1px solid #b89b5e;
-        color: #b89b5e;
-      }
-
-      .secondary:hover {
-        background: #f6f2e9;
-      }
+      /* Inline overrides if needed - prefer editing styles.css instead */
     </style>
   </head>
-
   <body>
     <div class="container">
+      <!-- Header -->
       <h1>Babette & Felix</h1>
-      <div class="subtitle" id="subtitle">
-        We’re so happy to celebrate our wedding with you
-      </div>
+      <p class="subtitle" id="subtitle">
+        We're so happy to celebrate our wedding with you
+      </p>
 
+      <!-- Language Switch -->
       <div class="language-switch">
-        <button onclick="setLanguage('en')" class="active">EN</button>
-        <button onclick="setLanguage('de')">DE</button>
-        <button onclick="setLanguage('dk')">DK</button>
+        <button onclick="setLanguage('en')" class="active" data-lang="en">
+          EN
+        </button>
+        <button onclick="setLanguage('de')" data-lang="de">DE</button>
+        <button onclick="setLanguage('dk')" data-lang="dk">DK</button>
       </div>
 
+      <!-- Navigation Buttons -->
       <div class="button-group">
-        <a href="index.html" class="button primary" id="rsvpBtn"> RSVP </a>
-
-        <a href="info.html" class="button secondary" id="infoBtn">
-          Practical Information
-        </a>
+        <a href="index.html" class="btn btn-primary" id="rsvpBtn">RSVP</a>
+        <a href="info.html" class="btn btn-secondary" id="infoBtn"
+          >Practical Information</a
+        >
       </div>
     </div>
 
+    <!-- TRANSLATIONS & LANGUAGE LOGIC -->
     <script>
+      /**
+       * OVERVIEW PAGE - LANGUAGE SWITCHER
+       *
+       * This page displays the language switch buttons.
+       * Selected language is stored in localStorage and applied to the RSVP form.
+       *
+       * To add a new language:
+       * 1. Add translation object below
+       * 2. Update language detection in initializeLanguage()
+       */
       const translations = {
         en: {
-          subtitle: "We’re so happy to celebrate our wedding with you",
+          subtitle: "We're so happy to celebrate our wedding with you",
           rsvp: "RSVP",
           info: "Practical Information",
         },
@@ -167,59 +74,84 @@
         },
       };
 
-      const langButtons = Array.from(
-        document.querySelectorAll(".language-switch button")
-      );
-
+      /**
+       * Apply language translations to the overview page
+       */
       function applyLanguage(lang) {
         const t = translations[lang] || translations.en;
-        const sub = document.getElementById("subtitle");
-        if (sub) sub.textContent = t.subtitle;
-        const rsvp = document.getElementById("rsvpBtn");
-        if (rsvp) rsvp.textContent = t.rsvp;
-        const info = document.getElementById("infoBtn");
-        if (info) info.textContent = t.info;
+
+        const subtitleEl = document.getElementById("subtitle");
+        if (subtitleEl) subtitleEl.textContent = t.subtitle;
+
+        const rsvpBtn = document.getElementById("rsvpBtn");
+        if (rsvpBtn) rsvpBtn.textContent = t.rsvp;
+
+        const infoBtn = document.getElementById("infoBtn");
+        if (infoBtn) infoBtn.textContent = t.info;
       }
 
+      /**
+       * Update active button styling
+       */
       function setActiveButton(lang) {
-        langButtons.forEach((b) => {
-          const buttonLang = (b.dataset.lang || b.textContent || "")
+        const buttons = document.querySelectorAll(".language-switch button");
+        buttons.forEach((btn) => {
+          const btnLang = (btn.dataset.lang || btn.textContent || "")
             .toString()
             .trim()
             .toLowerCase();
-          if (buttonLang === lang) b.classList.add("active");
-          else b.classList.remove("active");
+
+          if (btnLang === lang) {
+            btn.classList.add("active");
+          } else {
+            btn.classList.remove("active");
+          }
         });
       }
 
+      /**
+       * Set the current language and store in localStorage
+       * This persists the choice so the RSVP form shows in the selected language
+       */
       function setLanguage(lang) {
         lang = (lang || "").toString().toLowerCase();
+
+        // Map Danish to Danish translations
         if (lang === "da") lang = "dk";
+
+        // Default to English if language not found
         if (!translations[lang]) lang = "en";
+
+        // Store selection for other pages
         localStorage.setItem("selectedLanguage", lang);
+
+        // Update display
         applyLanguage(lang);
         setActiveButton(lang);
       }
 
-      // ensure dataset.lang values
-      langButtons.forEach((btn) => {
-        if (!btn.dataset.lang)
-          btn.dataset.lang = (btn.textContent || "").trim().toLowerCase();
-        btn.addEventListener("click", () =>
-          setLanguage((btn.dataset.lang || "en").toLowerCase())
-        );
-      });
+      /**
+       * Initialize page language on load
+       * Checks localStorage first, then browser language preference
+       */
+      (function initializeLanguage() {
+        let initial = localStorage.getItem("selectedLanguage");
 
-      const userLang = (
-        navigator.language ||
-        navigator.userLanguage ||
-        "en"
-      ).toLowerCase();
-      let initial = "en";
-      if (userLang.startsWith("de")) initial = "de";
-      else if (userLang.startsWith("da")) initial = "dk";
-      applyLanguage(initial);
-      setActiveButton(initial);
+        // If no saved preference, detect from browser
+        if (!initial) {
+          const browserLang = (
+            navigator.language ||
+            navigator.userLanguage ||
+            "en"
+          ).toLowerCase();
+          initial = "en";
+          if (browserLang.startsWith("de")) initial = "de";
+          else if (browserLang.startsWith("da")) initial = "dk";
+        }
+
+        applyLanguage(initial);
+        setActiveButton(initial);
+      })();
     </script>
   </body>
 </html>

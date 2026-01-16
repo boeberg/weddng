@@ -1,257 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        font-family: "Roboto", sans-serif;
-        background: #faf9f6;
-        color: #1f1f1f;
-      }
-
-      .container {
-        position: relative;
-        max-width: 520px;
-        margin: 80px auto;
-        padding: 48px 36px;
-        text-align: center;
-
-        background: linear-gradient(
-          135deg,
-          rgba(246, 230, 166, 0.95),
-          rgba(226, 180, 44, 0.95)
-        );
-
-        border-radius: 6px; /* less smooth */
-        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
-      }
-      .container::before {
-        content: "";
-        position: absolute;
-        inset: -14px;
-        background: rgba(226, 180, 44, 0.35);
-        z-index: -2;
-        transform: rotate(-2.5deg);
-        filter: blur(1px);
-      }
-
-      .container::after {
-        content: "";
-        position: absolute;
-        inset: -10px;
-        background: linear-gradient(
-            135deg,
-            rgba(246, 230, 166, 0.95),
-            rgba(226, 180, 44, 0.95)
-          ),
-          repeating-linear-gradient(
-            0deg,
-            rgba(0, 0, 0, 0.03) 0,
-            rgba(0, 0, 0, 0.03) 1px,
-            transparent 1px,
-            transparent 2px
-          ),
-          repeating-linear-gradient(
-            90deg,
-            rgba(255, 255, 255, 0.03) 0,
-            rgba(255, 255, 255, 0.03) 1px,
-            transparent 1px,
-            transparent 3px
-          );
-
-        z-index: -1;
-        transform: rotate(2deg);
-        filter: blur(0.6px);
-      }
-
-      h1 {
-        font-family: "Roboto", sans-serif;
-        font-size: 36px;
-        font-weight: 600;
-        margin: 0 0 12px 0;
-        color: #1f1f1f;
-      }
-
-      .subtitle {
-        font-size: 14px;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: #1f1f1f;
-        margin-bottom: 32px;
-      }
-
-      label {
-        display: block;
-        margin-top: 22px;
-        margin-bottom: 6px;
-        font-size: 14px;
-        color: #1f1f1f;
-      }
-
-      input,
-      select {
-        width: 100%;
-        padding: 12px;
-        font-size: 14px;
-        border-radius: 8px;
-        border: none;
-        background: #faf9f6;
-      }
-
-      input:focus,
-      select:focus {
-        outline: 2px solid #1f1f1f;
-      }
-
-      button,
-      a.button {
-        display: block;
-        width: 100%;
-        margin-top: 32px;
-        padding: 14px;
-        border-radius: 10px;
-        border: none;
-        background: #1f1f1f;
-        color: #faf9f6;
-        font-size: 15px;
-        font-weight: 500;
-        text-align: center;
-        cursor: pointer;
-        text-decoration: none;
-      }
-
-      button:hover,
-      a.button:hover {
-        background: #000;
-      }
-
-      .secondary {
-        background: transparent;
-        border: 1px solid #1f1f1f;
-        color: #1f1f1f;
-      }
-
-      .secondary:hover {
-        background: rgba(255, 255, 255, 0.4);
-      }
-
-      .language-switch {
-        text-align: center;
-        margin-bottom: 20px;
-        display: flex;
-        justify-content: center;
-        gap: 8px;
-      }
-
-      .language-switch button {
-        display: inline-block;
-        background: none;
-        border: none;
-        margin-left: 8px;
-        color: #1f1f1f;
-        font-weight: 500;
-        cursor: pointer;
-      }
-
-      .language-switch button.active {
-        text-decoration: underline;
-      }
-    </style>
-
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wedding RSVP</title>
-    <style>
-      body {
-        font-family: "Roboto", sans-serif;
-        max-width: 600px;
-        margin: 2rem auto;
-        padding: 1rem;
-      }
-      label {
-        display: block;
-        margin-top: 1rem;
-      }
-      input,
-      select,
-      textarea,
-      button {
-        width: 100%;
-        margin-top: 0.5rem;
-        padding: 0.5rem;
-      }
-      .hidden {
-        display: none;
-      }
-      /* Paper grain texture */
-      .container::marker {
-        display: none;
-      }
-
-      .container::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-
-        background-image: repeating-linear-gradient(
-            0deg,
-            rgba(0, 0, 0, 0.03) 0,
-            rgba(0, 0, 0, 0.03) 1px,
-            transparent 1px,
-            transparent 2px
-          ),
-          repeating-linear-gradient(
-            90deg,
-            rgba(255, 255, 255, 0.03) 0,
-            rgba(255, 255, 255, 0.03) 1px,
-            transparent 1px,
-            transparent 3px
-          );
-
-        mix-blend-mode: multiply;
-        opacity: 0.25;
-        border-radius: inherit;
-      }
-    </style>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding RSVP - Babette & Felix</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <style>
+    /* Inline overrides if needed - prefer editing styles.css instead */
+  </style>
   <body>
-    <h1>Wedding RSVP</h1>
     <div class="container">
-      <h1 data-i18n="title">Babette & Felix</h1>
-      <div class="subtitle" data-i18n="subtitle">
-        We would love to celebrate with you
-      </div>
+      <!-- Header -->
+      <h1>Babette & Felix</h1>
+      <p class="subtitle">We would love to celebrate with you</p>
 
+      <!-- RSVP Form -->
       <form id="rsvp-form">
-        <label for="guestName" id="labelGuestName">Guest Name</label>
-        <input name="entry.108083471" id="guestName" required />
+        <!-- Guest Name -->
+        <label for="guestName">Guest Name</label>
+        <input 
+          id="guestName"
+          name="entry.108083471" 
+          type="text"
+          placeholder="Enter your name"
+          required 
+        />
 
-        <label for="attending" id="labelAttending">Will you attend?</label>
-        <select name="entry.1418582323" id="attending" required>
-          <option value="" id="attendingPlaceholder" disabled selected>
-            -- Please choose --
-          </option>
-          <option value="Yes" id="attendingYes">Yes</option>
-          <option value="No" id="attendingNo">No</option>
+        <!-- Attending Status -->
+        <label for="attending">Will you attend?</label>
+        <select id="attending" name="entry.1418582323" required>
+          <option value="" disabled selected>-- Please choose --</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
         </select>
 
-        <label for="plusOne" id="labelPlusOne">Plus One Name (optional)</label>
-        <input name="entry.2029894852" id="plusOne" />
+        <!-- Plus One Name -->
+        <label for="plusOne">Plus One Name (optional)</label>
+        <input 
+          id="plusOne"
+          name="entry.2029894852" 
+          type="text"
+          placeholder="Enter guest name"
+        />
 
-        <label for="children" id="labelChildren">Number of Children</label>
-        <select name="entry.49562044" id="children">
-          <option value="" id="childrenPlaceholder" disabled selected>
-            -- Please choose --
-          </option>
+        <!-- Number of Children -->
+        <label for="children">Number of Children</label>
+        <select id="children" name="entry.49562044">
+          <option value="" disabled selected>-- Please choose --</option>
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -260,28 +61,40 @@
           <option value="5">5</option>
         </select>
 
-        <label for="meal" id="labelMeal">Meal Preference</label>
-        <select name="entry.314159265" id="meal">
-          <option value="" id="mealPlaceholder" disabled selected>
-            -- Please choose --
-          </option>
-          <option value="meat" id="mealMeat">Meat</option>
-          <option value="vegetarian" id="mealVeg">Vegetarian</option>
+        <!-- Meal Preference -->
+        <label for="meal">Meal Preference</label>
+        <select id="meal" name="entry.833697438">
+          <option value="" disabled selected>-- Please choose --</option>
+          <option value="Meat">Meat</option>
+          <option value="Vegetarian">Vegetarian</option>
         </select>
+
+        <!-- Submit Button -->
         <button type="submit">Send RSVP</button>
       </form>
+
+      <!-- Success Message (hidden by default) -->
+      <p id="thanks" class="hidden">Thank you! 💕</p>
     </div>
 
+    <!-- Hidden form for Google Forms submission -->
     <form
       id="rsvpForm"
       action="https://docs.google.com/forms/d/1eV14AgFXLGabdGzHrBHquWLiP-aAkAuaweCw5LsJkDE/formResponse"
       method="POST"
+      style="display: none;"
     ></form>
 
-    <p id="thanks" class="hidden">Thank you! 💕</p>
-
+    <!-- TRANSLATIONS & LOCALIZATION -->
     <script>
-      // ---- TRANSLATIONS ----
+      /**
+       * TRANSLATION STRINGS
+       * 
+       * To add a new language:
+       * 1. Add a new language object to translations (e.g., "fr" for French)
+       * 2. Add corresponding translation keys
+       * 3. Update the language detection logic if needed
+       */
       const translations = {
         en: {
           guestName: "Guest Name",
@@ -327,138 +140,155 @@
         },
       };
 
-      // ---- LANGUAGE SWITCH (buttons) ----
-      const langButtons = Array.from(
-        document.querySelectorAll(".language-switch button")
-      );
-
+      /**
+       * Apply language translations to the page
+       * Updates all form labels, placeholders, and buttons
+       */
       function applyLanguage(lang) {
         const t = translations[lang] || translations.en;
-        const setIf = (id, value) => {
-          const el = document.getElementById(id);
-          if (el) el.textContent = value;
+        
+        // Update all form labels
+        const labelMap = {
+          'label[for="guestName"]': t.guestName,
+          'label[for="attending"]': t.attending,
+          'label[for="plusOne"]': t.plusOne,
+          'label[for="children"]': t.numChildren,
+          'label[for="meal"]': t.meal,
         };
 
-        setIf("labelGuestName", t.guestName);
-        setIf("labelAttending", t.attending);
-        setIf("attendingYes", t.yes);
-        setIf("attendingNo", t.no);
-        setIf("labelPlusOne", t.plusOne);
-        setIf("labelChildren", t.numChildren);
+        Object.entries(labelMap).forEach(([selector, text]) => {
+          const el = document.querySelector(selector);
+          if (el) el.textContent = text;
+        });
 
-        const selectText = t.select;
-        setIf("attendingPlaceholder", selectText);
-        setIf("childrenPlaceholder", selectText);
-        setIf("mealPlaceholder", selectText);
+        // Update form options
+        const attending = document.getElementById("attending");
+        if (attending) {
+          const yesOpt = attending.querySelector('option[value="Yes"]');
+          const noOpt = attending.querySelector('option[value="No"]');
+          const selectOpt = attending.querySelector('option[disabled]');
+          if (yesOpt) yesOpt.textContent = t.yes;
+          if (noOpt) noOpt.textContent = t.no;
+          if (selectOpt) selectOpt.textContent = t.select;
+        }
 
-        setIf("labelMeal", t.meal);
-        setIf("mealMeat", t.meat);
-        setIf("mealVeg", t.vegetarian);
+        const children = document.getElementById("children");
+        if (children) {
+          const selectOpt = children.querySelector('option[disabled]');
+          if (selectOpt) selectOpt.textContent = t.select;
+        }
 
-        // submit button inside visible form
-        const submitBtn = document.querySelector(
-          '#rsvp-form button[type="submit"]'
-        );
+        const meal = document.getElementById("meal");
+        if (meal) {
+          const meatOpt = meal.querySelector('option[value="Meat"]');
+          const vegOpt = meal.querySelector('option[value="Vegetarian"]');
+          const selectOpt = meal.querySelector('option[disabled]');
+          if (meatOpt) meatOpt.textContent = t.meat;
+          if (vegOpt) vegOpt.textContent = t.vegetarian;
+          if (selectOpt) selectOpt.textContent = t.select;
+        }
+
+        // Update submit button
+        const submitBtn = document.querySelector('#rsvp-form button[type="submit"]');
         if (submitBtn) submitBtn.textContent = t.send;
 
+        // Update thank you message
         const thanksEl = document.getElementById("thanks");
         if (thanksEl) thanksEl.textContent = t.thankYou;
       }
 
-      function setActiveButton(lang) {
-        // No longer needed - language switch removed from this page
-      }
+      /**
+       * Initialize language on page load
+       * Checks localStorage first, then browser language, defaults to English
+       */
+      (function initializeLanguage() {
+        // Check if user previously selected a language
+        let initial = localStorage.getItem("selectedLanguage");
+        
+        // If not, detect from browser language
+        if (!initial) {
+          const userLang = (navigator.language || navigator.userLanguage || "en").toLowerCase();
+          initial = "en";
+          if (userLang.startsWith("de")) initial = "de";
+          else if (userLang.startsWith("da")) initial = "dk";
+        }
+        
+        applyLanguage(initial);
+      })();
+    </script>
 
-      // simple API used by inline onclicks
-      function setLanguage(lang) {
-        lang = (lang || "").toString().toLowerCase();
-        if (lang === "da") lang = "dk";
-        if (!translations[lang]) lang = "en";
-        localStorage.setItem("selectedLanguage", lang);
-        applyLanguage(lang);
-        setActiveButton(lang);
-      }
-
-      // attach handlers - language buttons removed from this page
-
-      // initialize language: check localStorage first, then browser preference
-      let initial = localStorage.getItem("selectedLanguage");
-      if (!initial) {
-        const userLang = (
-          navigator.language ||
-          navigator.userLanguage ||
-          "en"
-        ).toLowerCase();
-        initial = "en";
-        if (userLang.startsWith("de")) initial = "de";
-        else if (userLang.startsWith("da")) initial = "dk";
-      }
-      applyLanguage(initial);
-
-      // ---- SHOW/HIDE CHILDREN + PLUS ONE LOGIC ----
-      const attending = document.getElementById("attending");
-      const plusOne = document.getElementById("plusOne");
-      const children = document.getElementById("children");
-      const meal = document.getElementById("meal");
-      const labelMeal = document.getElementById("labelMeal");
-      const labelPlusOne = document.getElementById("labelPlusOne");
-      const labelChildren = document.getElementById("labelChildren");
-      const guestNameInput = document.getElementById("guestName");
-
+    <!-- FORM LOGIC -->
+    <script>
+      /**
+       * Toggle visibility of additional fields
+       * Shows plus one, children, and meal preference only when:
+       * 1. Guest name is filled in AND
+       * 2. Guest confirms they are attending
+       */
       function toggleExtras() {
+        const guestNameInput = document.getElementById("guestName");
+        const attendingSelect = document.getElementById("attending");
+        
         const nameFilled = guestNameInput && guestNameInput.value.trim() !== "";
-        const attendingValue = attending && attending.value;
+        const isAttending = attendingSelect && attendingSelect.value === "Yes";
 
-        function hideAll() {
-          labelPlusOne.style.display = "none";
-          plusOne.style.display = "none";
-          labelChildren.style.display = "none";
-          children.style.display = "none";
-          labelMeal.style.display = "none";
-          meal.style.display = "none";
-        }
+        // Elements to toggle
+        const fieldIds = ["plusOne", "children", "meal"];
+        const labelSelectors = fieldIds.map(id => `label[for="${id}"]`);
 
-        if (!nameFilled) {
-          hideAll();
-          return;
-        }
+        // Helper function to set visibility
+        const setVisible = (visible) => {
+          fieldIds.forEach(id => {
+            const field = document.getElementById(id);
+            if (field) field.style.display = visible ? "block" : "none";
+          });
+          
+          labelSelectors.forEach(selector => {
+            const label = document.querySelector(selector);
+            if (label) label.style.display = visible ? "block" : "none";
+          });
+        };
 
-        if (attendingValue === "Yes") {
-          labelPlusOne.style.display = "block";
-          plusOne.style.display = "block";
-          labelChildren.style.display = "block";
-          children.style.display = "block";
-          labelMeal.style.display = "block";
-          meal.style.display = "block";
-        } else {
-          hideAll();
-        }
+        // Show extras only if name is filled AND attending
+        setVisible(nameFilled && isAttending);
       }
 
-      if (guestNameInput)
-        guestNameInput.addEventListener("input", toggleExtras);
+      // Attach event listeners for dynamic form behavior
+      const guestNameInput = document.getElementById("guestName");
+      const attending = document.getElementById("attending");
+      
+      if (guestNameInput) guestNameInput.addEventListener("input", toggleExtras);
       if (attending) attending.addEventListener("change", toggleExtras);
+      
+      // Initialize visibility on page load
       toggleExtras();
 
-      // ---- FORM SUBMISSION ----
-      // Submit the visible form and then navigate to the thank-you page.
-      // Uses the hidden form's action (Google Forms URL) if present.
-      const hiddenTarget = document.getElementById("rsvpForm")?.action || null;
+      /**
+       * Handle form submission
+       * Submits data to Google Forms and redirects to thank you page
+       */
       const visibleForm = document.getElementById("rsvp-form");
+      const hiddenForm = document.getElementById("rsvpForm");
+      
       if (visibleForm) {
         visibleForm.addEventListener("submit", (e) => {
           e.preventDefault();
+          
           const formData = new FormData(visibleForm);
-          if (hiddenTarget) {
-            fetch(hiddenTarget, {
+          const googleFormUrl = hiddenForm?.action || null;
+          
+          // Submit to Google Forms (no-cors to avoid CORS errors with third-party forms)
+          if (googleFormUrl) {
+            fetch(googleFormUrl, {
               method: "POST",
               mode: "no-cors",
               body: formData,
             }).finally(() => {
+              // Redirect to thank you page after submission
               window.location.href = "thankyou.html";
             });
           } else {
-            // If no external target configured, just go to the thank-you page.
+            // Fallback if no external form configured
             window.location.href = "thankyou.html";
           }
         });
