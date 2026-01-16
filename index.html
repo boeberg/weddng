@@ -12,40 +12,88 @@
 
       body {
         margin: 0;
-        padding: 0;
         font-family: "Roboto", sans-serif;
-        background: #f7f5f2;
-        color: #333;
+        background: #faf9f6;
+        color: #1f1f1f;
       }
 
       .container {
-        max-width: 480px;
-        margin: 40px auto;
-        background: white;
-        padding: 32px;
-        border-radius: 12px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        position: relative;
+        max-width: 520px;
+        margin: 80px auto;
+        padding: 48px 36px;
+        text-align: center;
+
+        background: linear-gradient(
+          135deg,
+          rgba(246, 230, 166, 0.95),
+          rgba(226, 180, 44, 0.95)
+        );
+
+        border-radius: 6px; /* less smooth */
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+      }
+      .container::before {
+        content: "";
+        position: absolute;
+        inset: -14px;
+        background: rgba(226, 180, 44, 0.35);
+        z-index: -2;
+        transform: rotate(-2.5deg);
+        filter: blur(1px);
+      }
+
+      .container::after {
+        content: "";
+        position: absolute;
+        inset: -10px;
+        background: linear-gradient(
+            135deg,
+            rgba(246, 230, 166, 0.95),
+            rgba(226, 180, 44, 0.95)
+          ),
+          repeating-linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.03) 0,
+            rgba(0, 0, 0, 0.03) 1px,
+            transparent 1px,
+            transparent 2px
+          ),
+          repeating-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.03) 0,
+            rgba(255, 255, 255, 0.03) 1px,
+            transparent 1px,
+            transparent 3px
+          );
+
+        z-index: -1;
+        transform: rotate(2deg);
+        filter: blur(0.6px);
       }
 
       h1 {
-        font-family: "Playfair Display", serif;
+        font-family: "Roboto", sans-serif;
+        font-size: 36px;
         font-weight: 600;
-        text-align: center;
-        margin-bottom: 8px;
+        margin: 0 0 12px 0;
+        color: #1f1f1f;
       }
 
       .subtitle {
-        text-align: center;
         font-size: 14px;
-        color: #777;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #1f1f1f;
         margin-bottom: 32px;
       }
 
       label {
         display: block;
-        font-size: 14px;
+        margin-top: 22px;
         margin-bottom: 6px;
-        margin-top: 20px;
+        font-size: 14px;
+        color: #1f1f1f;
       }
 
       input,
@@ -54,48 +102,67 @@
         padding: 12px;
         font-size: 14px;
         border-radius: 8px;
-        border: 1px solid #ccc;
+        border: none;
+        background: #faf9f6;
       }
 
       input:focus,
       select:focus {
-        outline: none;
-        border-color: #b89b5e;
+        outline: 2px solid #1f1f1f;
       }
 
-      button {
+      button,
+      a.button {
+        display: block;
         width: 100%;
-        margin-top: 30px;
+        margin-top: 32px;
         padding: 14px;
-        background: #b89b5e;
-        color: white;
-        font-size: 15px;
-        border: none;
         border-radius: 10px;
+        border: none;
+        background: #1f1f1f;
+        color: #faf9f6;
+        font-size: 15px;
+        font-weight: 500;
+        text-align: center;
         cursor: pointer;
+        text-decoration: none;
       }
 
-      button:hover {
-        background: #a88b4f;
+      button:hover,
+      a.button:hover {
+        background: #000;
+      }
+
+      .secondary {
+        background: transparent;
+        border: 1px solid #1f1f1f;
+        color: #1f1f1f;
+      }
+
+      .secondary:hover {
+        background: rgba(255, 255, 255, 0.4);
       }
 
       .language-switch {
         text-align: center;
         margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
       }
 
       .language-switch button {
-        width: auto;
+        display: inline-block;
         background: none;
         border: none;
-        color: #777;
-        margin: 0 5px;
+        margin-left: 8px;
+        color: #1f1f1f;
+        font-weight: 500;
         cursor: pointer;
       }
 
       .language-switch button.active {
-        color: #000;
-        font-weight: 500;
+        text-decoration: underline;
       }
     </style>
 
@@ -124,6 +191,36 @@
       .hidden {
         display: none;
       }
+      /* Paper grain texture */
+      .container::marker {
+        display: none;
+      }
+
+      .container::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+
+        background-image: repeating-linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.03) 0,
+            rgba(0, 0, 0, 0.03) 1px,
+            transparent 1px,
+            transparent 2px
+          ),
+          repeating-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.03) 0,
+            rgba(255, 255, 255, 0.03) 1px,
+            transparent 1px,
+            transparent 3px
+          );
+
+        mix-blend-mode: multiply;
+        opacity: 0.25;
+        border-radius: inherit;
+      }
     </style>
   </head>
   <body>
@@ -132,10 +229,6 @@
       <h1 data-i18n="title">Babette & Felix</h1>
       <div class="subtitle" data-i18n="subtitle">
         We would love to celebrate with you
-      </div>
-      <div class="language-switch">
-        <button onclick="setLanguage('en')" class="active">EN</button>
-        <button onclick="setLanguage('de')">DE</button>
       </div>
 
       <form id="rsvp-form">
@@ -206,17 +299,31 @@
         },
         de: {
           guestName: "Dein Name",
-          attending: "Wirst du teilnehmen?",
+          attending: "Kommst du?",
           yes: "Ja",
           no: "Nein",
-          plusOne: "Name deiner Begleitperson (optional)",
-          numChildren: "Anzahl der Kinder (optional)",
+          plusOne: "Hast du ein +1? (optional)",
+          numChildren: "Anzahl der Kinder (falls du welche hast)",
           select: "Bitte wählen...",
-          meal: "Essenswahl",
+          meal: "Was willst du essen?",
           meat: "Fleisch",
           vegetarian: "Vegetarisch",
           send: "RSVP absenden",
           thankYou: "Danke! 💕",
+        },
+        dk: {
+          guestName: "Dit navn",
+          attending: "Kommer du?",
+          yes: "Ja",
+          no: "Nej",
+          plusOne: "Navn på din ledsager (valgfrit)",
+          numChildren: "Antal børn (valgfrit)",
+          select: "Vælg venligst...",
+          meal: "Hvad vil du spise?",
+          meat: "Kød",
+          vegetarian: "Vegetarisk",
+          send: "Send RSVP",
+          thankYou: "Tak! 💕",
         },
       };
 
@@ -259,38 +366,34 @@
       }
 
       function setActiveButton(lang) {
-        langButtons.forEach((b) => {
-          const buttonLang = (b.dataset.lang || b.textContent || "")
-            .toString()
-            .trim()
-            .toLowerCase();
-          if (buttonLang === lang) b.classList.add("active");
-          else b.classList.remove("active");
-        });
+        // No longer needed - language switch removed from this page
       }
 
-      // attach handlers
-      langButtons.forEach((btn) => {
-        // ensure a dataset.lang exists (EN/DE -> en/de)
-        if (!btn.dataset.lang) {
-          btn.dataset.lang = (btn.textContent || "").trim().toLowerCase();
-        }
-        btn.addEventListener("click", () => {
-          const lang = (btn.dataset.lang || "en").toLowerCase();
-          applyLanguage(lang);
-          setActiveButton(lang);
-        });
-      });
+      // simple API used by inline onclicks
+      function setLanguage(lang) {
+        lang = (lang || "").toString().toLowerCase();
+        if (lang === "da") lang = "dk";
+        if (!translations[lang]) lang = "en";
+        localStorage.setItem("selectedLanguage", lang);
+        applyLanguage(lang);
+        setActiveButton(lang);
+      }
 
-      // initialize language: prefer browser, fallback to en
-      const userLang = (
-        navigator.language ||
-        navigator.userLanguage ||
-        "en"
-      ).toLowerCase();
-      const initial = userLang.startsWith("de") ? "de" : "en";
+      // attach handlers - language buttons removed from this page
+
+      // initialize language: check localStorage first, then browser preference
+      let initial = localStorage.getItem("selectedLanguage");
+      if (!initial) {
+        const userLang = (
+          navigator.language ||
+          navigator.userLanguage ||
+          "en"
+        ).toLowerCase();
+        initial = "en";
+        if (userLang.startsWith("de")) initial = "de";
+        else if (userLang.startsWith("da")) initial = "dk";
+      }
       applyLanguage(initial);
-      setActiveButton(initial);
 
       // ---- SHOW/HIDE CHILDREN + PLUS ONE LOGIC ----
       const attending = document.getElementById("attending");

@@ -18,23 +18,48 @@
 
       body {
         margin: 0;
-        font-family: Inter, sans-serif;
+        font-family: "Roboto", sans-serif;
         background: linear-gradient(180deg, #f7f5f2, #ece9e4);
         color: #333;
       }
 
       .container {
-        max-width: 480px;
-        margin: 60px auto;
-        background: white;
-        padding: 40px 32px;
-        border-radius: 14px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        position: relative;
+        max-width: 520px;
+        margin: 80px auto;
+        padding: 48px 36px;
         text-align: center;
+
+        background: linear-gradient(
+          135deg,
+          rgba(246, 230, 166, 0.95),
+          rgba(226, 180, 44, 0.95)
+        );
+
+        border-radius: 6px; /* less smooth */
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+      }
+      .container::before,
+      .container::after {
+        content: "";
+        position: absolute;
+        inset: -14px;
+        background: rgba(226, 180, 44, 0.35);
+        z-index: -1;
+        filter: blur(1px);
+      }
+
+      .container::before {
+        transform: rotate(-2.5deg);
+      }
+
+      .container::after {
+        transform: rotate(2deg);
+        background: rgba(246, 230, 166, 0.45);
       }
 
       h1 {
-        font-family: "Playfair Display", serif;
+        font-family: "Roboto", sans-serif;
         font-weight: 600;
         margin-bottom: 10px;
       }
@@ -43,6 +68,26 @@
         font-size: 14px;
         color: #777;
         margin-bottom: 40px;
+      }
+
+      .language-switch {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .language-switch button {
+        display: inline-block;
+        width: auto;
+        background: none;
+        border: none;
+        color: #777;
+        margin: 0 5px;
+        cursor: pointer;
+      }
+
+      .language-switch button.active {
+        color: #000;
+        font-weight: 500;
       }
 
       .button-group {
@@ -84,15 +129,97 @@
   <body>
     <div class="container">
       <h1>Babette & Felix</h1>
-      <div class="subtitle">
+      <div class="subtitle" id="subtitle">
         We’re so happy to celebrate our wedding with you
       </div>
 
-      <div class="button-group">
-        <a href="index.html" class="button primary"> RSVP </a>
+      <div class="language-switch">
+        <button onclick="setLanguage('en')" class="active">EN</button>
+        <button onclick="setLanguage('de')">DE</button>
+        <button onclick="setLanguage('dk')">DK</button>
+      </div>
 
-        <a href="info.html" class="button secondary"> Practical Information </a>
+      <div class="button-group">
+        <a href="index.html" class="button primary" id="rsvpBtn"> RSVP </a>
+
+        <a href="info.html" class="button secondary" id="infoBtn">
+          Practical Information
+        </a>
       </div>
     </div>
+
+    <script>
+      const translations = {
+        en: {
+          subtitle: "We’re so happy to celebrate our wedding with you",
+          rsvp: "RSVP",
+          info: "Practical Information",
+        },
+        de: {
+          subtitle: "Wir freuen uns, unsere Hochzeit mit dir zu feiern",
+          rsvp: "RSVP",
+          info: "Praktische Informationen",
+        },
+        dk: {
+          subtitle: "Vi glæder os til at fejre vores bryllup med dig",
+          rsvp: "RSVP",
+          info: "Praktiske oplysninger",
+        },
+      };
+
+      const langButtons = Array.from(
+        document.querySelectorAll(".language-switch button")
+      );
+
+      function applyLanguage(lang) {
+        const t = translations[lang] || translations.en;
+        const sub = document.getElementById("subtitle");
+        if (sub) sub.textContent = t.subtitle;
+        const rsvp = document.getElementById("rsvpBtn");
+        if (rsvp) rsvp.textContent = t.rsvp;
+        const info = document.getElementById("infoBtn");
+        if (info) info.textContent = t.info;
+      }
+
+      function setActiveButton(lang) {
+        langButtons.forEach((b) => {
+          const buttonLang = (b.dataset.lang || b.textContent || "")
+            .toString()
+            .trim()
+            .toLowerCase();
+          if (buttonLang === lang) b.classList.add("active");
+          else b.classList.remove("active");
+        });
+      }
+
+      function setLanguage(lang) {
+        lang = (lang || "").toString().toLowerCase();
+        if (lang === "da") lang = "dk";
+        if (!translations[lang]) lang = "en";
+        localStorage.setItem("selectedLanguage", lang);
+        applyLanguage(lang);
+        setActiveButton(lang);
+      }
+
+      // ensure dataset.lang values
+      langButtons.forEach((btn) => {
+        if (!btn.dataset.lang)
+          btn.dataset.lang = (btn.textContent || "").trim().toLowerCase();
+        btn.addEventListener("click", () =>
+          setLanguage((btn.dataset.lang || "en").toLowerCase())
+        );
+      });
+
+      const userLang = (
+        navigator.language ||
+        navigator.userLanguage ||
+        "en"
+      ).toLowerCase();
+      let initial = "en";
+      if (userLang.startsWith("de")) initial = "de";
+      else if (userLang.startsWith("da")) initial = "dk";
+      applyLanguage(initial);
+      setActiveButton(initial);
+    </script>
   </body>
 </html>
