@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e59fbd45a96c1d20869d62951536f1d5 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_e59fbd45a96c1d20869d62951536f1d5" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e59fbd45a96c1d20869d62951536f1d5 = L.map(
+                "map_e59fbd45a96c1d20869d62951536f1d5",
+                {
+                    center: [53.99976342260903, 11.076335375644415],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_03543cd128da47137b86660b4f9f7772 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_03543cd128da47137b86660b4f9f7772.addTo(map_e59fbd45a96c1d20869d62951536f1d5);
+        
+    
+            var marker_a06be04a3aea698396739219679a7ff4 = L.marker(
+                [54.001852317015924, 11.073050025624658],
+                {
+}
+            ).addTo(map_e59fbd45a96c1d20869d62951536f1d5);
+        
+    
+            var icon_7f7301b48c12f117379e2ccca195f89e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_04ec1b3bac684dceaa48b4c4b11d8fef = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f03a5890e6bbe99e61920f9bf80401f1 = $(`<div id="html_f03a5890e6bbe99e61920f9bf80401f1" style="width: 100.0%; height: 100.0%;"><b>„Mondgesicht“, „Reetkaten“ and Zollhaus</b><br>Website: <a href='https://naturferien-ostsee.de/' target='_blank'>https://naturferien-ostsee.de/</a><br>Distance to Alte Schule: 774m<br></div>`)[0];
+                popup_04ec1b3bac684dceaa48b4c4b11d8fef.setContent(html_f03a5890e6bbe99e61920f9bf80401f1);
+            
+        
+
+        marker_a06be04a3aea698396739219679a7ff4.bindPopup(popup_04ec1b3bac684dceaa48b4c4b11d8fef)
+        ;
+
+        
+    
+    
+            marker_a06be04a3aea698396739219679a7ff4.bindTooltip(
+                `<div>
+                     <b>„Mondgesicht“, „Reetkaten“ and Zollhaus</b><br>Website: https://naturferien-ostsee.de/<br>Distance to Alte Schule: 774m
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a06be04a3aea698396739219679a7ff4.setIcon(icon_7f7301b48c12f117379e2ccca195f89e);
+            
+    
+            var marker_2c672f1bf548ed7118eb49964a5dd619 = L.marker(
+                [53.99924344633364, 11.04720779867901],
+                {
+}
+            ).addTo(map_e59fbd45a96c1d20869d62951536f1d5);
+        
+    
+            var icon_c8f1e53220b508d8f7c3063f507bd42f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b503c915cac2f82faacb0eb4100e76f1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3977ae06c839c9136970e90482680e0e = $(`<div id="html_3977ae06c839c9136970e90482680e0e" style="width: 100.0%; height: 100.0%;"><b>Gut Brook</b><br>Website: <a href='https://gut-brook.de/ferienwohnungen/' target='_blank'>https://gut-brook.de/ferienwohnungen/</a><br>Distance to Alte Schule: 2394m<br></div>`)[0];
+                popup_b503c915cac2f82faacb0eb4100e76f1.setContent(html_3977ae06c839c9136970e90482680e0e);
+            
+        
+
+        marker_2c672f1bf548ed7118eb49964a5dd619.bindPopup(popup_b503c915cac2f82faacb0eb4100e76f1)
+        ;
+
+        
+    
+    
+            marker_2c672f1bf548ed7118eb49964a5dd619.bindTooltip(
+                `<div>
+                     <b>Gut Brook</b><br>Website: https://gut-brook.de/ferienwohnungen/<br>Distance to Alte Schule: 2394m
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2c672f1bf548ed7118eb49964a5dd619.setIcon(icon_c8f1e53220b508d8f7c3063f507bd42f);
+            
+    
+            var marker_77c91f3d26f2ec2371ece1b3a46429fe = L.marker(
+                [53.99912665832114, 11.092406554964157],
+                {
+}
+            ).addTo(map_e59fbd45a96c1d20869d62951536f1d5);
+        
+    
+            var icon_98c2d01a46df2d9103d46ba159c1501a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_061d8024917e3a08f9cd49b817f0d95e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ead315e130300bafbada1c84c6fd6d3b = $(`<div id="html_ead315e130300bafbada1c84c6fd6d3b" style="width: 100.0%; height: 100.0%;"><b>Elmenhof/Cafe im Stall</b><br>Website: <a href='https://elmenhof.info/' target='_blank'>https://elmenhof.info/</a><br>Distance to Alte Schule: 571m<br></div>`)[0];
+                popup_061d8024917e3a08f9cd49b817f0d95e.setContent(html_ead315e130300bafbada1c84c6fd6d3b);
+            
+        
+
+        marker_77c91f3d26f2ec2371ece1b3a46429fe.bindPopup(popup_061d8024917e3a08f9cd49b817f0d95e)
+        ;
+
+        
+    
+    
+            marker_77c91f3d26f2ec2371ece1b3a46429fe.bindTooltip(
+                `<div>
+                     <b>Elmenhof/Cafe im Stall</b><br>Website: https://elmenhof.info/<br>Distance to Alte Schule: 571m
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_77c91f3d26f2ec2371ece1b3a46429fe.setIcon(icon_98c2d01a46df2d9103d46ba159c1501a);
+            
+    
+            var marker_271565a66d410a6b76b48f3fc2c43208 = L.marker(
+                [54.000056102380654, 11.077432158574165],
+                {
+}
+            ).addTo(map_e59fbd45a96c1d20869d62951536f1d5);
+        
+    
+            var icon_efdea5d1c773ae9c50a1fa75e061c8ab = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1d91f62b2bb26708b2b40b521727fcf4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_294e5426c47dc485115f7a5744ad7d9a = $(`<div id="html_294e5426c47dc485115f7a5744ad7d9a" style="width: 100.0%; height: 100.0%;"><b>Jochen Henkels Bauwagen</b><br>Website: <a href='https://www.ferienhausvermittlung.de/ferienhaus-ostsee/73455-1' target='_blank'>https://www.ferienhausvermittlung.de/ferienhaus-ostsee/73455-1</a><br>Distance to Alte Schule: 433m<br></div>`)[0];
+                popup_1d91f62b2bb26708b2b40b521727fcf4.setContent(html_294e5426c47dc485115f7a5744ad7d9a);
+            
+        
+
+        marker_271565a66d410a6b76b48f3fc2c43208.bindPopup(popup_1d91f62b2bb26708b2b40b521727fcf4)
+        ;
+
+        
+    
+    
+            marker_271565a66d410a6b76b48f3fc2c43208.bindTooltip(
+                `<div>
+                     <b>Jochen Henkels Bauwagen</b><br>Website: https://www.ferienhausvermittlung.de/ferienhaus-ostsee/73455-1<br>Distance to Alte Schule: 433m
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_271565a66d410a6b76b48f3fc2c43208.setIcon(icon_efdea5d1c773ae9c50a1fa75e061c8ab);
+            
+    
+            var marker_4d7d738e99d528e777d3d2cc25a51012 = L.marker(
+                [54.00049128142989, 11.075215022107257],
+                {
+}
+            ).addTo(map_e59fbd45a96c1d20869d62951536f1d5);
+        
+    
+            var icon_83e15cc713a4f3a0f75464e6c85500a7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c86324839653c82b181b6c2fd90c3949 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_82a32ac987f599531016d39c4dc39e5f = $(`<div id="html_82a32ac987f599531016d39c4dc39e5f" style="width: 100.0%; height: 100.0%;"><b>Baltic Charlets</b><br>Website: <a href='https://www.baltic-chalets.com/' target='_blank'>https://www.baltic-chalets.com/</a><br>Distance to Alte Schule: 586m<br></div>`)[0];
+                popup_c86324839653c82b181b6c2fd90c3949.setContent(html_82a32ac987f599531016d39c4dc39e5f);
+            
+        
+
+        marker_4d7d738e99d528e777d3d2cc25a51012.bindPopup(popup_c86324839653c82b181b6c2fd90c3949)
+        ;
+
+        
+    
+    
+            marker_4d7d738e99d528e777d3d2cc25a51012.bindTooltip(
+                `<div>
+                     <b>Baltic Charlets</b><br>Website: https://www.baltic-chalets.com/<br>Distance to Alte Schule: 586m
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4d7d738e99d528e777d3d2cc25a51012.setIcon(icon_83e15cc713a4f3a0f75464e6c85500a7);
+            
+    
+            var marker_9d10fadbb292a0be91065a91ff76367e = L.marker(
+                [53.9987108543213, 11.08532510374218],
+                {
+}
+            ).addTo(map_e59fbd45a96c1d20869d62951536f1d5);
+        
+    
+            var icon_d5d9efa2c9b3c9ebb62e67f255a4383f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "tree",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d4fa04aec653e660c1c8c20b0ab36711 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8ffa0c2375ffff0aaa4935d99796662c = $(`<div id="html_8ffa0c2375ffff0aaa4935d99796662c" style="width: 100.0%; height: 100.0%;"><b>Sportplatz</b><br>Distance to Alte Schule: 107m<br></div>`)[0];
+                popup_d4fa04aec653e660c1c8c20b0ab36711.setContent(html_8ffa0c2375ffff0aaa4935d99796662c);
+            
+        
+
+        marker_9d10fadbb292a0be91065a91ff76367e.bindPopup(popup_d4fa04aec653e660c1c8c20b0ab36711)
+        ;
+
+        
+    
+    
+            marker_9d10fadbb292a0be91065a91ff76367e.bindTooltip(
+                `<div>
+                     <b>Sportplatz</b><br>Distance to Alte Schule: 107m
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9d10fadbb292a0be91065a91ff76367e.setIcon(icon_d5d9efa2c9b3c9ebb62e67f255a4383f);
+            
+    
+            var marker_f1bc17dca1c78899dd294b6f1d36d423 = L.marker(
+                [53.99886329846064, 11.08371096581948],
+                {
+}
+            ).addTo(map_e59fbd45a96c1d20869d62951536f1d5);
+        
+    
+            var icon_cc2f83a0e69ce4b91fd8e47677521f8c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_14488d1b03c0b18e8b968aa4a605095b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d8286be03c8189c153fd843aacabfc1d = $(`<div id="html_d8286be03c8189c153fd843aacabfc1d" style="width: 100.0%; height: 100.0%;"><b>Alte Schule</b><br>Distance to Alte Schule: 0m<br></div>`)[0];
+                popup_14488d1b03c0b18e8b968aa4a605095b.setContent(html_d8286be03c8189c153fd843aacabfc1d);
+            
+        
+
+        marker_f1bc17dca1c78899dd294b6f1d36d423.bindPopup(popup_14488d1b03c0b18e8b968aa4a605095b)
+        ;
+
+        
+    
+    
+            marker_f1bc17dca1c78899dd294b6f1d36d423.bindTooltip(
+                `<div>
+                     <b>Alte Schule</b><br>Distance to Alte Schule: 0m
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f1bc17dca1c78899dd294b6f1d36d423.setIcon(icon_cc2f83a0e69ce4b91fd8e47677521f8c);
+            
+</script>
+</html>

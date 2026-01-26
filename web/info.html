@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Information - Babette & Felix</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <style>
+    /* Additional styles for info page */
+    .info-section {
+      text-align: left;
+      margin-bottom: var(--spacing-2xl);
+      padding: var(--spacing-large);
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: var(--container-border-radius);
+    }
+
+    .info-section h2 {
+      text-align: center;
+      margin-bottom: var(--spacing-large);
+      color: var(--color-primary);
+      border-bottom: 2px solid var(--color-primary);
+      padding-bottom: var(--spacing-medium);
+    }
+
+    .info-section p {
+      margin-bottom: var(--spacing-medium);
+      line-height: 1.8;
+    }
+
+    .map-container {
+      margin-top: var(--spacing-large);
+      border-radius: var(--container-border-radius);
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: var(--spacing-2xl);
+      padding: var(--spacing-medium) var(--spacing-large);
+      color: var(--color-text);
+      text-decoration: none;
+      border: 1px solid var(--color-primary);
+      border-radius: var(--container-border-radius);
+      transition: var(--transition);
+    }
+
+    .back-button:hover {
+      background-color: var(--color-primary);
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .map-container iframe {
+        height: 400px;
+      }
+
+      .info-section {
+        padding: var(--spacing-medium);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <h1 id="title">Babette & Felix</h1>
+    <p class="subtitle" id="subtitle">Practical Information</p>
+
+    <!-- Accommodations Section -->
+    <div class="info-section">
+      <h2 id="accommodations-title">Accommodations</h2>
+      <p id="accommodations-text">
+        We've collected nearby accommodations for our guests. Click on the map below to explore the different options available. 
+        Each location on the map shows the accommodation name, website, and distance to our venue (Alte Schule).
+      </p>
+      <div class="map-container">
+        <iframe src="../data/maps/guest_locations_map.html"></iframe>
+      </div>
+    </div>
+
+    <!-- Dress Code Section -->
+    <div class="info-section">
+      <h2 id="dress-code-title">Dress Code</h2>
+      <p id="dress-code-text">
+        We're planning an outdoor celebration, so please dress comfortably for the weather. 
+        We suggest elegant casual attire. Since we'll be celebrating by the sea, feel free to wear colors that match the scenery. 
+        Comfortable shoes are recommended as we'll be walking on natural terrain.
+      </p>
+    </div>
+
+    <!-- Getting There Section -->
+    <div class="info-section">
+      <h2 id="getting-there-title">Getting There</h2>
+      <p id="getting-there-text">
+        Our wedding will take place at Alte Schule in Warnkenhagen, Germany. 
+        The venue is easily accessible by car from both major German cities and the Danish coast. 
+        If you need assistance with travel arrangements or directions, please don't hesitate to contact us.
+        Public parking is available near the venue.
+      </p>
+    </div>
+
+    <!-- Gifts Section -->
+    <div class="info-section">
+      <h2 id="gifts-title">Gifts</h2>
+      <p id="gifts-text">
+        Your presence is the greatest gift! If you'd like to give us something, we appreciate contributions to our 
+        future together. We're open to any suggestions and will provide a gift registry or alternative gift ideas upon request. 
+        Please feel free to reach out with any questions.
+      </p>
+    </div>
+
+    <!-- Back Button -->
+    <a href="overview.html" class="back-button" id="back-btn">← Back to Overview</a>
+  </div>
+
+  <!-- LANGUAGE LOGIC -->
+  <script>
+    /**
+     * INFO PAGE - LANGUAGE SUPPORT
+     *
+     * This page displays wedding information with language support.
+     * The language is read from localStorage (set on overview.html).
+     *
+     * All translatable text is defined in the translations object below.
+     * To add a new language, add a new object to translations with all keys.
+     */
+    const translations = {
+      en: {
+        title: "Babette & Felix",
+        subtitle: "Practical Information",
+        "accommodations-title": "Accommodations",
+        "accommodations-text": "We've collected nearby accommodations for our guests. Click on the map below to explore the different options available. Each location on the map shows the accommodation name, website, and distance to our venue (Alte Schule).",
+        "dress-code-title": "Dress Code",
+        "dress-code-text": "We're planning an outdoor celebration, so please dress comfortably for the weather. We suggest elegant casual attire. Since we'll be celebrating by the sea, feel free to wear colors that match the scenery. Comfortable shoes are recommended as we'll be walking on natural terrain.",
+        "getting-there-title": "Getting There",
+        "getting-there-text": "Our wedding will take place at Alte Schule in Warnkenhagen, Germany. The venue is easily accessible by car from both major German cities and the Danish coast. If you need assistance with travel arrangements or directions, please don't hesitate to contact us. Public parking is available near the venue.",
+        "gifts-title": "Gifts",
+        "gifts-text": "Your presence is the greatest gift! If you'd like to give us something, we appreciate contributions to our future together. We're open to any suggestions and will provide a gift registry or alternative gift ideas upon request. Please feel free to reach out with any questions.",
+        "back-btn": "← Back to Overview"
+      },
+      de: {
+        title: "Babette & Felix",
+        subtitle: "Praktische Informationen",
+        "accommodations-title": "Unterkunftsoptionen",
+        "accommodations-text": "Wir haben eine Auswahl an Unterkünften für unsere Gäste zusammengestellt. Klicken Sie auf die Karte unten, um die verschiedenen verfügbaren Optionen zu erkunden. Jeder Standort auf der Karte zeigt den Namen der Unterkunft, die Website und die Entfernung zu unserem Veranstaltungsort (Alte Schule).",
+        "dress-code-title": "Kleiderordnung",
+        "dress-code-text": "Wir planen eine Feier im Freien, daher bitten wir Sie, sich für das Wetter angemessen zu kleiden. Wir empfehlen elegante und bequeme Kleidung. Da wir am Meer feiern werden, können Sie gerne Farben tragen, die zur Umgebung passen. Bequeme Schuhe werden empfohlen, da wir auf natürlichem Gelände unterwegs sein werden.",
+        "getting-there-title": "Anreise",
+        "getting-there-text": "Unsere Hochzeit findet in der Alten Schule in Warnkenhagen, Deutschland statt. Der Veranstaltungsort ist leicht mit dem Auto von großen deutschen Städten und der dänischen Küste erreichbar. Falls Sie Hilfe bei der Reiseplanung oder Wegbeschreibung benötigen, zögern Sie nicht, uns zu kontaktieren. Es gibt öffentliche Parkplätze in der Nähe des Veranstaltungsortes.",
+        "gifts-title": "Geschenke",
+        "gifts-text": "Eure Anwesenheit ist das größte Geschenk! Falls ihr uns dennoch etwas schenken möchtet, freuen wir uns über Beiträge zu unserer gemeinsamen Zukunft. Wir sind offen für Vorschläge und stellen gerne eine Wunschliste oder alternative Geschenkideen zur Verfügung. Zögert nicht, uns zu kontaktieren, wenn ihr Fragen habt.",
+        "back-btn": "← Zurück zur Übersicht"
+      },
+      dk: {
+        title: "Babette & Felix",
+        subtitle: "Praktiske Oplysninger",
+        "accommodations-title": "Indkvartering",
+        "accommodations-text": "Vi har samlet et udvalg af indkvarteringssteder for vores gæster. Klik på kortet nedenfor for at udforske de forskellige muligheder. Hvert sted på kortet viser navn på indkvarteringen, hjemmeside og afstand til vores lokation (Alte Schule).",
+        "dress-code-title": "Dresscode",
+        "dress-code-text": "Vi planlægger en udendørsfest, så vi beder jer om at klæde jer passende til vejret. Vi foreslår elegant casual påklædning. Da vi fejrer ved havet, kan I gerne bruge farver, der passer til omgivelserne. Behagelige sko anbefales, da vi vil være på naturligt terræn.",
+        "getting-there-title": "Sådan Kommer Du Der",
+        "getting-there-text": "Vores bryllup finder sted på Alte Schule i Warnkenhagen, Tyskland. Lokationen er let tilgængelig med bil fra større tyske byer og den danske kyst. Hvis I har brug for hjælp til rejseplanering eller vejledning, så kontakt os. Der er offentlig parkering nær lokationen.",
+        "gifts-title": "Gaver",
+        "gifts-text": "Jeres tilstedeværelse er det bedste gave! Hvis I gerne vil give os noget, værdsætter vi gaver til vores fælles fremtid. Vi er åbne for forslag og vil gerne give en gaveønskelist eller alternative gaveideér. Kontakt os endelig hvis I har spørgsmål.",
+        "back-btn": "← Tilbage til Oversigt"
+      }
+    };
+
+    /**
+     * Get the saved language from localStorage or default to English
+     */
+    function getLanguage() {
+      const lang = localStorage.getItem("language") || "en";
+      return lang;
+    }
+
+    /**
+     * Apply language translations to all elements with id="[key]"
+     */
+    function applyLanguage(lang) {
+      const langData = translations[lang] || translations["en"];
+      
+      Object.keys(langData).forEach(key => {
+        const element = document.getElementById(key);
+        if (element) {
+          element.textContent = langData[key];
+        }
+      });
+    }
+
+    /**
+     * Initialize language on page load
+     */
+    window.addEventListener("DOMContentLoaded", () => {
+      const lang = getLanguage();
+      applyLanguage(lang);
+    });
+  </script>
+</body>
+</html>

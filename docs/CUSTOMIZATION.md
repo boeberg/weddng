@@ -4,7 +4,7 @@
 
 ## Change Colors (Most Common)
 
-Open `styles.css` and edit the `:root` section at the top:
+Open `web/styles.css` and edit the `:root` section at the top:
 
 ```css
 :root {
@@ -20,7 +20,7 @@ Open `styles.css` and edit the `:root` section at the top:
 
 ## Change Font
 
-In `styles.css`:
+In `web/styles.css`:
 
 ```css
 :root {
@@ -31,7 +31,7 @@ In `styles.css`:
 Or add a Google Font:
 
 ```html
-<!-- In the <head> of index.html and overview.html -->
+<!-- In the <head> of web/index.html and web/overview.html -->
 <link href="https://fonts.googleapis.com/css2?family=FONT-NAME:wght@400;700&display=swap" rel="stylesheet">
 ```
 
@@ -39,9 +39,9 @@ Or add a Google Font:
 
 ## Change Text
 
-- **"We would love to celebrate with you"** → Edit in `index.html` line ~227
-- **"We're so happy to celebrate..."** → Edit in `overview.html` line ~46
-- **"Thank you! 💕"** → Edit in `index.html` translations object
+- **"We would love to celebrate with you"** → Edit in `web/index.html` line ~227
+- **"We're so happy to celebrate..."** → Edit in `web/overview.html` line ~46
+- **"Thank you! 💕"** → Edit in `web/index.html` translations object
 - **Button text** → Edit in translations objects
 
 ---
