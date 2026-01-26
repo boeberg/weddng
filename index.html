@@ -274,8 +274,16 @@
         visibleForm.addEventListener("submit", (e) => {
           e.preventDefault();
           
+          const guestName = document.getElementById("guestName").value;
+          console.log("Form submitted with guest name:", guestName);
+          
           const formData = new FormData(visibleForm);
           const googleFormUrl = hiddenForm?.action || null;
+          
+          console.log("Form data entries:");
+          for (let [key, value] of formData.entries()) {
+            console.log(`  ${key}: ${value}`);
+          }
           
           // Submit to Google Forms (no-cors to avoid CORS errors with third-party forms)
           if (googleFormUrl) {
