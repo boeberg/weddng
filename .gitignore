@@ -42,7 +42,8 @@ wheels/
 *.egg
 
 # Generated Files
-data/guest_locations_map.html
+data/temp/*
+
 *.log
 
 # OS

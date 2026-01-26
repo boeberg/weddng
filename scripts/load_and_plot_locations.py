@@ -240,9 +240,9 @@ def create_map(df, output_file=None):
     """
     print(f"\nCreating map...")
     
-    # Set default output path
+    # Set default output path to web/data/maps/
     if output_file is None:
-        output_path = Path(__file__).parent.parent / "data" / "maps"
+        output_path = Path(__file__).parent.parent / "web" / "data" / "maps"
         output_path.mkdir(parents=True, exist_ok=True)
         output_file = output_path / "guest_locations_map.html"
     else:
