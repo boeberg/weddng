@@ -1,287 +1,285 @@
-# Wedding RSVP Website - Developer Guide
+# Wedding RSVP & Location Mapper
 
-## Overview
+A beautiful, maintainable wedding website with:
+- 🌍 Multi-language RSVP form
+- 🗺️ Interactive accommodation map
+- 📱 Mobile-responsive design
+- 🎨 Easy customization
 
-This is a simple, maintainable wedding RSVP website with multi-language support. The design is clean and easy to customize for less experienced developers.
-
-## File Structure
+## Project Structure
 
 ```
 weddng/
-├── styles.css          # Shared CSS (EDIT THIS to change styling)
-├── index.html          # RSVP form page
-├── overview.html       # Landing/language selection page
-├── thankyou.html       # Thank you/confirmation page
-├── config.yaml         # Configuration file
-└── README.md           # This file
+├── web/                      # Website files
+│   ├── index.html           # RSVP form
+│   ├── overview.html        # Landing page & language selector
+│   ├── thankyou.html        # Confirmation page
+│   └── styles.css           # Styling (main customization point)
+├── scripts/                  # Python utilities
+│   └── load_and_plot_locations.py  # Generate accommodation map
+├── data/                     # Generated outputs
+│   └── guest_locations_map.html    # Interactive map
+├── docs/                     # Documentation
+│   ├── SETUP.md             # Setup & deployment guide
+│   ├── DESIGN_SYSTEM.md     # Design tokens & system
+│   └── CUSTOMIZATION.md     # How to customize
+├── .github/
+│   └── copilot-instructions.md
+├── requirements.txt          # Python dependencies
+├── config.yaml              # Configuration
+└── README.md                # This file
 ```
 
 ## Quick Start
 
-### Serving Locally
+### 1. Setup Environment
 
 ```bash
-cd /Users/babettesophiabresser/Develop/weddng
+# Activate virtual environment
+source .venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### 2. Serve Locally
+
+```bash
+source .venv/bin/activate
 python3 -m http.server 8000
 ```
 
-Then open `http://localhost:8000/overview.html` in your browser.
+Open: `http://localhost:8000/web/overview.html`
 
-> **Important**: localStorage only works with HTTP/HTTPS, not `file://` URLs
+> **Note:** localStorage only works with HTTP/HTTPS, not `file://` URLs
+
+### 3. Generate Location Map (Optional)
+
+```bash
+source .venv/bin/activate
+python scripts/load_and_plot_locations.py
+```
+
+Output: `data/guest_locations_map.html`
 
 ---
 
-## How to Customize
+## Documentation
 
-### 1. Change Colors & Styling
+- **[Setup Guide](docs/SETUP.md)** - Installation, configuration, and troubleshooting
+- **[Design System](docs/DESIGN_SYSTEM.md)** - Colors, typography, spacing
+- **[Customization Guide](docs/CUSTOMIZATION.md)** - How to customize the website
 
-**Edit `styles.css`** - All design customization happens here!
+## Customization
 
-At the top of the file, you'll find CSS variables that control the entire look:
+Everything is designed to be easy to customize. Here are the main customization points:
+
+### 1️⃣ Change Colors & Styling
+
+**File:** `web/styles.css` (top section - CSS variables)
 
 ```css
 :root {
-  /* Colors */
-  --color-primary: #b89b5e;              /* Main accent color */
-  --color-text: #1f1f1f;                 /* Text color */
-  --color-background: #faf9f6;           /* Background color */
-  --color-card-bg: linear-gradient(...); /* Card background */
+  /* Colors - change these! */
+  --color-primary: #b89b5e;              /* Main accent (gold) */
+  --color-text: #1f1f1f;                 /* Text color (dark) */
+  --color-background: #faf9f6;           /* Background (cream) */
   
   /* Fonts */
-  --font-primary: "Roboto", sans-serif;  /* Main font */
+  --font-primary: "Roboto", sans-serif;
   
   /* Spacing */
   --spacing-small: 6px;
   --spacing-medium: 12px;
   --spacing-large: 20px;
-  
-  /* Layout */
-  --container-max-width: 520px;
-  --container-padding: 48px 36px;
 }
 ```
 
-Simply change these values to update the entire site's appearance!
+Just change the CSS variables and the entire website updates! 🎨
 
-### 2. Add or Change Fonts
+### 2️⃣ Edit Website Content
 
-Edit the `<link>` tag in the HTML files or in `styles.css`:
+**Files to edit:**
+- `web/overview.html` - Landing page, language buttons
+- `web/index.html` - RSVP form
+- `web/info.html` - Practical information (Accommodations, Dress Code, Getting There, Gifts)
+- `web/thankyou.html` - Thank you message
 
+All page content is in simple HTML. Easy to find and update!
+
+**Example:** To change the title, find and edit:
 ```html
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=YOUR-FONT:wght@300;400;700&display=swap" rel="stylesheet">
+<h1>Babette & Felix</h1>  <!-- Change to your names -->
 ```
 
-Then update the `--font-primary` variable in `styles.css`.
+### 3️⃣ Add Multiple Languages
 
-### 3. Add Images
+**Files:** `web/overview.html`, `web/index.html`, `web/info.html`
 
-Add image references to `styles.css`:
-
-```css
-.container {
-  background-image: url('path/to/your/image.jpg');
-  background-size: cover;
-  background-position: center;
-}
-```
-
-Or in HTML:
-
-```html
-<img src="your-image.jpg" alt="Description" style="max-width: 100%; margin-bottom: 20px;">
-```
-
-### 4. Add a New Language
-
-1. **Edit `index.html`** - Add translations to the `translations` object:
+Find the `translations` object and add your language:
 
 ```javascript
 const translations = {
-  en: { /* ... */ },
-  de: { /* ... */ },
-  fr: {  // NEW
-    guestName: "Nom du convi",
-    attending: "Allez-vous assister?",
-    // ... add all keys
+  en: { /* English translations */ },
+  de: { /* German translations */ },
+  fr: {  // NEW LANGUAGE
+    title: "Babette & Felix",
+    subtitle: "Nous sommes...",
+    // ... add all translation keys
   }
 };
 ```
 
-2. **Edit `overview.html`** - Add translations:
-
-```javascript
-const translations = {
-  en: { /* ... */ },
-  de: { /* ... */ },
-  fr: {  // NEW
-    subtitle: "Nous serions heureux...",
-    rsvp: "RSVP",
-    info: "Informations pratiques",
-  }
-};
+Then add the language button on overview.html:
+```html
+<button onclick="setLanguage('fr')" data-lang="fr">FR</button>
 ```
 
-3. **Edit `thankyou.html`** - If using it, add translations.
+### 4️⃣ Customize RSVP Form
 
-4. **Update language buttons** in HTML if needed.
+**File:** `web/index.html`
+
+Change form fields by editing the HTML:
+
+```html
+<label for="guestName">Guest Name</label>
+<input id="guestName" name="entry.108083471" type="text" required />
+
+<!-- Add/remove fields as needed -->
+```
+
+To change where the form submits, update:
+```html
+<form id="rsvpForm" action="https://docs.google.com/forms/d/YOUR_FORM_ID/formResponse" method="POST">
+```
+
+### 5️⃣ Customize Information Pages
+
+**File:** `web/info.html`
+
+Each section (Accommodations, Dress Code, Getting There, Gifts) has an ID you can edit:
+
+```html
+<h2 id="accommodations-title">Accommodations</h2>
+<p id="accommodations-text">
+  We've collected nearby accommodations...
+</p>
+```
+
+Then update the translations object at the bottom with your custom text.
+
+### 6️⃣ Update Accommodation Map
+
+**File:** `scripts/load_and_plot_locations.py`
+
+The script loads accommodations from a Google Sheet and creates an interactive map:
+
+```bash
+source .venv/bin/activate
+python scripts/load_and_plot_locations.py
+```
+
+The map automatically:
+- ✅ Marks "Alte Schule" in **red** (your venue)
+- ✅ Marks "Sportplatz" in **green**
+- ✅ Marks other locations in **blue**
+- ✅ Shows distance to your venue when you hover
+- ✅ Shows website links for each accommodation
+
+**To use it:** Share your Google Sheet with `kaffeemoeder` project credentials.
+
+### 7️⃣ Test Locally
+
+```bash
+cd /Users/felixschilling/Documents/weddng/web
+python3 -m http.server 8000
+```
+
+Then visit:
+- `http://localhost:8000/overview.html` - Landing page
+- `http://localhost:8000/index.html` - RSVP form
+- `http://localhost:8000/info.html` - Practical information
+- `http://localhost:8000/thankyou.html` - Thank you page
+
+### 📋 Customization Checklist
+
+- [ ] Change `--color-primary` in `web/styles.css` to your color
+- [ ] Edit titles and names (find "Babette & Felix" in HTML files)
+- [ ] Update RSVP form fields in `web/index.html`
+- [ ] Customize content in `web/info.html`
+- [ ] Add/update languages in translation objects
+- [ ] Update Google Forms submission URL in `web/index.html`
+- [ ] Run location mapper: `python scripts/load_and_plot_locations.py`
+- [ ] Test locally and review all pages
+
+For more detailed guidance, see [docs/CUSTOMIZATION.md](docs/CUSTOMIZATION.md)
 
 ---
 
-## Page Structure
+## Features
 
-### overview.html (Landing Page)
+### RSVP Form (`web/index.html`)
 
-- Title and subtitle
-- **Language switch buttons** (user selects language here)
-- Navigation buttons (RSVP, Practical Info)
-
-### index.html (RSVP Form)
-
+- Multi-language support (English, German)
 - Form fields:
   - Guest name (required)
   - Attending status (Yes/No)
-  - Plus One name (optional)
+  - Plus one name (optional)
   - Number of children (optional)
   - Meal preference (optional)
-- Shows/hides fields based on user responses
+- Dynamic field visibility
 - Submits to Google Forms
-- Redirects to thankyou.html on success
+- Redirect to thank you page on success
 
-### thankyou.html (Confirmation Page)
+### Location Mapper (`scripts/load_and_plot_locations.py`)
 
-- Simple thank you message
-- Back button to form
+- Loads accommodation data from Google Sheets
+- Generates interactive map using folium
+- Supports multiple coordinate formats
+- Requires Google Sheets API access
 
----
+### Design
 
-## How Translations Work
-
-1. User selects a language in **overview.html**
-2. Selection is stored in browser's `localStorage`
-3. User clicks "RSVP" link to **index.html**
-4. index.html reads the saved language from localStorage
-5. Form displays in the selected language
-
-The language choice persists across browser sessions!
+- Mobile-responsive
+- Customizable with CSS variables
+- Clean, elegant aesthetic
+- Accessible HTML structure
 
 ---
 
-## Form Submission
+## Development
 
-The form submits to Google Forms. To change the submission URL:
+### Python Environment
 
-1. Create a new Google Form
-2. Copy the form submission URL
-3. In `index.html`, find this line:
+All Python code must run within the `.venv` virtual environment:
 
-```html
-<form id="rsvpForm" action="https://docs.google.com/forms/d/..." method="POST">
+```bash
+source .venv/bin/activate
+python scripts/load_and_plot_locations.py
 ```
 
-Replace the `action` URL with your new Google Forms URL.
+### Adding Dependencies
 
----
-
-## CSS Classes Reference
-
-```css
-.container         /* Main card container */
-.language-switch   /* Language button group */
-.btn              /* Base button style */
-.btn-primary      /* Call-to-action button */
-.btn-secondary    /* Secondary button */
-.subtitle         /* Subtitle text */
-.hidden           /* Hide element */
-.text-center      /* Center text */
-.text-muted       /* Light gray text */
+```bash
+source .venv/bin/activate
+pip install <package-name>
+pip freeze > requirements.txt
 ```
 
----
+### Code Quality
 
-## Code Organization
+- TypeScript with strict mode (for web components, if added)
+- ESLint rules enforced (if added)
+- Unit tests for all functions (if test framework added)
 
-### index.html Structure
-
-- **Meta tags & font imports** (head)
-- **Shared CSS link** (head)
-- **Inline styles** (optional overrides)
-- **HTML form** (body)
-- **Translation script** (bottom)
-- **Form logic script** (bottom)
-
-### Script Sections
-
-1. **TRANSLATIONS & LOCALIZATION** - Language strings
-2. **FORM LOGIC** - Toggle fields, handle submission
-
-Each section has detailed comments explaining the code.
-
----
-
-## Tips for Less Experienced Developers
-
-### ✅ DO:
-- Edit `styles.css` for styling changes
-- Add comments when making changes
-- Test locally with Python server
-- Keep translations in sync across pages
-- Use browser console to debug (F12)
-
-### ❌ DON'T:
-- Don't edit styles inside HTML `<style>` tags (use styles.css instead)
-- Don't change field IDs or form field names without updating translations
-- Don't test with `file://` URLs (use Python server instead)
-
-### Debugging
-
-Open browser Developer Tools (F12) and check:
-
-- **Console tab** - JavaScript errors
-- **Network tab** - Form submission status
-- **Application tab** - localStorage values
-
----
-
-## Responsive Design
-
-The site is mobile-friendly. Breakpoints are in `styles.css`:
-
-```css
-@media (max-width: 768px) {
-  /* Tablet styles */
-}
-
-@media (max-width: 480px) {
-  /* Mobile styles */
-}
-```
-
----
-
-## Future Enhancements
-
-Ideas for expansion:
-
-- Add a gallery/photos page
-- Add wedding details/timeline page
-- Send confirmation emails
-- Admin dashboard to view responses
-- Add guest filtering/seating arrangements
-- Add dietary restrictions field
-- Add RSVP deadline countdown
+See [.github/copilot-instructions.md](.github/copilot-instructions.md) for coding standards.
 
 ---
 
 ## Support
 
-For questions, refer to:
+For setup issues, see [docs/SETUP.md](docs/SETUP.md)
 
-1. **Code comments** - Every section has detailed comments
-2. **Browser console** - Check for JavaScript errors
-3. **HTML structure** - Semantic, self-documenting tags
-4. **CSS variables** - All customizable at the top of styles.css
+For design questions, see [docs/DESIGN_SYSTEM.md](docs/DESIGN_SYSTEM.md)
 
----
-
-**Happy coding! 💍**
+For customization help, see [docs/CUSTOMIZATION.md](docs/CUSTOMIZATION.md)
