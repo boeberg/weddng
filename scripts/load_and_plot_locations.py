@@ -286,6 +286,12 @@ def create_map(df, output_file=None):
         # Get distance if available
         distance = row.get('Distance to Alte Schule (m)', None)
         
+        # Get prive level range if available
+        prive_level = row.get('prive level range', '')
+        if pd.isna(prive_level):
+            prive_level = ''
+        prive_level = str(prive_level).strip()
+        
         # Create formatted HTML popup with each field on separate row
         popup_html = f"<b>{unterkunft}</b><br>"
         
@@ -297,9 +303,15 @@ def create_map(df, output_file=None):
         if pd.notna(distance):
             popup_html += f"Distance to Alte Schule: {distance:.0f}m<br>"
         
+        # Add prive level range if available
+        if prive_level:
+            popup_html += f"Price Range: {prive_level}<br>"
+        
         # Create tooltip with multiple lines - each field on separate row
         # Note: Website is NOT shown in tooltip (only on popup)
         tooltip_html = f"<b>{unterkunft}</b><br>"
+        if prive_level:
+            tooltip_html += f"Price Range: {prive_level}<br>"
         if pd.notna(distance):
             tooltip_html += f"Distance to Alte Schule: {distance:.0f}m"
         
