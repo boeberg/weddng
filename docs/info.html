@@ -220,10 +220,25 @@
       };
 
       /**
-       * Get the saved language from localStorage or default to English
+       * Get the saved language from localStorage or detect from browser
        */
       function getLanguage() {
-        const lang = localStorage.getItem("language") || "en";
+        let lang =
+          localStorage.getItem("language") ||
+          localStorage.getItem("selectedLanguage");
+
+        // If not saved, detect from browser language
+        if (!lang) {
+          const userLang = (
+            navigator.language ||
+            navigator.userLanguage ||
+            "en"
+          ).toLowerCase();
+          lang = "en";
+          if (userLang.startsWith("de")) lang = "de";
+          else if (userLang.startsWith("da")) lang = "dk";
+        }
+
         return lang;
       }
 
