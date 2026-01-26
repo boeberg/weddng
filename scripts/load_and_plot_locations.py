@@ -104,18 +104,11 @@ def load_sheet_authenticated():
 def load_guest_data():
     """
     Load guest data from Google Sheet.
-    Tries public access first, then authenticated access.
+    Uses authenticated access via gcloud credentials.
     """
     print("Attempting to load Google Sheet...")
 
-    # Try public access first
-    df = load_sheet_public()
-    if df is not None and not df.empty:
-        print(f"✓ Loaded sheet successfully ({len(df)} rows)")
-        return df
-
     # Try authenticated access
-    print("Public access failed. Trying authenticated access...")
     df = load_sheet_authenticated()
     if df is not None and not df.empty:
         print(f"✓ Loaded sheet successfully ({len(df)} rows)")
@@ -242,7 +235,7 @@ def create_map(df, output_file=None):
     
     # Set default output path to web/data/maps/
     if output_file is None:
-        output_path = Path(__file__).parent.parent / "web" / "data" / "maps"
+        output_path = Path(__file__).parent.parent / "docs" / "data" / "maps"
         output_path.mkdir(parents=True, exist_ok=True)
         output_file = output_path / "guest_locations_map.html"
     else:
@@ -305,16 +298,15 @@ def create_map(df, output_file=None):
             popup_html += f"Distance to Alte Schule: {distance:.0f}m<br>"
         
         # Create tooltip with multiple lines - each field on separate row
+        # Note: Website is NOT shown in tooltip (only on popup)
         tooltip_html = f"<b>{unterkunft}</b><br>"
-        if website:
-            tooltip_html += f"Website: {website}<br>"
         if pd.notna(distance):
             tooltip_html += f"Distance to Alte Schule: {distance:.0f}m"
         
         # Determine marker color based on Unterkunft name
         if unterkunft == "Alte Schule":
             color = 'red'
-            icon = 'star'
+            icon = 'home'
         elif unterkunft == "Sportplatz":
             color = 'green'
             icon = 'tree'

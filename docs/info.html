@@ -37,6 +37,40 @@
         line-height: 1.8;
       }
 
+      .accommodations-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: var(--spacing-large);
+        margin-bottom: var(--spacing-large);
+      }
+
+      .accommodations-table th,
+      .accommodations-table td {
+        border: 1px solid #ddd;
+        padding: var(--spacing-medium);
+        text-align: left;
+      }
+
+      .accommodations-table th {
+        background-color: var(--color-primary);
+        color: white;
+        font-weight: 500;
+      }
+
+      .accommodations-table tr:nth-child(even) {
+        background-color: rgba(0, 0, 0, 0.02);
+      }
+
+      .accommodations-table a {
+        color: var(--color-primary);
+        text-decoration: none;
+        word-break: break-word;
+      }
+
+      .accommodations-table a:hover {
+        text-decoration: underline;
+      }
+
       .map-container {
         margin-top: var(--spacing-large);
         border-radius: var(--container-border-radius);
@@ -86,11 +120,56 @@
       <!-- Accommodations Section -->
       <div class="info-section">
         <h2 id="accommodations-title">Accommodations</h2>
-        <p id="accommodations-text">
-          We've collected nearby accommodations for our guests. Click on the map
-          below to explore the different options available. Each location on the
-          map shows the accommodation name, website, and distance to our venue
-          (Alte Schule).
+        
+        <h3 id="camping-subtitle">Camping & Camper</h3>
+        <p id="camping-text">
+          You are welcome to camp or park your camper for free at the Alter Schule venue where our celebration takes place!
+        </p>
+
+        <h3 id="apartments-subtitle">Apartments & Other Options</h3>
+        <p id="apartments-intro">
+          We've collected nearby accommodations for our guests. Here are some nice options available. Each entry shows the accommodation name, distance to our venue (Alte Schule), and website link.
+        </p>
+
+        <table class="accommodations-table">
+          <thead>
+            <tr>
+              <th id="table-name">Name</th>
+              <th id="table-distance">Distance to Venue</th>
+              <th id="table-website">Website</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>„Mondgesicht", „Reetkaten" and Zollhaus</td>
+              <td>774 m</td>
+              <td><a href="https://naturferien-ostsee.de/" target="_blank">naturferien-ostsee.de</a></td>
+            </tr>
+            <tr>
+              <td>Elmenhof/Cafe im Stall</td>
+              <td>571 m</td>
+              <td><a href="https://elmenhof.info/" target="_blank">elmenhof.info</a></td>
+            </tr>
+            <tr>
+              <td>Baltic Chalets</td>
+              <td>586 m</td>
+              <td><a href="https://www.baltic-chalets.com/" target="_blank">baltic-chalets.com</a></td>
+            </tr>
+            <tr>
+              <td>Jochen Henkels Bauwagen</td>
+              <td>433 m</td>
+              <td><a href="https://www.ferienhausvermittlung.de/ferienhaus-ostsee/73455-1" target="_blank">ferienhausvermittlung.de</a></td>
+            </tr>
+            <tr>
+              <td>Gut Brook</td>
+              <td>2.4 km</td>
+              <td><a href="https://gut-brook.de/ferienwohnungen/" target="_blank">gut-brook.de</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p id="map-intro">
+          You can also explore all locations on the map below:
         </p>
         <div class="map-container">
           <iframe src="data/maps/guest_locations_map.html"></iframe>
@@ -163,8 +242,17 @@
           title: "Babette & Felix",
           subtitle: "Practical Information",
           "accommodations-title": "Accommodations",
-          "accommodations-text":
-            "We've collected nearby accommodations for our guests. Click on the map below to explore the different options available. Each location on the map shows the accommodation name, website, and distance to our venue (Alte Schule).",
+          "camping-subtitle": "Camping & Camper",
+          "camping-text":
+            "You are welcome to camp or park your camper for free at the Alter Schule venue where our celebration takes place!",
+          "apartments-subtitle": "Apartments & Other Options",
+          "apartments-intro":
+            "We've collected nearby accommodations for our guests. Here are some nice options available. Each entry shows the accommodation name, distance to our venue (Alte Schule), and website link.",
+          "table-name": "Name",
+          "table-distance": "Distance to Venue",
+          "table-website": "Website",
+          "map-intro":
+            "You can also explore all locations on the map below:",
           "dress-code-title": "Dress Code",
           "dress-code-text":
             "We're planning an outdoor celebration, so please dress comfortably for the weather. We suggest elegant casual attire. Since we'll be celebrating by the sea, feel free to bring a swimsuit, also because we might have a sauna for those who want to use it. As there is some natural terrain at the venue, we recommend you bring a pair of comfortable shoes.",
@@ -182,8 +270,17 @@
           title: "Babette & Felix",
           subtitle: "Praktische Informationen",
           "accommodations-title": "Unterkunftsoptionen",
-          "accommodations-text":
-            "Wir haben eine Auswahl an Unterkünften für euch zusammengestellt. Klickt auf die Karte unten, um die verschiedenen verfügbaren Optionen zu erkunden. Jeder Standort auf der Karte zeigt den Namen der Unterkunft, die Website und die Entfernung zu unserem Veranstaltungsort (Alte Schule).",
+          "camping-subtitle": "Camping & Wohnmobil",
+          "camping-text":
+            "Ihr könnt gerne kostenlos auf dem Gelände der Alten Schule, unserem Veranstaltungsort, campen oder euer Wohnmobil parken!",
+          "apartments-subtitle": "Apartments & andere Optionen",
+          "apartments-intro":
+            "Wir haben eine Auswahl an Unterkünften für euch zusammengestellt. Hier sind einige schöne Optionen. Jeder Eintrag zeigt den Namen der Unterkunft, die Entfernung zu unserem Veranstaltungsort (Alte Schule) und einen Link zur Website.",
+          "table-name": "Name",
+          "table-distance": "Entfernung zur Hochzeitsstelle",
+          "table-website": "Website",
+          "map-intro":
+            "Ihr könnt alle Standorte auch auf der Karte unten erkunden:",
           "dress-code-title": "Kleiderordnung",
           "dress-code-text":
             "Wir planen eine Feier im Freien, also zieht euch bitte wettergerecht und bequem an. Wir empfehlen einen elegant-lässigen Stil. Da wir am Meer feiern, bringt gerne Badesachen mit – auch, weil es vielleicht eine Sauna für alle gibt, die Lust haben. Da es vor Ort etwas natürliches Gelände gibt, empfehlen wir außerdem bequeme Schuhe.",
@@ -202,8 +299,17 @@
           title: "Babette & Felix",
           subtitle: "Praktiske Oplysninger",
           "accommodations-title": "Indkvartering",
-          "accommodations-text":
-            "Vi har samlet et udvalg af indkvarteringssteder for vores gæster. Klik på kortet nedenfor for at udforske de forskellige muligheder. Hvert sted på kortet viser navn på indkvarteringen, hjemmeside og afstand til vores lokation (Alte Schule).",
+          "camping-subtitle": "Camping & Autocamper",
+          "camping-text":
+            "I er velkomne til at campe eller parkere jeres autocamper gratis på Alte Schule-arealet, hvor vores fejring finder sted!",
+          "apartments-subtitle": "Lejligheder & andre muligheder",
+          "apartments-intro":
+            "Vi har samlet et udvalg af indkvarteringssteder for vores gæster. Her er nogle fine muligheder. Hver angivelse viser navnet på indkvarteringen, afstanden til vores lokation (Alte Schule) og et link til hjemmesiden.",
+          "table-name": "Navn",
+          "table-distance": "Afstand til lokation",
+          "table-website": "Hjemmeside",
+          "map-intro":
+            "I kan også udforske alle steder på kortet nedenfor:",
           "dress-code-title": "Dresscode",
           "dress-code-text":
             "Vi planlægger en udendørs fejring, så klæd jer gerne komfortabelt efter vejret. Vi foreslår elegant casual. Da vi skal fejre det ved havet, er I meget velkomne til at tage badetøj med – også fordi der måske er en sauna for dem, der har lyst. Da der er lidt naturterræn på stedet, anbefaler vi også et par gode, komfortable sko.",
