@@ -261,6 +261,15 @@
        */
       window.addEventListener("DOMContentLoaded", () => {
         const lang = getLanguage();
+        console.log("INFO.HTML - Language detected:", lang);
+        console.log(
+          "INFO.HTML - localStorage selectedLanguage:",
+          localStorage.getItem("selectedLanguage"),
+        );
+        console.log(
+          "INFO.HTML - localStorage language:",
+          localStorage.getItem("language"),
+        );
         applyLanguage(lang);
       });
     </script>
