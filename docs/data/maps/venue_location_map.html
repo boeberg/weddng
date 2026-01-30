@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1b3ca2df36bc538135db5c0cb0dc3558 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_1b3ca2df36bc538135db5c0cb0dc3558" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_1b3ca2df36bc538135db5c0cb0dc3558 = L.map(
+                "map_1b3ca2df36bc538135db5c0cb0dc3558",
+                {
+                    center: [51.1657, 10.4515],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 7,
+  "zoomControl": true,
+  "preferCanvas": true,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_e30f0c967b251f76cebe9a04bcd01606 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_e30f0c967b251f76cebe9a04bcd01606.addTo(map_1b3ca2df36bc538135db5c0cb0dc3558);
+        
+    
+            var marker_8c0232f7d743413005d804452394d6af = L.marker(
+                [49.6544, 7.6575],
+                {
+}
+            ).addTo(map_1b3ca2df36bc538135db5c0cb0dc3558);
+        
+    
+            var icon_ffb1a01e92faf493ae3aeca61822c3b1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "heart",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5edb2bc5ae815ad52833fdd1c8757af1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_635ba278cab47899ce5a75dcf18bbea6 = $(`<div id="html_635ba278cab47899ce5a75dcf18bbea6" style="width: 100.0%; height: 100.0%;"><b>Alte Schule</b><br>Bad Sobernheim, Germany</div>`)[0];
+                popup_5edb2bc5ae815ad52833fdd1c8757af1.setContent(html_635ba278cab47899ce5a75dcf18bbea6);
+            
+        
+
+        marker_8c0232f7d743413005d804452394d6af.bindPopup(popup_5edb2bc5ae815ad52833fdd1c8757af1)
+        ;
+
+        
+    
+    
+            marker_8c0232f7d743413005d804452394d6af.bindTooltip(
+                `<div>
+                     Alte Schule
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8c0232f7d743413005d804452394d6af.setIcon(icon_ffb1a01e92faf493ae3aeca61822c3b1);
+            
+    
+            var circle_502caaabe3fa1fcd0e4f8447d78f1220 = L.circle(
+                [49.6544, 7.6575],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 5000, "stroke": true, "weight": 2}
+            ).addTo(map_1b3ca2df36bc538135db5c0cb0dc3558);
+        
+</script>
+</html>

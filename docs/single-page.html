@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Babette & Felix - Wedding Celebration</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ========================================
+       SINGLE PAGE WEDDING SITE - MODERN DESIGN
+       ======================================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #faf9f6;
+    }
+
+    /* ========== HEADER & NAVIGATION ========== */
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 1rem 2rem;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    header .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: #b89b5e;
+    }
+
+    .language-switch {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .language-switch button {
+      padding: 0.5rem 1rem;
+      border: 1px solid #b89b5e;
+      background: white;
+      color: #b89b5e;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .language-switch button.active {
+      background: #b89b5e;
+      color: white;
+    }
+
+    .language-switch button:hover:not(.active) {
+      background: rgba(184, 155, 94, 0.1);
+    }
+
+    /* ========== HERO SECTION ========== */
+
+    .hero {
+      margin-top: 60px;
+      height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                  url('data/pictures/placeholder_b_f.jpg') center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      animation: fadeInUp 1s ease;
+    }
+
+    .hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      margin-bottom: 2rem;
+    }
+
+    /* ========== MAIN CONTENT ========== */
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      padding: 5rem 2rem;
+      scroll-margin-top: 80px;
+    }
+
+    section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: #b89b5e;
+      margin-bottom: 2rem;
+      text-align: center;
+      position: relative;
+      padding-bottom: 1rem;
+    }
+
+    section h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: #b89b5e;
+      border-radius: 2px;
+    }
+
+    /* ========== INTRO SECTION ========== */
+
+    #intro-section {
+      background: linear-gradient(135deg, rgba(246, 230, 166, 0.5), rgba(226, 180, 44, 0.3));
+    }
+
+    .intro-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      color: #555;
+    }
+
+    /* ========== DATES SECTION ========== */
+
+    #dates-section {
+      background: white;
+    }
+
+    .dates-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .date-info {
+      background: #f9f7f2;
+      padding: 2rem;
+      border-radius: 8px;
+      border-left: 4px solid #b89b5e;
+    }
+
+    .date-info h4 {
+      color: #b89b5e;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .date-info p {
+      margin-bottom: 0.5rem;
+      color: #666;
+    }
+
+    .map-container {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      min-height: 400px;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 400px;
+      border: none;
+    }
+
+    /* ========== RSVP SECTION ========== */
+
+    #rsvp-section {
+      background: linear-gradient(135deg, rgba(246, 230, 166, 0.5), rgba(226, 180, 44, 0.3));
+    }
+
+    .rsvp-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #b89b5e;
+      box-shadow: 0 0 0 3px rgba(184, 155, 94, 0.1);
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 1rem;
+      background: #b89b5e;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .form-submit:hover {
+      background: #a88b4f;
+    }
+
+    .form-success {
+      display: none;
+      padding: 1rem;
+      background: #d4edda;
+      color: #155724;
+      border-radius: 4px;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    /* ========== GIFTS SECTION ========== */
+
+    #gifts-section {
+      background: white;
+    }
+
+    .gifts-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .gifts-content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #666;
+    }
+
+    /* ========== QA SECTION ========== */
+
+    #qa-section {
+      background: #f9f7f2;
+    }
+
+    .qa-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .qa-item {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .qa-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .qa-item h4 {
+      color: #b89b5e;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .qa-item p {
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* ========== FOOTER ========== */
+
+    footer {
+      background: #333;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0.5rem 0;
+    }
+
+    /* ========== UTILITIES ========== */
+
+    .markdown-content {
+      line-height: 1.8;
+      color: #555;
+    }
+
+    .markdown-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: #b89b5e;
+      margin: 2rem 0 1rem 0;
+    }
+
+    .markdown-content h3 {
+      font-size: 1.3rem;
+      color: #b89b5e;
+      margin: 1.5rem 0 0.8rem 0;
+    }
+
+    .markdown-content p {
+      margin-bottom: 1rem;
+    }
+
+    .markdown-content ul,
+    .markdown-content ol {
+      margin-left: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .markdown-content li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* ========== ANIMATIONS ========== */
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeInUp 0.6s ease;
+    }
+
+    /* ========== RESPONSIVE ========== */
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.2rem;
+      }
+
+      .hero h2 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      section h3 {
+        font-size: 1.8rem;
+      }
+
+      .dates-content {
+        grid-template-columns: 1fr;
+      }
+
+      .qa-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .map-container {
+        min-height: 300px;
+      }
+
+      section {
+        padding: 3rem 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 0.75rem 1rem;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      section h3 {
+        font-size: 1.5rem;
+      }
+
+      .language-switch {
+        gap: 0.25rem;
+      }
+
+      .language-switch button {
+        padding: 0.4rem 0.7rem;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <h1>Babette & Felix</h1>
+      <div class="language-switch">
+        <button onclick="setLanguage('en')" class="active" data-lang="en">EN</button>
+        <button onclick="setLanguage('de')" data-lang="de">DE</button>
+        <button onclick="setLanguage('dk')" data-lang="dk">DK</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2 id="heroTitle">Babette & Felix</h2>
+      <p id="heroSubtitle">We're excited to celebrate with you</p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <div class="container">
+    <!-- INTRO SECTION -->
+    <section id="intro-section">
+      <div id="intro-content" class="markdown-content"></div>
+    </section>
+
+    <!-- DATES SECTION -->
+    <section id="dates-section">
+      <h3 id="datesTitle">When & Where</h3>
+      <div class="dates-content">
+        <div id="dates-info" class="markdown-content"></div>
+        <div class="map-container">
+          <iframe src="data/maps/venue_location_map.html"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP SECTION -->
+    <section id="rsvp-section">
+      <h3 id="rsvpTitle">RSVP</h3>
+      <div class="rsvp-form">
+        <form id="rsvp-form">
+          <div class="form-group">
+            <label for="guestName" id="labelName">Guest Name</label>
+            <input 
+              id="guestName"
+              name="entry.108083471" 
+              type="text"
+              placeholder="Enter your name"
+              required 
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="attending" id="labelAttending">Will you attend?</label>
+            <select id="attending" name="entry.1418582323" required>
+              <option value="" disabled selected id="selectAttending">-- Please choose --</option>
+              <option value="Yes" id="optYes">Yes</option>
+              <option value="No" id="optNo">No</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="plusOne" id="labelPlusOne">Plus One Name (optional)</label>
+            <input 
+              id="plusOne"
+              name="entry.2029894852" 
+              type="text"
+              placeholder="Enter guest name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="children" id="labelChildren">Number of Children</label>
+            <select id="children" name="entry.49562044">
+              <option value="" disabled selected id="selectChildren">-- Please choose --</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="camping" id="labelCamping">Do you want to camp at Alte Schule?</label>
+            <select id="camping" name="entry.1234567890">
+              <option value="" disabled selected id="selectCamping">-- Please choose --</option>
+              <option value="Yes" id="campYes">Yes</option>
+              <option value="No" id="campNo">No</option>
+            </select>
+          </div>
+
+          <button type="submit" class="form-submit" id="submitBtn">Send RSVP</button>
+        </form>
+        <div class="form-success" id="successMsg">Thank you! 💕</div>
+      </div>
+    </section>
+
+    <!-- GIFTS SECTION -->
+    <section id="gifts-section">
+      <h3 id="giftsTitle">Gifts</h3>
+      <div id="gifts-content" class="markdown-content"></div>
+    </section>
+
+    <!-- QA SECTION -->
+    <section id="qa-section">
+      <h3 id="qaTitle">Questions & Answers</h3>
+      <div id="qa-content" class="qa-grid"></div>
+    </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Babette & Felix. All rights reserved.</p>
+  </footer>
+
+  <!-- HIDDEN GOOGLE FORMS SUBMIT -->
+  <form
+    id="rsvpForm"
+    action="https://docs.google.com/forms/d/1eV14AgFXLGabdGzHrBHquWLiP-aAkAuaweCw5LsJkDE/formResponse"
+    method="POST"
+    style="display: none;"
+  ></form>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // ========== TRANSLATIONS ==========
+    const translations = {
+      en: {
+        heroTitle: 'Babette & Felix',
+        heroSubtitle: "We're excited to celebrate with you",
+        datesTitle: 'When & Where',
+        rsvpTitle: 'RSVP',
+        giftsTitle: 'Gifts',
+        qaTitle: 'Questions & Answers',
+        labelName: 'Guest Name',
+        labelAttending: 'Will you attend?',
+        selectAttending: '-- Please choose --',
+        optYes: 'Yes',
+        optNo: 'No',
+        labelPlusOne: 'Plus One Name (optional)',
+        labelChildren: 'Number of Children',
+        selectChildren: '-- Please choose --',
+        labelCamping: 'Do you want to camp at Alte Schule?',
+        selectCamping: '-- Please choose --',
+        campYes: 'Yes',
+        campNo: 'No',
+        submitBtn: 'Send RSVP'
+      },
+      de: {
+        heroTitle: 'Babette & Felix',
+        heroSubtitle: 'Wir freuen uns, unsere Hochzeit mit dir zu feiern',
+        datesTitle: 'Wann & Wo',
+        rsvpTitle: 'RSVP',
+        giftsTitle: 'Geschenke',
+        qaTitle: 'Fragen & Antworten',
+        labelName: 'Gastname',
+        labelAttending: 'Wirst du teilnehmen?',
+        selectAttending: '-- Bitte wählen --',
+        optYes: 'Ja',
+        optNo: 'Nein',
+        labelPlusOne: 'Begleitername (optional)',
+        labelChildren: 'Anzahl der Kinder',
+        selectChildren: '-- Bitte wählen --',
+        labelCamping: 'Möchtest du auf der Alte Schule campen?',
+        selectCamping: '-- Bitte wählen --',
+        campYes: 'Ja',
+        campNo: 'Nein',
+        submitBtn: 'RSVP absenden'
+      },
+      dk: {
+        heroTitle: 'Babette & Felix',
+        heroSubtitle: 'Vi glæder os til at fejre vores bryllup med dig',
+        datesTitle: 'Hvornår & Hvor',
+        rsvpTitle: 'RSVP',
+        giftsTitle: 'Gaver',
+        qaTitle: 'Spørgsmål & Svar',
+        labelName: 'Gæstnavn',
+        labelAttending: 'Vil du deltage?',
+        selectAttending: '-- Vælg venligst --',
+        optYes: 'Ja',
+        optNo: 'Nej',
+        labelPlusOne: 'Ledsagers navn (valgfrit)',
+        labelChildren: 'Antal børn',
+        selectChildren: '-- Vælg venligst --',
+        labelCamping: 'Vil du gerne campe på Alte Schule?',
+        selectCamping: '-- Vælg venligst --',
+        campYes: 'Ja',
+        campNo: 'Nej',
+        submitBtn: 'Send RSVP'
+      }
+    };
+
+    // ========== MARKDOWN PARSER ==========
+    function parseMarkdown(markdown) {
+      let html = markdown
+        .replace(/^### (.*?)$/gm, '<h3>$1</h3>')
+        .replace(/^## (.*?)$/gm, '<h2>$1</h2>')
+        .replace(/^# (.*?)$/gm, '<h1>$1</h1>')
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*(.*?)\*/g, '<em>$1</em>')
+        .replace(/\n\n/g, '</p><p>')
+        .replace(/^- (.*?)$/gm, '<li>$1</li>')
+        .replace(/(<li>.*?<\/li>)/s, '<ul>$1</ul>')
+        .replace(/\n/g, '<br>');
+      
+      return '<p>' + html + '</p>';
+    }
+
+    // ========== LOAD MARKDOWN CONTENT ==========
+    async function loadMarkdownContent(lang) {
+      try {
+        const response = await fetch(`content/content_${lang}.md`);
+        const markdown = await response.text();
+        
+        // Parse markdown into sections
+        const sections = markdown.split(/^## /m).slice(1);
+        
+        let introContent = '';
+        let datesContent = '';
+        let giftsContent = '';
+        let qaContent = '';
+        
+        sections.forEach(section => {
+          const [title, ...contentLines] = section.split('\n');
+          const content = contentLines.join('\n').trim();
+          
+          if (title.toLowerCase().includes('welcome')) {
+            introContent = content;
+          } else if (title.toLowerCase().includes('dates') || title.toLowerCase().includes('termine')) {
+            datesContent = content;
+          } else if (title.toLowerCase().includes('gifts') || title.toLowerCase().includes('geschenke') || title.toLowerCase().includes('gaver')) {
+            giftsContent = content;
+          } else if (title.toLowerCase().includes('question') || title.toLowerCase().includes('frage') || title.toLowerCase().includes('spørgsmål')) {
+            qaContent = content;
+          }
+        });
+        
+        // Update intro section
+        const introEl = document.getElementById('intro-content');
+        if (introEl) introEl.innerHTML = parseMarkdown(introContent);
+        
+        // Update dates section
+        const datesEl = document.getElementById('dates-info');
+        if (datesEl) datesEl.innerHTML = parseMarkdown(datesContent);
+        
+        // Update gifts section
+        const giftsEl = document.getElementById('gifts-content');
+        if (giftsEl) giftsEl.innerHTML = parseMarkdown(giftsContent);
+        
+        // Update QA section (convert to grid items)
+        const qaEl = document.getElementById('qa-content');
+        if (qaEl) {
+          qaEl.innerHTML = '';
+          const qaItems = qaContent.split(/^### /m).slice(1);
+          qaItems.forEach(item => {
+            const [title, ...contentLines] = item.split('\n');
+            const content = contentLines.join('\n').trim();
+            const itemHTML = `
+              <div class="qa-item">
+                <h4><i class="fas fa-circle-question"></i> ${title}</h4>
+                <p>${content.replace(/\n/g, '<br>')}</p>
+              </div>
+            `;
+            qaEl.innerHTML += itemHTML;
+          });
+        }
+        
+      } catch (error) {
+        console.warn(`Could not load markdown for language ${lang}:`, error);
+      }
+    }
+
+    // ========== APPLY TRANSLATIONS ==========
+    function applyLanguage(lang) {
+      const t = translations[lang] || translations.en;
+      
+      // Update UI text
+      document.getElementById('heroTitle').textContent = t.heroTitle;
+      document.getElementById('heroSubtitle').textContent = t.heroSubtitle;
+      document.getElementById('datesTitle').textContent = t.datesTitle;
+      document.getElementById('rsvpTitle').textContent = t.rsvpTitle;
+      document.getElementById('giftsTitle').textContent = t.giftsTitle;
+      document.getElementById('qaTitle').textContent = t.qaTitle;
+      
+      document.getElementById('labelName').textContent = t.labelName;
+      document.getElementById('labelAttending').textContent = t.labelAttending;
+      document.getElementById('selectAttending').textContent = t.selectAttending;
+      document.getElementById('optYes').textContent = t.optYes;
+      document.getElementById('optNo').textContent = t.optNo;
+      document.getElementById('labelPlusOne').textContent = t.labelPlusOne;
+      document.getElementById('labelChildren').textContent = t.labelChildren;
+      document.getElementById('selectChildren').textContent = t.selectChildren;
+      document.getElementById('labelCamping').textContent = t.labelCamping;
+      document.getElementById('selectCamping').textContent = t.selectCamping;
+      document.getElementById('campYes').textContent = t.campYes;
+      document.getElementById('campNo').textContent = t.campNo;
+      document.getElementById('submitBtn').textContent = t.submitBtn;
+      
+      // Load markdown content
+      loadMarkdownContent(lang);
+      
+      // Update language button states
+      document.querySelectorAll('.language-switch button').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.dataset.lang === lang) btn.classList.add('active');
+      });
+    }
+
+    // ========== SET LANGUAGE ==========
+    function setLanguage(lang) {
+      lang = (lang || 'en').toLowerCase();
+      if (lang === 'da') lang = 'dk';
+      if (!translations[lang]) lang = 'en';
+      
+      localStorage.setItem('selectedLanguage', lang);
+      applyLanguage(lang);
+    }
+
+    // ========== GET SAVED LANGUAGE ==========
+    function getSavedLanguage() {
+      return localStorage.getItem('selectedLanguage') || 
+             (navigator.language || navigator.userLanguage || 'en')
+               .split('-')[0]
+               .toLowerCase() || 'en';
+    }
+
+    // ========== RSVP FORM HANDLING ==========
+    document.getElementById('rsvp-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Copy values to hidden Google Form
+      const guestName = document.getElementById('guestName').value;
+      const attending = document.getElementById('attending').value;
+      const plusOne = document.getElementById('plusOne').value;
+      const children = document.getElementById('children').value;
+      
+      // Create form data
+      const formData = new FormData();
+      formData.append('entry.108083471', guestName);
+      formData.append('entry.1418582323', attending);
+      formData.append('entry.2029894852', plusOne);
+      formData.append('entry.49562044', children);
+      
+      // Submit to Google Forms
+      fetch('https://docs.google.com/forms/d/1eV14AgFXLGabdGzHrBHquWLiP-aAkAuaweCw5LsJkDE/formResponse', {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+      }).then(() => {
+        // Show success message
+        document.getElementById('rsvp-form').style.display = 'none';
+        document.getElementById('successMsg').style.display = 'block';
+      }).catch(error => {
+        console.error('Form submission error:', error);
+        alert('There was an issue submitting your RSVP. Please try again.');
+      });
+    });
+
+    // ========== INITIALIZATION ==========
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedLang = getSavedLanguage();
+      applyLanguage(savedLang);
+    });
+  </script>
+</body>
+</html>
