@@ -11,6 +11,9 @@
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="styles.css">
+
   <style>
     /* ========================================
        SINGLE PAGE WEDDING SITE - MODERN DESIGN
@@ -27,10 +30,10 @@
     }
 
     body {
-      font-family: 'Roboto', sans-serif;
+      font-family: var(--font-primary);
       line-height: 1.6;
-      color: #333;
-      background-color: #faf9f6;
+      color: var(--color-text);
+      background-color: var(--color-background);
     }
 
     /* ========== HEADER & NAVIGATION ========== */
@@ -57,7 +60,7 @@
     header h1 {
       font-family: 'Playfair Display', serif;
       font-size: 1.5rem;
-      color: #b89b5e;
+      color: var(--color-primary);
     }
 
     .language-switch {
@@ -67,9 +70,9 @@
 
     .language-switch button {
       padding: 0.5rem 1rem;
-      border: 1px solid #b89b5e;
+      border: 1px solid var(--color-primary);
       background: white;
-      color: #b89b5e;
+      color: var(--color-primary);
       cursor: pointer;
       border-radius: 4px;
       font-weight: 500;
@@ -77,7 +80,7 @@
     }
 
     .language-switch button.active {
-      background: #b89b5e;
+      background: var(--color-primary);
       color: white;
     }
 
@@ -89,9 +92,9 @@
 
     .hero {
       margin-top: 60px;
-      height: 100vh;
+      height: 1000px;
       background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
-                  url('data/pictures/placeholder_b_f.jpg') center/cover;
+                  url('https://www.decker-luebeck.de/data/img/haus-1.jpg') center/contain no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -134,7 +137,7 @@
     section h3 {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
-      color: #b89b5e;
+      color: var(--color-primary);
       margin-bottom: 2rem;
       text-align: center;
       position: relative;
@@ -149,7 +152,7 @@
       transform: translateX(-50%);
       width: 60px;
       height: 3px;
-      background: #b89b5e;
+      background: var(--color-primary);
       border-radius: 2px;
     }
 
@@ -165,7 +168,7 @@
       max-width: 800px;
       margin: 0 auto;
       text-align: center;
-      color: #555;
+      color: var(--color-text-light);
     }
 
     /* ========== DATES SECTION ========== */
@@ -185,18 +188,18 @@
       background: #f9f7f2;
       padding: 2rem;
       border-radius: 8px;
-      border-left: 4px solid #b89b5e;
+      border-left: 4px solid var(--color-primary);
     }
 
     .date-info h4 {
-      color: #b89b5e;
+      color: var(--color-primary);
       margin-bottom: 1rem;
       font-size: 1.2rem;
     }
 
     .date-info p {
       margin-bottom: 0.5rem;
-      color: #666;
+      color: var(--color-text-light);
     }
 
     .map-container {
@@ -232,7 +235,7 @@
       display: block;
       margin-bottom: 0.5rem;
       font-weight: 500;
-      color: #333;
+      color: var(--color-text);
     }
 
     .form-group input,
@@ -249,14 +252,14 @@
     .form-group input:focus,
     .form-group select:focus {
       outline: none;
-      border-color: #b89b5e;
+      border-color: var(--color-primary);
       box-shadow: 0 0 0 3px rgba(184, 155, 94, 0.1);
     }
 
     .form-submit {
       width: 100%;
       padding: 1rem;
-      background: #b89b5e;
+      background: var(--color-primary);
       color: white;
       border: none;
       border-radius: 4px;
@@ -267,7 +270,7 @@
     }
 
     .form-submit:hover {
-      background: #a88b4f;
+      background: var(--color-primary-dark);
     }
 
     .form-success {
@@ -278,6 +281,66 @@
       border-radius: 4px;
       text-align: center;
       font-weight: 500;
+    }
+
+    /* ========== ACCOMMODATIONS SECTION ========== */
+
+    #accommodations-section {
+      background: white;
+    }
+
+    #accommodations-content {
+      max-width: 1200px;
+      margin: 2rem auto;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .accommodations-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    .accommodations-table thead {
+      background-color: var(--color-primary);
+      color: white;
+    }
+
+    .accommodations-table th {
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+      border-bottom: 2px solid var(--color-primary);
+    }
+
+    .accommodations-table td {
+      padding: 1rem;
+      border-bottom: 1px solid #e0e0e0;
+      color: var(--color-text);
+    }
+
+    .accommodations-table tbody tr:hover {
+      background-color: #f9f9f9;
+    }
+
+    .accommodations-table tbody tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+
+    .accommodations-table a {
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .accommodations-table a:hover {
+      opacity: 0.8;
+      text-decoration: underline;
     }
 
     /* ========== GIFTS SECTION ========== */
@@ -295,7 +358,7 @@
     .gifts-content p {
       font-size: 1.1rem;
       line-height: 1.8;
-      color: #666;
+      color: var(--color-text-light);
     }
 
     /* ========== QA SECTION ========== */
@@ -325,7 +388,7 @@
     }
 
     .qa-item h4 {
-      color: #b89b5e;
+      color: var(--color-primary);
       margin-bottom: 1rem;
       display: flex;
       align-items: center;
@@ -333,7 +396,7 @@
     }
 
     .qa-item p {
-      color: #666;
+      color: var(--color-text-light);
       line-height: 1.7;
     }
 
@@ -354,19 +417,19 @@
 
     .markdown-content {
       line-height: 1.8;
-      color: #555;
+      color: var(--color-text-light);
     }
 
     .markdown-content h2 {
       font-family: 'Playfair Display', serif;
       font-size: 1.8rem;
-      color: #b89b5e;
+      color: var(--color-primary);
       margin: 2rem 0 1rem 0;
     }
 
     .markdown-content h3 {
       font-size: 1.3rem;
-      color: #b89b5e;
+      color: var(--color-primary);
       margin: 1.5rem 0 0.8rem 0;
     }
 
@@ -476,10 +539,6 @@
 
   <!-- HERO SECTION -->
   <section class="hero">
-    <div class="hero-content">
-      <h2 id="heroTitle">Babette & Felix</h2>
-      <p id="heroSubtitle">We're excited to celebrate with you</p>
-    </div>
   </section>
 
   <!-- MAIN CONTENT -->
@@ -496,6 +555,29 @@
         <div id="dates-info" class="markdown-content"></div>
         <div class="map-container">
           <iframe src="data/maps/venue_location_map.html"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACCOMMODATIONS SECTION -->
+    <section id="accommodations-section">
+      <h3 id="accommodationsTitle">Accommodations</h3>
+      <div id="accommodations-content">
+        <div class="table-wrapper">
+          <table id="accommodations-table" class="accommodations-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Website</th>
+                <th>Distance to Venue</th>
+                <th>Price Level</th>
+              </tr>
+            </thead>
+            <tbody id="accommodations-body">
+              <tr><td colspan="5">Loading accommodations...</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
@@ -597,6 +679,7 @@
         heroTitle: 'Babette & Felix',
         heroSubtitle: "We're excited to celebrate with you",
         datesTitle: 'When & Where',
+        accommodationsTitle: 'Accommodations',
         rsvpTitle: 'RSVP',
         giftsTitle: 'Gifts',
         qaTitle: 'Questions & Answers',
@@ -618,6 +701,7 @@
         heroTitle: 'Babette & Felix',
         heroSubtitle: 'Wir freuen uns, unsere Hochzeit mit dir zu feiern',
         datesTitle: 'Wann & Wo',
+        accommodationsTitle: 'Unterkunftsmöglichkeiten',
         rsvpTitle: 'RSVP',
         giftsTitle: 'Geschenke',
         qaTitle: 'Fragen & Antworten',
@@ -639,6 +723,7 @@
         heroTitle: 'Babette & Felix',
         heroSubtitle: 'Vi glæder os til at fejre vores bryllup med dig',
         datesTitle: 'Hvornår & Hvor',
+        accommodationsTitle: 'Indkvartering',
         rsvpTitle: 'RSVP',
         giftsTitle: 'Gaver',
         qaTitle: 'Spørgsmål & Svar',
@@ -674,31 +759,114 @@
       return '<p>' + html + '</p>';
     }
 
+    // ========== LOAD ACCOMMODATIONS FROM CSV ==========
+    async function loadAccommodations() {
+      try {
+        const response = await fetch('./data/temp/accommodations_with_distances.csv');
+        const csv = await response.text();
+        
+        // Parse CSV
+        const lines = csv.trim().split('\n');
+        const headers = lines[0].split(',');
+        
+        // Find column indices
+        const nameIdx = headers.findIndex(h => h.includes('Unterkunft'));
+        const addressIdx = headers.findIndex(h => h.includes('Adress'));
+        const websiteIdx = headers.findIndex(h => h.includes('Website'));
+        const distanceIdx = headers.findIndex(h => h.includes('Distance'));
+        const priceIdx = headers.findIndex(h => h.includes('Price'));
+        
+        // Parse rows (skip Alte Schule itself)
+        const tbody = document.getElementById('accommodations-body');
+        tbody.innerHTML = '';
+        
+        for (let i = 1; i < lines.length; i++) {
+          // Simple CSV parsing (handles quoted fields)
+          const cells = [];
+          let current = '';
+          let inQuotes = false;
+          
+          for (let j = 0; j < lines[i].length; j++) {
+            const char = lines[i][j];
+            if (char === '"') {
+              inQuotes = !inQuotes;
+            } else if (char === ',' && !inQuotes) {
+              cells.push(current.trim().replace(/^"|"$/g, ''));
+              current = '';
+            } else {
+              current += char;
+            }
+          }
+          cells.push(current.trim().replace(/^"|"$/g, ''));
+          
+          if (cells.length > nameIdx) {
+            const name = cells[nameIdx] || '';
+            
+            // Skip the venue itself (Alte Schule)
+            if (name === 'Alte Schule') continue;
+            
+            const address = cells[addressIdx] || '';
+            const website = cells[websiteIdx] || '';
+            const distance = cells[distanceIdx] || '';
+            const price = cells[priceIdx] || '';
+            
+            // Format distance in km
+            let distanceKm = '';
+            if (distance) {
+              const meters = parseFloat(distance);
+              distanceKm = (meters / 1000).toFixed(2) + ' km';
+            }
+            
+            // Create table row
+            const row = document.createElement('tr');
+            row.innerHTML = `
+              <td><strong>${name}</strong></td>
+              <td>${address}</td>
+              <td>${website ? `<a href="${website}" target="_blank">Visit →</a>` : '—'}</td>
+              <td>${distanceKm}</td>
+              <td>${price}</td>
+            `;
+            tbody.appendChild(row);
+          }
+        }
+      } catch (error) {
+        console.error('Could not load accommodations:', error);
+        const tbody = document.getElementById('accommodations-body');
+        tbody.innerHTML = '<tr><td colspan="5">Could not load accommodations data</td></tr>';
+      }
+    }
+
     // ========== LOAD MARKDOWN CONTENT ==========
     async function loadMarkdownContent(lang) {
       try {
-        const response = await fetch(`content/content_${lang}.md`);
-        const markdown = await response.text();
+        const response = await fetch(`./content/content_${lang}.md`);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
         
-        // Parse markdown into sections
-        const sections = markdown.split(/^## /m).slice(1);
+        const markdown = await response.text();
+        if (!markdown) throw new Error('Empty markdown file');
+        
+        // Split by ## (h2 headers)
+        const sections = markdown.split(/^## /m);
         
         let introContent = '';
         let datesContent = '';
         let giftsContent = '';
         let qaContent = '';
         
-        sections.forEach(section => {
-          const [title, ...contentLines] = section.split('\n');
-          const content = contentLines.join('\n').trim();
+        sections.forEach((section, index) => {
+          if (index === 0) return; // Skip the first split (before any ##)
           
-          if (title.toLowerCase().includes('welcome')) {
+          const lines = section.split('\n');
+          const title = lines[0].trim().toLowerCase();
+          const content = lines.slice(1).join('\n').trim();
+          
+          if (title.includes('welcome') || title.includes('willkommen') || title.includes('velkommen')) {
             introContent = content;
-          } else if (title.toLowerCase().includes('dates') || title.toLowerCase().includes('termine')) {
+          } else if (title.includes('date') || title.includes('termine') || title.includes('datoer') || title.includes('location') || title.includes('ort') || title.includes('lokation')) {
             datesContent = content;
-          } else if (title.toLowerCase().includes('gifts') || title.toLowerCase().includes('geschenke') || title.toLowerCase().includes('gaver')) {
+          } else if (title.includes('gift') || title.includes('geschenke') || title.includes('gaver')) {
             giftsContent = content;
-          } else if (title.toLowerCase().includes('question') || title.toLowerCase().includes('frage') || title.toLowerCase().includes('spørgsmål')) {
+          } else if (title.includes('question') || title.includes('frage') || title.includes('spørgsmål')) {
             qaContent = content;
           }
         });
@@ -719,14 +887,18 @@
         const qaEl = document.getElementById('qa-content');
         if (qaEl) {
           qaEl.innerHTML = '';
-          const qaItems = qaContent.split(/^### /m).slice(1);
-          qaItems.forEach(item => {
-            const [title, ...contentLines] = item.split('\n');
-            const content = contentLines.join('\n').trim();
+          const qaItems = qaContent.split(/^### /m);
+          qaItems.forEach((item, idx) => {
+            if (idx === 0) return; // Skip empty first split
+            
+            const lines = item.split('\n');
+            const itemTitle = lines[0].trim();
+            const itemContent = lines.slice(1).join('\n').trim();
+            
             const itemHTML = `
               <div class="qa-item">
-                <h4><i class="fas fa-circle-question"></i> ${title}</h4>
-                <p>${content.replace(/\n/g, '<br>')}</p>
+                <h4><i class="fas fa-circle-question"></i> ${itemTitle}</h4>
+                <p>${itemContent.replace(/\n/g, '<br>')}</p>
               </div>
             `;
             qaEl.innerHTML += itemHTML;
@@ -734,7 +906,7 @@
         }
         
       } catch (error) {
-        console.warn(`Could not load markdown for language ${lang}:`, error);
+        console.error(`Could not load markdown for language ${lang}:`, error);
       }
     }
 
@@ -746,6 +918,7 @@
       document.getElementById('heroTitle').textContent = t.heroTitle;
       document.getElementById('heroSubtitle').textContent = t.heroSubtitle;
       document.getElementById('datesTitle').textContent = t.datesTitle;
+      document.getElementById('accommodationsTitle').textContent = t.accommodationsTitle;
       document.getElementById('rsvpTitle').textContent = t.rsvpTitle;
       document.getElementById('giftsTitle').textContent = t.giftsTitle;
       document.getElementById('qaTitle').textContent = t.qaTitle;
@@ -828,6 +1001,7 @@
     document.addEventListener('DOMContentLoaded', function() {
       const savedLang = getSavedLanguage();
       applyLanguage(savedLang);
+      loadAccommodations();
     });
   </script>
 </body>

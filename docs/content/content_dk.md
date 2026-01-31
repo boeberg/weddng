@@ -1,16 +1,14 @@
 # Bryllupsfejring
 
 ## Velkommen
-Hej! Velkommen til vores bryllupswebsite. Som du sikkert ved, er vi ret organiserede, så jeg måtte jage dem lidt, før de endelig blev gift. Her er endelig arrangementet med alle de detaljer, du skal kende!
+
+Velkommen til bryllupsudviklingen af Babette og Felix! Paula er det bedste, som de to sammen har fået til at lykkes hidtil. Men selvom – eller netop fordi – Paula ofte bliver passet, fodret og underholdt af mennesker, der ikke hedder Babette og Felix, glæder vi os, hvis vores bryllup bliver særligt gennem jer, alle de dejlige mennesker, som vi gerne vil samle.
+
+For at gøre vores fejring tilgængelig og så behagelig som mulig for alle, forsøger vi at planlægge tilmeldingen, rejse, indkvartering og opholdet så glat som muligt med alle de logistiske spørgsmål, så der er masser af tid til meningsfulde møder.
 
 ## Datoer & Lokation
-**Bryllupsdato:** 21. juni 2025
-
-**Ceremonitid:** 14:00
-
-**Sted:** Alte Schule, Bad Sobernheim, Tyskland
-
-Vær venlig at notere datoen og lad os vide, om du kan møde op!
+**Bryllupsdato:** 19. september 2026
+**Sted:** Alte Schule, Warnkenhagen
 
 **Indkvartering:** Du kan finde en omfattende liste over nærliggende indkvarteringsmuligheder med afstande til Alte Schule i vores data/temp/accommodations_with_distances.csv-fil. Dette omfatter hoteller, gæstehuse og andre indkvarteringsmuligheder i området.
 
@@ -20,19 +18,19 @@ Din tilstedeværelse betyder mere for os end noget andet. Hvis du gerne vil give
 ## Spørgsmål & Svar
 
 ### Vejr
-Juni i Bad Sobernheim har typisk mildt til varmt vejr (15-25°C). Vi anbefaler at medbringe en let jakke i tilfælde af regn.
+I september i Warnkenhagen er vejret typisk mildt og efterårslignende (12-20°C). Vi anbefaler at medbringe en let jakke i tilfælde af regn og måske en varm trøje til aftenerne.
 
 ### Børn
 Børn er absolut velkomne! Vi har planlagt aktiviteter for at holde dem underholdt. Fortæl os venligst antal og alder på dine børn, når du melder dig til.
 
 ### Hvad skal man have på
-Smart casual til semiformal påklædning anbefales. Tænk på kjoler, pæne bukser, blazere og polerede sko. Vær venlig at undgå meget afslappet tøj som jeans og t-shirts.
+Smart casual til semiformal påklædning anbefales. Tænk på kjoler, pæne bukser, blazere og polerede sko. Vær venlig at undgå meget afslappet tøj som jeans og t-shirts. Med hensyn til årsstiden er lagdelt påklædning en god idé!
 
 ### Sådan kommer du derhen
 **Med bil:** Stedet er nemt tilgængeligt med bil og har rigelige parkeringsmuligheder.
 
-**Med tog:** Den nærmeste togstation er Bad Sobernheim station, omkring 10 minutter fra stedet med taxa.
+**Med tog:** Den nærmeste togstation er Bad Sobernheim station, omkring 15 minutter fra stedet med taxa. Regionaltoget forbinder godt med større byer.
 
-**Med fly:** Den internationale lufthavn Frankfurt er omkring 1,5 timer væk med bil.
+**Med fly:** Den internationale lufthavn Frankfurt er omkring 1,5 timer væk med bil. Vi kan hjælpe med at arrangere transport, hvis det er nødvendigt!
 
 Vi vil give detaljerede vejledninger og transportoplysninger tættere på datoen!
