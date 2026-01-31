@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Invitation - Babette & Felix</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <style>
+    /* Inline overrides for invitation page */
+    .rsvp-section {
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: var(--spacing-large);
+      border-radius: var(--container-border-radius);
+      margin-bottom: var(--spacing-2xl);
+      border: 2px solid var(--color-primary);
+    }
+
+    .rsvp-section h2 {
+      color: var(--color-primary);
+      margin-bottom: var(--spacing-large);
+      text-align: center;
+    }
+
+    .info-section {
+      text-align: left;
+      margin-bottom: var(--spacing-2xl);
+      padding: var(--spacing-large);
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: var(--container-border-radius);
+    }
+
+    .info-section h2 {
+      text-align: center;
+      margin-bottom: var(--spacing-large);
+      color: var(--color-primary);
+      border-bottom: 2px solid var(--color-primary);
+      padding-bottom: var(--spacing-medium);
+    }
+
+    .info-section p {
+      margin-bottom: var(--spacing-medium);
+      line-height: 1.8;
+    }
+
+    .map-container {
+      margin-top: var(--spacing-large);
+      border-radius: var(--container-border-radius);
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+    }
+
+    #thanks {
+      text-align: center;
+      font-size: 1.2em;
+      color: var(--color-primary);
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .map-container iframe {
+        height: 400px;
+      }
+
+      .info-section,
+      .rsvp-section {
+        padding: var(--spacing-medium);
+      }
+    }
+  </style>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <h1 id="title">Babette & Felix</h1>
+      <p class="subtitle" id="subtitle-main">We would love to celebrate with you</p>
+
+      <!-- ========== RSVP FORM SECTION ========== -->
+      <div class="rsvp-section">
+        <h2 id="rsvp-title">RSVP</h2>
+        
+        <form id="rsvp-form">
+          <!-- Guest Name -->
+          <label for="guestName" id="label-guestName">Guest Name</label>
+          <input 
+            id="guestName"
+            name="entry.108083471" 
+            type="text"
+            placeholder="Enter your name"
+            required 
+          />
+
+          <!-- Attending Status -->
+          <label for="attending" id="label-attending">Will you attend?</label>
+          <select id="attending" name="entry.1418582323" required>
+            <option value="" disabled selected id="opt-select">-- Please choose --</option>
+            <option value="Yes" id="opt-yes">Yes</option>
+            <option value="No" id="opt-no">No</option>
+          </select>
+
+          <!-- Plus One Name -->
+          <label for="plusOne" id="label-plusOne">Plus One Name (optional)</label>
+          <input 
+            id="plusOne"
+            name="entry.2029894852" 
+            type="text"
+            placeholder="Enter guest name"
+          />
+
+          <!-- Number of Children -->
+          <label for="children" id="label-children">Number of Children</label>
+          <select id="children" name="entry.49562044">
+            <option value="" disabled selected id="opt-select-children">-- Please choose --</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+
+          <!-- Submit Button -->
+          <button type="submit" id="submit-btn">Send RSVP</button>
+        </form>
+
+        <!-- Success Message (hidden by default) -->
+        <p id="thanks" class="hidden">Thank you! 💕</p>
+      </div>
+
+      <!-- ========== INFO SECTIONS ========== -->
+
+      <!-- Accommodations Section -->
+      <div class="info-section">
+        <h2 id="accommodations-title">Accommodations</h2>
+        <p id="accommodations-text">
+          We've collected nearby accommodations for our guests. Click on the map
+          below to explore the different options available. Each location on the
+          map shows the accommodation name, website, and distance to our venue
+          (Alte Schule).
+        </p>
+        <div class="map-container">
+          <iframe src="data/maps/guest_locations_map.html"></iframe>
+        </div>
+      </div>
+
+      <!-- Dress Code Section -->
+      <div class="info-section">
+        <h2 id="dress-code-title">Dress Code</h2>
+        <p id="dress-code-text">
+          We're planning an outdoor celebration, so please dress comfortably for
+          the weather. We suggest elegant casual attire. Since we'll be
+          celebrating by the sea, feel free to bring a swimsuit, also because we
+          might have a sauna for those who want to use it. As there is some
+          natural terrain at the venue, we recommend you bring a pair of
+          comfortable shoes.
+        </p>
+      </div>
+
+      <!-- Getting There Section -->
+      <div class="info-section">
+        <h2 id="getting-there-title">Getting There</h2>
+        <p id="getting-there-text">
+          Our wedding will take place at Alte Schule in Warnkenhagen, Germany.
+          The venue is easily accessible by car from both major German cities
+          and the Danish coast. If you need assistance with travel arrangements
+          or directions, please don't hesitate to contact us. Public parking is
+          available near the venue.
+        </p>
+      </div>
+
+      <!-- Kids Section -->
+      <div class="info-section">
+        <h2 id="kids-title">Kids</h2>
+        <p id="kids-text">
+          Kids are totally welcome at our wedding celebration!
+        </p>
+      </div>
+    </div>
+
+    <!-- Hidden form for Google Forms submission -->
+    <form
+      id="rsvpForm"
+      action="https://docs.google.com/forms/d/1eV14AgFXLGabdGzHrBHquWLiP-aAkAuaweCw5LsJkDE/formResponse"
+      method="POST"
+      style="display: none;"
+    ></form>
+
+    <!-- TRANSLATIONS & LOCALIZATION -->
+    <script>
+      const translations = {
+        en: {
+          title: "Babette & Felix",
+          "subtitle-main": "We would love to celebrate with you",
+          "rsvp-title": "RSVP",
+          "label-guestName": "Guest Name",
+          "label-attending": "Will you attend?",
+          "opt-yes": "Yes",
+          "opt-no": "No",
+          "opt-select": "Please choose...",
+          "opt-select-children": "Please choose...",
+          "label-plusOne": "Plus One Name (optional)",
+          "label-children": "Number of Children",
+          "submit-btn": "Send RSVP",
+          "thanks": "Thank you! 💕",
+          "accommodations-title": "Accommodations",
+          "accommodations-text":
+            "We've collected nearby accommodations for our guests. Click on the map below to explore the different options available. Each location on the map shows the accommodation name, website, and distance to our venue (Alte Schule).",
+          "dress-code-title": "Dress Code",
+          "dress-code-text":
+            "We're planning an outdoor celebration, so please dress comfortably for the weather. We suggest elegant casual attire. Since we'll be celebrating by the sea, feel free to bring a swimsuit, also because we might have a sauna for those who want to use it. As there is some natural terrain at the venue, we recommend you bring a pair of comfortable shoes.",
+          "getting-there-title": "Getting There",
+          "getting-there-text":
+            "Our wedding will take place at Alte Schule in Warnkenhagen, Germany. The venue is easily accessible by car from both major German cities and the Danish coast. If you need assistance with travel arrangements or directions, please don't hesitate to contact us. Public parking is available near the venue.",
+          "kids-title": "Kids",
+          "kids-text":
+            "Kids are totally welcome at our wedding celebration!",
+        },
+        de: {
+          title: "Babette & Felix",
+          "subtitle-main": "Wir würden uns freuen, mit dir zu feiern",
+          "rsvp-title": "RSVP",
+          "label-guestName": "Dein Name",
+          "label-attending": "Kommst du?",
+          "opt-yes": "Ja",
+          "opt-no": "Nein",
+          "opt-select": "Bitte wählen...",
+          "opt-select-children": "Bitte wählen...",
+          "label-plusOne": "Hast du ein +1? (optional)",
+          "label-children": "Anzahl der Kinder",
+          "submit-btn": "RSVP absenden",
+          "thanks": "Danke! 💕",
+          "accommodations-title": "Unterkunftsoptionen",
+          "accommodations-text":
+            "Wir haben eine Auswahl an Unterkünften für unsere Gäste zusammengestellt. Klicken Sie auf die Karte unten, um die verschiedenen verfügbaren Optionen zu erkunden. Jeder Standort auf der Karte zeigt den Namen der Unterkunft, die Website und die Entfernung zu unserem Veranstaltungsort (Alte Schule).",
+          "dress-code-title": "Kleiderordnung",
+          "dress-code-text":
+            "Wir planen eine Feier im Freien, also zieht euch bitte wettergerecht und bequem an. Wir empfehlen einen elegant-lässigen Stil. Da wir am Meer feiern, bringt gerne Badesachen mit – auch, weil es vielleicht eine Sauna für alle gibt, die Lust haben. Da es vor Ort etwas natürliches Gelände gibt, empfehlen wir außerdem bequeme Schuhe.",
+          "getting-there-title": "Anreise",
+          "getting-there-text":
+            "Unsere Hochzeit findet in der Alten Schule in Warnkenhagen, Deutschland statt. Der Veranstaltungsort ist leicht mit dem Auto von großen deutschen Städten und der dänischen Küste erreichbar. Falls Sie Hilfe bei der Reiseplanung oder Wegbeschreibung benötigen, zögern Sie nicht, uns zu kontaktieren. Es gibt öffentliche Parkplätze in der Nähe des Veranstaltungsortes.",
+          "kids-title": "Kinder",
+          "kids-text":
+            "Kinder sind bei unserer Hochzeitsfeier sehr willkommen!",
+        },
+        dk: {
+          title: "Babette & Felix",
+          "subtitle-main": "Vi ville gerne fejre med dig",
+          "rsvp-title": "RSVP",
+          "label-guestName": "Dit navn",
+          "label-attending": "Kommer du?",
+          "opt-yes": "Ja",
+          "opt-no": "Nej",
+          "opt-select": "Vælg venligst...",
+          "opt-select-children": "Vælg venligst...",
+          "label-plusOne": "Navn på din ledsager (valgfrit)",
+          "label-children": "Antal børn",
+          "submit-btn": "Send RSVP",
+          "thanks": "Tak! 💕",
+          "accommodations-title": "Indkvartering",
+          "accommodations-text":
+            "Vi har samlet et udvalg af indkvarteringssteder for vores gæster. Klik på kortet nedenfor for at udforske de forskellige muligheder. Hvert sted på kortet viser navn på indkvarteringen, hjemmeside og afstand til vores lokation (Alte Schule).",
+          "dress-code-title": "Dresscode",
+          "dress-code-text":
+            "Vi planlægger en udendørs fejring, så klæd jer gerne komfortabelt efter vejret. Vi foreslår elegant casual. Da vi skal fejre det ved havet, er I meget velkomne til at tage badetøj med – også fordi der måske er en sauna for dem, der har lyst. Da der er lidt naturterræn på stedet, anbefaler vi også et par gode, komfortable sko.",
+          "getting-there-title": "Sådan Kommer Du Der",
+          "getting-there-text":
+            "Vores bryllup finder sted på Alte Schule i Warnkenhagen, Tyskland. Lokationen er let tilgængelig med bil fra større tyske byer og den danske kyst. Hvis I har brug for hjælp til rejseplanering eller vejledning, så kontakt os. Der er offentlig parkering nær lokationen.",
+          "kids-title": "Børn",
+          "kids-text":
+            "Børn er meget velkomne til vores bryllupsfest!",
+        },
+      };
+
+      /**
+       * Apply language translations to the page
+       */
+      function applyLanguage(lang) {
+        const t = translations[lang] || translations.en;
+        
+        Object.keys(t).forEach((key) => {
+          const element = document.getElementById(key);
+          if (element) {
+            element.textContent = t[key];
+          }
+        });
+
+        // Update select options
+        const attending = document.getElementById("attending");
+        if (attending) {
+          const yesOpt = attending.querySelector('option[id="opt-yes"]');
+          const noOpt = attending.querySelector('option[id="opt-no"]');
+          const selectOpt = attending.querySelector('option[id="opt-select"]');
+          if (yesOpt) yesOpt.textContent = t["opt-yes"];
+          if (noOpt) noOpt.textContent = t["opt-no"];
+          if (selectOpt) selectOpt.textContent = t["opt-select"];
+        }
+
+        const children = document.getElementById("children");
+        if (children) {
+          const selectOpt = children.querySelector('option[id="opt-select-children"]');
+          if (selectOpt) selectOpt.textContent = t["opt-select-children"];
+        }
+      }
+
+      /**
+       * Initialize language on page load
+       */
+      (function initializeLanguage() {
+        let lang = localStorage.getItem("selectedLanguage") || localStorage.getItem("language");
+        
+        // If not saved, detect from browser language
+        if (!lang) {
+          const userLang = (navigator.language || navigator.userLanguage || "en").toLowerCase();
+          lang = "en";
+          if (userLang.startsWith("de")) lang = "de";
+          else if (userLang.startsWith("da")) lang = "dk";
+        }
+        
+        applyLanguage(lang);
+      })();
+    </script>
+
+    <!-- FORM LOGIC -->
+    <script>
+      /**
+       * Toggle visibility of additional fields
+       * Shows plus one and children only when guest confirms attending
+       */
+      function toggleAdditionalFields() {
+        const guestNameInput = document.getElementById("guestName");
+        const attendingSelect = document.getElementById("attending");
+
+        const nameFilled = guestNameInput && guestNameInput.value.trim() !== "";
+        const isAttending = attendingSelect && attendingSelect.value === "Yes";
+
+        // Elements to toggle
+        const fieldIds = ["plusOne", "children"];
+        const labelIds = [
+          'label[for="plusOne"]',
+          'label[for="children"]',
+        ];
+
+        // Helper function to set visibility
+        const setVisible = (visible) => {
+          fieldIds.forEach((id) => {
+            const field = document.getElementById(id);
+            if (field) field.style.display = visible ? "block" : "none";
+          });
+          
+          labelIds.forEach((selector) => {
+            const label = document.querySelector(selector);
+            if (label) label.style.display = visible ? "block" : "none";
+          });
+        };
+
+        // Show extras only if name is filled AND attending
+        setVisible(nameFilled && isAttending);
+      }
+
+      // Attach event listeners for dynamic form behavior
+      const guestNameInput = document.getElementById("guestName");
+      const attendingSelect = document.getElementById("attending");
+
+      if (guestNameInput) {
+        guestNameInput.addEventListener("input", toggleAdditionalFields);
+      }
+
+      if (attendingSelect) {
+        attendingSelect.addEventListener("change", toggleAdditionalFields);
+      }
+
+      /**
+       * Form submission
+       */
+      const form = document.getElementById("rsvp-form");
+      if (form) {
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          const visibleForm = form;
+          const hiddenForm = document.getElementById("rsvpForm");
+          const guestName = document.getElementById("guestName").value;
+          console.log("Form submitted with guest name:", guestName);
+          
+          const formData = new FormData(visibleForm);
+          const googleFormUrl = hiddenForm?.action || null;
+          
+          console.log("Form data entries:");
+          for (let [key, value] of formData.entries()) {
+            console.log(`  ${key}: ${value}`);
+          }
+          
+          // Submit to Google Forms (no-cors to avoid CORS errors with third-party forms)
+          if (googleFormUrl) {
+            fetch(googleFormUrl, {
+              method: "POST",
+              mode: "no-cors",
+              body: formData,
+            }).finally(() => {
+              // Show thank you message
+              document.getElementById("rsvp-form").style.display = "none";
+              document.getElementById("thanks").style.display = "block";
+              document.getElementById("thanks").classList.remove("hidden");
+            });
+          } else {
+            // Fallback if no external form configured
+            document.getElementById("rsvp-form").style.display = "none";
+            document.getElementById("thanks").style.display = "block";
+            document.getElementById("thanks").classList.remove("hidden");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
