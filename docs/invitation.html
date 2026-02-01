@@ -167,6 +167,12 @@
     </style>
     <body>
       <div class="container">
+        <!-- Header -->
+        <h1 id="title">Babette & Felix</h1>
+        <p class="subtitle" id="subtitle-main">
+          We would love to celebrate with you
+        </p>
+
         <!-- Photo at top -->
         <div class="photo-section">
           <img
@@ -179,11 +185,36 @@
         <!-- Markdown intro content -->
         <div id="intro-content" class="intro-section"></div>
 
-        <!-- Header -->
-        <h1 id="title">Babette & Felix</h1>
-        <p class="subtitle" id="subtitle-main">
-          We would love to celebrate with you
-        </p>
+        <!-- Event Details Section -->
+        <div class="info-section">
+          <p
+            id="event-details"
+            style="
+              font-size: 1.1em;
+              font-weight: 200;
+              text-align: center;
+              margin-bottom: 10px;
+              margin-top: 20px;
+            "
+          >
+            <span id="event-date">19th of September 2026</span> | <span id="event-venue">Hohenschönberger Weg 3, 23948 Kalkhorst, Germany</span>
+          </p>
+        </div>
+
+        <!-- ========== ACCOMMODATIONS SECTION ========== -->
+        <div class="info-section">
+          <h2 id="accommodations-title">Accommodations</h2>
+          <p id="accommodations-text">
+            We've collected nearby accommodations for our guests. Click on the
+            map below to explore the different options available. Each location
+            on the map shows the accommodation name, website, and distance to
+            our venue (Alte Schule). Important: You can also camp at the venue,
+            just let us know in the RSVP form if you plan to do so.
+          </p>
+          <div class="map-container">
+            <iframe src="data/maps/guest_locations_map.html"></iframe>
+          </div>
+        </div>
 
         <!-- ========== RSVP FORM SECTION ========== -->
         <div class="rsvp-section">
@@ -277,21 +308,6 @@
         </div>
 
         <!-- ========== INFO SECTIONS ========== -->
-
-        <!-- Accommodations Section -->
-        <div class="info-section">
-          <h2 id="accommodations-title">Accommodations</h2>
-          <p id="accommodations-text">
-            We've collected nearby accommodations for our guests. Click on the
-            map below to explore the different options available. Each location
-            on the map shows the accommodation name, website, and distance to
-            our venue (Alte Schule). Important: You can also camp at the venue,
-            just let us know in the RSVP form if you plan to do so.
-          </p>
-          <div class="map-container">
-            <iframe src="data/maps/guest_locations_map.html"></iframe>
-          </div>
-        </div>
 
         <!-- Dress Code Section -->
         <div class="info-section">
