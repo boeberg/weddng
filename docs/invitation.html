@@ -227,12 +227,45 @@
               <option value="" disabled selected id="opt-select-children">
                 -- Please choose --
               </option>
-              <option value="0">0</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
+            </select>
+
+            <!-- BBQ Friday Question -->
+            <label for="bbqFriday" id="label-bbqFriday"
+              >Are you coming to the BBQ on Friday the 18th?</label
+            >
+            <select id="bbqFriday" name="entry.bbqFriday">
+              <option value="" disabled selected id="opt-select-bbq">
+                -- Please choose --
+              </option>
+              <option value="Yes" id="opt-yes-bbq">Yes</option>
+              <option value="No" id="opt-no-bbq">No</option>
+            </select>
+
+            <!-- Breakfast Sunday Question -->
+            <label for="breakfastSunday" id="label-breakfastSunday"
+              >Are you coming for breakfast Sunday morning?</label
+            >
+            <select id="breakfastSunday" name="entry.breakfastSunday">
+              <option value="" disabled selected id="opt-select-breakfast">
+                -- Please choose --
+              </option>
+              <option value="Yes" id="opt-yes-breakfast">Yes</option>
+              <option value="No" id="opt-no-breakfast">No</option>
+            </select>
+
+            <!-- Camping Question -->
+            <label for="camping" id="label-camping"
+              >Are you planning to camp at the venue?</label
+            >
+            <select id="camping" name="entry.camping">
+              <option value="" disabled selected id="opt-select-camping">
+                -- Please choose --
+              </option>
+              <option value="Yes" id="opt-yes-camping">Yes</option>
+              <option value="No" id="opt-no-camping">No</option>
             </select>
 
             <!-- Submit Button -->
@@ -252,7 +285,8 @@
             We've collected nearby accommodations for our guests. Click on the
             map below to explore the different options available. Each location
             on the map shows the accommodation name, website, and distance to
-            our venue (Alte Schule).
+            our venue (Alte Schule). Important: You can also camp at the venue,
+            just let us know in the RSVP form if you plan to do so.
           </p>
           <div class="map-container">
             <iframe src="data/maps/guest_locations_map.html"></iframe>
@@ -315,7 +349,20 @@
             "opt-select": "Please choose...",
             "opt-select-children": "Please choose...",
             "label-plusOne": "Plus One Name (optional)",
-            "label-children": "Number of Children",
+            "label-children": "Number of Children (optional)",
+            "label-bbqFriday": "Are you coming to the BBQ on Friday the 18th?",
+            "opt-select-bbq": "Please choose...",
+            "opt-yes-bbq": "Yes",
+            "opt-no-bbq": "No",
+            "label-breakfastSunday":
+              "Are you coming for breakfast Sunday morning?",
+            "opt-select-breakfast": "Please choose...",
+            "opt-yes-breakfast": "Yes",
+            "opt-no-breakfast": "No",
+            "label-camping": "Are you planning to camp at the venue?",
+            "opt-select-camping": "Please choose...",
+            "opt-yes-camping": "Yes",
+            "opt-no-camping": "No",
             "submit-btn": "Send RSVP",
             thanks: "Thank you! 💕",
             "accommodations-title": "Accommodations",
@@ -341,7 +388,19 @@
             "opt-select": "Bitte wählen...",
             "opt-select-children": "Bitte wählen...",
             "label-plusOne": "Hast du ein +1? (optional)",
-            "label-children": "Anzahl der Kinder",
+            "label-children": "Anzahl der Kinder (optional)",
+            "label-bbqFriday": "Kommst du zum BBQ am Freitag, den 18.?",
+            "opt-select-bbq": "Bitte wählen...",
+            "opt-yes-bbq": "Ja",
+            "opt-no-bbq": "Nein",
+            "label-breakfastSunday": "Kommst du zum Frühstück Sonntagmorgen?",
+            "opt-select-breakfast": "Bitte wählen...",
+            "opt-yes-breakfast": "Ja",
+            "opt-no-breakfast": "Nein",
+            "label-camping": "Wirst du auf dem Gelände campen?",
+            "opt-select-camping": "Bitte wählen...",
+            "opt-yes-camping": "Ja",
+            "opt-no-camping": "Nein",
             "submit-btn": "RSVP absenden",
             thanks: "Danke! 💕",
             "accommodations-title": "Unterkunftsoptionen",
@@ -368,7 +427,19 @@
             "opt-select": "Vælg venligst...",
             "opt-select-children": "Vælg venligst...",
             "label-plusOne": "Navn på din ledsager (valgfrit)",
-            "label-children": "Antal børn",
+            "label-children": "Antal børn (valgfrit)",
+            "label-bbqFriday": "Kommer du til BBQ'en på fredag den 18.?",
+            "opt-select-bbq": "Vælg venligst...",
+            "opt-yes-bbq": "Ja",
+            "opt-no-bbq": "Nej",
+            "label-breakfastSunday": "Kommer du til morgenmad søndag morgen?",
+            "opt-select-breakfast": "Vælg venligst...",
+            "opt-yes-breakfast": "Ja",
+            "opt-no-breakfast": "Nej",
+            "label-camping": "Planlægger du at campe på stedet?",
+            "opt-select-camping": "Vælg venligst...",
+            "opt-yes-camping": "Ja",
+            "opt-no-camping": "Nej",
             "submit-btn": "Send RSVP",
             thanks: "Tak! 💕",
             "accommodations-title": "Indkvartering",
