@@ -541,20 +541,31 @@
       <script>
         /**
          * Toggle visibility of additional fields
-         * Shows plus one and children only when guest confirms attending
+         * Shows all fields after the name field when guest enters their name
          */
         function toggleAdditionalFields() {
           const guestNameInput = document.getElementById("guestName");
-          const attendingSelect = document.getElementById("attending");
-
           const nameFilled =
             guestNameInput && guestNameInput.value.trim() !== "";
-          const isAttending =
-            attendingSelect && attendingSelect.value === "Yes";
 
-          // Elements to toggle
-          const fieldIds = ["plusOne", "children"];
-          const labelIds = ['label[for="plusOne"]', 'label[for="children"]'];
+          // Elements to toggle (all except name field)
+          const fieldIds = [
+            "attending",
+            "plusOne",
+            "children",
+            "bbqFriday",
+            "breakfastSunday",
+            "camping",
+            "submit-btn",
+          ];
+          const labelIds = [
+            'label[for="attending"]',
+            'label[for="plusOne"]',
+            'label[for="children"]',
+            'label[for="bbqFriday"]',
+            'label[for="breakfastSunday"]',
+            'label[for="camping"]',
+          ];
 
           // Helper function to set visibility
           const setVisible = (visible) => {
@@ -569,21 +580,47 @@
             });
           };
 
-          // Show extras only if name is filled AND attending
-          setVisible(nameFilled && isAttending);
+          // Show all fields when name is filled
+          setVisible(nameFilled);
         }
 
         // Attach event listeners for dynamic form behavior
         const guestNameInput = document.getElementById("guestName");
-        const attendingSelect = document.getElementById("attending");
 
         if (guestNameInput) {
           guestNameInput.addEventListener("input", toggleAdditionalFields);
         }
 
-        if (attendingSelect) {
-          attendingSelect.addEventListener("change", toggleAdditionalFields);
-        }
+        // Initialize: hide all fields except name on page load
+        (function initializeFormVisibility() {
+          const fieldIds = [
+            "attending",
+            "plusOne",
+            "children",
+            "bbqFriday",
+            "breakfastSunday",
+            "camping",
+            "submit-btn",
+          ];
+          const labelIds = [
+            'label[for="attending"]',
+            'label[for="plusOne"]',
+            'label[for="children"]',
+            'label[for="bbqFriday"]',
+            'label[for="breakfastSunday"]',
+            'label[for="camping"]',
+          ];
+
+          fieldIds.forEach((id) => {
+            const field = document.getElementById(id);
+            if (field) field.style.display = "none";
+          });
+
+          labelIds.forEach((selector) => {
+            const label = document.querySelector(selector);
+            if (label) label.style.display = "none";
+          });
+        })();
 
         /**
          * Form submission
