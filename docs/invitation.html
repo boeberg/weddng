@@ -230,8 +230,9 @@
         font-weight: 500;
       }
     </style>
-    <body>
-      <div class="container">
+  </head>
+  <body>
+    <div class="container">
         <!-- Language Selector -->
         <div class="language-selector">
           <button class="language-btn" id="language-toggle">
@@ -407,85 +408,7 @@
         <!-- Getting There Section -->
         <div class="info-section">
           <h2 data-i18n="getting-there-title">Getting There</h2>
-          <p style="margin-bottom: 25px; font-style: italic">
-            If you need help to plan the trip or join others taking the same
-            trip, let us know, we are happy to help.
-          </p>
-
-          <!-- By Car -->
-          <h3
-            style="
-              font-size: 1.2em;
-              font-weight: 400;
-              margin-top: 25px;
-              margin-bottom: 15px;
-            "
-          >
-            By Car
-          </h3>
-          <p id="getting-there-car">
-            Coming from Berlin, the drive takes about three hours and covers
-            roughly 225 km. The usual route goes via the A24 toward Hamburg,
-            then the A14 and A20 in the direction of Wismar/Lübeck, followed by
-            local roads toward Kalkhorst and Hohen Schönberg.<br />
-            <br />
-            From Hamburg, the drive is much shorter at about 1 hour and 10
-            minutes. Take the A1 toward Lübeck, then the A20 toward Rostock,
-            exit near Schönberg, and continue on local roads to Kalkhorst.<br />
-            <br />
-            From Copenhagen, driving takes around seven hours depending on
-            traffic and border crossings. The route goes via Denmark's E20 and
-            the bridges to Germany, then south past Hamburg and east toward
-            Lübeck and Kalkhorst. Driving is the easiest option for the final
-            rural stretch.
-          </p>
-
-          <!-- By Train -->
-          <h3
-            style="
-              font-size: 1.2em;
-              font-weight: 400;
-              margin-top: 25px;
-              margin-bottom: 15px;
-            "
-          >
-            By Train
-          </h3>
-          <p id="getting-there-train">
-            Kalkhorst does not have a long-distance train station, so travel
-            involves a combination of train and local transport. From Berlin,
-            trains run to Lübeck, Wismar, or Schönberg via major hubs such as
-            Hamburg or Bad Kleinen. Total travel time is usually five hours or
-            more.<br />
-            <br />
-            From Hamburg, regional trains run frequently to Lübeck, taking about
-            45 minutes. From Lübeck, continue by regional bus, taxi, or a short
-            regional train connection toward Schönberg or Grevesmühlen, then on
-            to Kalkhorst. Expect a total travel time of around three to four
-            hours.<br />
-            <br />
-            From Copenhagen, take a train to Hamburg, then continue to Lübeck
-            and onward by regional transport. This journey typically takes seven
-            to nine hours depending on connections.
-          </p>
-
-          <!-- By Plane -->
-          <h3
-            style="
-              font-size: 1.2em;
-              font-weight: 400;
-              margin-top: 25px;
-              margin-bottom: 15px;
-            "
-          >
-            By Plane
-          </h3>
-          <p id="getting-there-plane">
-            The most convenient airport is Hamburg Airport, which is about 80 km
-            from Kalkhorst. From there, you can rent a car for a direct drive of
-            about 1 hour and 15 minutes, or take a train via Hamburg
-            Hauptbahnhof to Lübeck and continue by bus or taxi.
-          </p>
+          <p data-i18n="getting-there-text" style="margin-bottom: 25px; font-style: italic; white-space: pre-wrap;"></p>
         </div>
 
         <!-- Gifts Section -->
@@ -496,7 +419,7 @@
           <img src="data/pictures/kolo water color.png" style="width: 100%; max-width: 500px; height: auto; border-radius: 8px; margin-bottom: 25px; display: block; margin-left: auto; margin-right: auto;">
 
           <!-- Gift Message -->
-          <p data-i18n="gifts-message">
+          <p data-i18n="gifts-text" style="white-space: pre-wrap;">
             Your presence and celebration with us means everything. We're truly happy if you can simply come and celebrate this special day with us. However, if you'd like to contribute a gift, we're also delighted to receive anything that could be useful for our little garden house. We appreciate your thoughtfulness either way!
           </p>
         </div>
@@ -569,7 +492,9 @@
               "We're planning an outdoor celebration, so please dress comfortably for the weather. We suggest elegant casual attire. Since we'll be celebrating by the sea, feel free to bring a swimsuit, also because we might have a sauna for those who want to use it.",
             "getting-there-title": "Getting There",
             "getting-there-text":
-              "By car: Coming from Berlin, the drive takes about three hours and covers roughly 225 km. From Hamburg, the drive is much shorter at about 1 hour and 10 minutes. From Copenhagen, driving takes around seven hours depending on traffic and border crossings. By train: Kalkhorst does not have a long-distance train station, so travel involves a combination of train and local transport. From Berlin, trains run to Lübeck or Wismar via major hubs such as Hamburg. Total travel time is usually five hours or more. From Hamburg, regional trains run frequently to Lübeck, taking about 45 minutes. From Lübeck, continue by regional bus or a short regional train connection toward Schönberg or Grevesmühlen, then on to Kalkhorst. Expect a total travel time of around three to four hours. From Copenhagen, take a train to Hamburg, then continue to Lübeck and onward by regional transport. This journey typically takes seven to nine hours depending on connections. By plane: The most convenient airport is Hamburg Airport, which is about 80 km from Kalkhorst. From there, you can rent a car for a direct drive of about 1 hour, or take a train via Hamburg Central Station to Lübeck and continue by bus or taxi.",
+              "By car: Coming from Berlin, the drive takes about three hours and covers roughly 225 km. From Hamburg, the drive is much shorter at about 1 hour and 10 minutes. From Copenhagen, driving takes around seven hours depending on traffic and border crossings.\n\nBy train: Kalkhorst does not have a long-distance train station, so travel involves a combination of train and local transport. From Berlin, trains run to Lübeck or Wismar via major hubs such as Hamburg. Total travel time is usually five hours or more. From Hamburg, regional trains run frequently to Lübeck, taking about 45 minutes. From Lübeck, continue by regional bus or a short regional train connection toward Schönberg or Grevesmühlen, then on to Kalkhorst. Expect a total travel time of around three to four hours. From Copenhagen, take a train to Hamburg, then continue to Lübeck and onward by regional transport. This journey typically takes seven to nine hours depending on connections.\n\nBy plane: The most convenient airport is Hamburg Airport, which is about 80 km from Kalkhorst. From there, you can rent a car for a direct drive of about 1 hour, or take a train via Hamburg Central Station to Lübeck and continue by bus or taxi.",
+            "gifts-title": "Gifts",
+            "gifts-text": "Your presence and celebration with us means everything. We're truly happy if you can simply come and celebrate this special day with us. However, if you'd like to contribute a gift, we're also delighted to receive anything that could be useful for our little garden house. We appreciate your thoughtfulness either way!",
             "kids-title": "Kids",
             "kids-text": "Kids are totally welcome at our wedding celebration!",
             "photo-text": "Hi everyone,\n\nI'm Paula, the best thing Babette and Felix have made so far!\nAs their wedding planning skills are quite...improvable, I want to give you a heads up that you are invited to their wedding on September 9, 2026 in Warnkenhagen (Germany)!\n\nMore info to come, but if you want to be sure to have an accommodation close by, we've collected a list of available apartments/hotels. So feel free to book already.\nAnd please fill out the RSVP form below to let us know if you'll be joining us on this special day. We also plan a BBQ night on the day before and breakfast the day after the wedding. We'd love to see you there!\n\nWe look forward to sharing this moment with you!\n\nPaula, Babette & Felix",
@@ -608,7 +533,9 @@
               "Wir planen eine Feier im Freien, also zieht euch bitte wettergerecht und bequem an. Wir empfehlen einen elegant-lässigen Stil. Da wir am Meer feiern, bringt gerne Badesachen mit – auch, weil es vielleicht eine Sauna für alle gibt, die Lust haben. Da es vor Ort etwas natürliches Gelände gibt, empfehlen wir außerdem bequeme Schuhe.",
             "getting-there-title": "Anreise",
             "getting-there-text":
-              "Falls du Hilfe bei der Reiseplanung brauchst oder mit anderen zusammen fahren möchtest, melde dich gerne. Wir helfen dir gerne weiter.",
+              "Mit dem Auto: Von Berlin aus dauert die Fahrt etwa drei Stunden und führt über eine Strecke von rund 225 km. Von Hamburg ist die Fahrt viel kürzer, etwa 1 Stunde und 10 Minuten. Von Kopenhagen dauert die Fahrt je nach Verkehr und Grenzübergängen etwa sieben Stunden.\n\nMit dem Zug: Kalkhorst hat keinen Fernbahnhof, daher kombiniert man Zug- und Nahverkehr. Von Berlin fahren Züge nach Lübeck oder Wismar über Drehkreuze wie Hamburg. Die Reisedauer beträgt normalerweise fünf Stunden oder mehr. Von Hamburg fahren Regionalbahnen häufig nach Lübeck und brauchen etwa 45 Minuten. Von Lübeck weiterer regionaler Bus oder eine kurze Zugverbindung nach Schönberg oder Grevesmühlen, dann nach Kalkhorst. Erwarten Sie eine Gesamtreisedauer von etwa drei bis vier Stunden. Von Kopenhagen: Zug nach Hamburg, dann weiter nach Lübeck und per Nahverkehr. Diese Reise dauert typischerweise sieben bis neun Stunden je nach Verbindungen.\n\nMit dem Flugzeug: Der praktischste Flughafen ist Hamburg Airport, etwa 80 km von Kalkhorst entfernt. Von dort können Sie ein Auto mieten für eine direkte Fahrt von etwa 1 Stunde oder einen Zug vom Hamburger Hauptbahnhof nach Lübeck nehmen und dann weiter per Bus oder Taxi fahren.",
+            "gifts-title": "Geschenke",
+            "gifts-text": "Deine Anwesenheit und das Feiern mit uns bedeuten uns alles. Wir sind sehr glücklich, wenn du einfach mit uns diesen besonderen Tag feierst. Wenn du aber gerne ein Geschenk machen möchtest, freuen wir uns auch über alles, was für unser kleines Gartenhaus nützlich ist. Wir schätzen dein Geschenk in jedem Fall!",
             "kids-title": "Kinder",
             "kids-text":
               "Kinder sind bei unserer Hochzeitsfeier sehr willkommen!",
@@ -648,7 +575,9 @@
               "Vi planlægger en udendørs fejring, så klæd jer gerne komfortabelt efter vejret. Vi foreslår elegant casual. Da vi skal fejre det ved havet, er I meget velkomne til at tage badetøj med – også fordi der måske er en sauna for dem, der har lyst. Da der er lidt naturterræn på stedet, anbefaler vi også et par gode, komfortable sko.",
             "getting-there-title": "Sådan Kommer Du Der",
             "getting-there-text":
-              "Hvis du har brug for hjælp til rejseplanering eller gerne vil rejse sammen med andre, så giv os besked. Vi hjælper gerne.",
+              "Med bil: Fra Berlin tager køreturen cirka tre timer og dækker omkring 225 km. Fra Hamburg er køreturen meget kortere, omkring 1 time og 10 minutter. Fra København tager køreturen omkring syv timer alt efter trafik og grænseovergange.\n\nMed tog: Kalkhorst har ingen fjernbanestationer, så rejsen består af en kombination af tog og lokal transport. Fra Berlin kører tog til Lübeck eller Wismar via større byer som Hamburg. Samlet rejsetid er normalt fem timer eller mere. Fra Hamburg kører regionaltog hyppigt til Lübeck og bruger omkring 45 minutter. Fra Lübeck fortsætter du med regional bus, taxa eller en kort regional togforbindelse mod Schönberg eller Grevesmühlen, derefter til Kalkhorst. Forvent en samlet rejsetid på omkring tre til fire timer. Fra København: Tag tog til Hamburg, derefter videre til Lübeck og videre med lokal transport. Denne rejse tager typisk syv til ni timer alt efter forbindelser.\n\nMed fly: Den mest bekvemme lufthavn er Hamburg Airport, omkring 80 km fra Kalkhorst. Derfra kan du leje en bil for en direkte køretur på omkring 1 time, eller tage tog fra Hamburgs hovedbanegård til Lübeck og fortsætte med bus eller taxa.",
+            "gifts-title": "Gaver",
+            "gifts-text": "Din tilstedeværelse og at fejre sammen med os betyder alt for os. Vi er meget glade, hvis du bare kan komme og fejre denne specielle dag med os. Hvis du gerne vil give en gave, er vi også meget glad for alt, der kunne være brugbart til vores lille haver hus. Vi værdsætter din vendelighed på enhver måde!",
             "kids-title": "Børn",
             "kids-text": "Børn er meget velkomne til vores bryllupsfest!",
             "photo-text": "Hej alle sammen,\n\nJeg er Paula, det bedste, som Babette og Felix hidtil har lavet!\nDa deres brylluppplanlegnningsevner er ganske forbedringsbehov, ville jeg give jer en heads-up om, at i er inviteret til deres bryllup den 9. september 2026 i Warnkenhagen (Tyskland)!\n\nMere information kommer snart, men hvis i vil være sikre på at have indkvartering i nærheden, har vi samlet en liste over tilgængelige lejligheder/hoteller. Så gerne book allerede.\nOg udfyld venligst RSVP-formularen nedenfor for at lade os vide, om i deltager på denne specielle dag. Vi planlægger også en BBQ-aften dagen før og morgenmad dagen efter brylluppet. Vi ville gerne se jer der!\n\nVi glæder os til at dele dette øjeblik med jer!\n\nPaula, Babette & Felix",
@@ -665,8 +594,8 @@
           document.querySelectorAll('[data-i18n]').forEach((element) => {
             const key = element.getAttribute('data-i18n');
             if (t[key]) {
-              // For photo-text, replace line breaks with <br> for proper display
-              if (key === 'photo-text') {
+              // For photo-text and getting-there-text, replace line breaks with <br> for proper display
+              if (key === 'photo-text' || key === 'getting-there-text') {
                 element.innerHTML = t[key].replace(/\n/g, '<br>');
               } else {
                 element.textContent = t[key];
@@ -863,5 +792,4 @@
         }
       </script>
     </body>
-  </head>
 </html>
