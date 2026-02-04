@@ -265,6 +265,11 @@
           />
         </div>
 
+        <!-- Text placeholder -->
+        <div class="info-section" style="margin-top: 30px; margin-bottom: 30px;">
+          <p data-i18n="photo-text" style="font-size: 1em; font-weight: 300; text-align: center; line-height: 1.8;"></p>
+        </div>
+
         <!-- Markdown intro content -->
         <div id="intro-content" class="intro-section"></div>
 
@@ -567,6 +572,7 @@
               "By car: Coming from Berlin, the drive takes about three hours and covers roughly 225 km. From Hamburg, the drive is much shorter at about 1 hour and 10 minutes. From Copenhagen, driving takes around seven hours depending on traffic and border crossings. By train: Kalkhorst does not have a long-distance train station, so travel involves a combination of train and local transport. From Berlin, trains run to Lübeck or Wismar via major hubs such as Hamburg. Total travel time is usually five hours or more. From Hamburg, regional trains run frequently to Lübeck, taking about 45 minutes. From Lübeck, continue by regional bus or a short regional train connection toward Schönberg or Grevesmühlen, then on to Kalkhorst. Expect a total travel time of around three to four hours. From Copenhagen, take a train to Hamburg, then continue to Lübeck and onward by regional transport. This journey typically takes seven to nine hours depending on connections. By plane: The most convenient airport is Hamburg Airport, which is about 80 km from Kalkhorst. From there, you can rent a car for a direct drive of about 1 hour, or take a train via Hamburg Central Station to Lübeck and continue by bus or taxi.",
             "kids-title": "Kids",
             "kids-text": "Kids are totally welcome at our wedding celebration!",
+            "photo-text": "Hi everyone,\n\nI'm Paula, the best thing Babette and Felix have made so far!\nAs their wedding planning skills are quite...improvable, I want to give you a heads up that you are invited to their wedding on September 9, 2026 in Warnkenhagen (Germany)!\n\nMore info to come, but if you want to be sure to have an accommodation close by, we've collected a list of available apartments/hotels. So feel free to book already.\nAnd please fill out the RSVP form below to let us know if you'll be joining us on this special day. We also plan a BBQ night on the day before and breakfast the day after the wedding. We'd love to see you there!\n\nWe look forward to sharing this moment with you!\n\nPaula, Babette & Felix",
           },
           de: {
             title: "Babette & Felix",
@@ -606,6 +612,7 @@
             "kids-title": "Kinder",
             "kids-text":
               "Kinder sind bei unserer Hochzeitsfeier sehr willkommen!",
+            "photo-text": "Hallo zusammen,\n\nIch bin Paula, das beste, das Babette und Felix bisher gemacht haben!\nDa ihre Hochzeitsplanungsfähigkeiten eher...verbesserungsbedürftig sind, wollte ich euch einen Hinweis geben: Ihr seid zur Hochzeit von Babette und Felix am 9. September 2026 in Warnkenhagen (Deutschland) eingeladen!\n\nMehr Informationen folgen, aber wenn ihr sichergehen möchtet, eine Unterkunft in der Nähe zu haben, haben wir eine Liste mit verfügbaren Apartments/Hotels zusammengestellt. Also gerne schon buchen.\nUnd bitte füllt das RSVP-Formular unten aus, um uns zu sagen, ob ihr dabei seid. Wir planen auch einen BBQ-Abend am Tag vor der Hochzeit und Frühstück am Tag danach. Wir würden euch gerne dort sehen!\n\nWir freuen uns, diesen Moment mit euch zu teilen!\n\nPaula, Babette & Felix",
           },
           dk: {
             title: "Babette & Felix",
@@ -644,6 +651,7 @@
               "Hvis du har brug for hjælp til rejseplanering eller gerne vil rejse sammen med andre, så giv os besked. Vi hjælper gerne.",
             "kids-title": "Børn",
             "kids-text": "Børn er meget velkomne til vores bryllupsfest!",
+            "photo-text": "Hej alle sammen,\n\nJeg er Paula, det bedste, som Babette og Felix hidtil har lavet!\nDa deres brylluppplanlegnningsevner er ganske forbedringsbehov, ville jeg give jer en heads-up om, at i er inviteret til deres bryllup den 9. september 2026 i Warnkenhagen (Tyskland)!\n\nMere information kommer snart, men hvis i vil være sikre på at have indkvartering i nærheden, har vi samlet en liste over tilgængelige lejligheder/hoteller. Så gerne book allerede.\nOg udfyld venligst RSVP-formularen nedenfor for at lade os vide, om i deltager på denne specielle dag. Vi planlægger også en BBQ-aften dagen før og morgenmad dagen efter brylluppet. Vi ville gerne se jer der!\n\nVi glæder os til at dele dette øjeblik med jer!\n\nPaula, Babette & Felix",
           },
         };
 
@@ -657,7 +665,12 @@
           document.querySelectorAll('[data-i18n]').forEach((element) => {
             const key = element.getAttribute('data-i18n');
             if (t[key]) {
-              element.textContent = t[key];
+              // For photo-text, replace line breaks with <br> for proper display
+              if (key === 'photo-text') {
+                element.innerHTML = t[key].replace(/\n/g, '<br>');
+              } else {
+                element.textContent = t[key];
+              }
             }
           });
         }
@@ -848,20 +861,6 @@
             }
           });
         }
-      </script>
-      <!-- Load markdown intro -->
-      <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-      <script>
-        // Load markdown intro content
-        fetch("invitation-intro.md")
-          .then((response) => response.text())
-          .then((markdown) => {
-            const introDiv = document.getElementById("intro-content");
-            introDiv.innerHTML = marked.parse(markdown);
-          })
-          .catch((error) =>
-            console.log("Could not load intro markdown:", error),
-          );
       </script>
     </body>
   </head>
