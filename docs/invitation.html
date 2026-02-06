@@ -233,563 +233,617 @@
   </head>
   <body>
     <div class="container">
-        <!-- Language Selector -->
-        <div class="language-selector">
-          <button class="language-btn" id="language-toggle">
-            <svg class="globe-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-              <!-- Simple text lines icon -->
-              <rect x="15" y="20" width="70" height="8" rx="2" fill="#000000"/>
-              <rect x="15" y="38" width="70" height="8" rx="2" fill="#000000"/>
-              <rect x="15" y="56" width="70" height="8" rx="2" fill="#000000"/>
-              <rect x="15" y="74" width="50" height="8" rx="2" fill="#000000"/>
-            </svg>
-          </button>
-          <div class="language-menu" id="language-menu">
-            <div class="language-option active" data-lang="en">English</div>
-            <div class="language-option" data-lang="de">Deutsch</div>
-            <div class="language-option" data-lang="dk">Dansk</div>
-          </div>
-        </div>
-
-        <!-- Header -->
-        <h1 data-i18n="title">Babette & Felix</h1>
-        <p class="subtitle" data-i18n="subtitle-main">
-          We would love to celebrate with you
-        </p>
-
-        <!-- Photo at top -->
-        <div class="photo-section">
-          <img
-            id="invitation-photo"
-            src="data/pictures/invitation-photo.jpg"
-            alt="Wedding Photo"
-          />
-        </div>
-
-        <!-- Text placeholder -->
-        <div class="info-section" style="margin-top: 30px; margin-bottom: 30px;">
-          <p data-i18n="photo-text" style="font-size: 1em; font-weight: 300; text-align: center; line-height: 1.8;"></p>
-        </div>
-
-        <!-- Markdown intro content -->
-        <div id="intro-content" class="intro-section"></div>
-
-        <!-- Venue Picture -->
-        <div class="photo-section" style="margin-bottom: 20px;">
-          <img src="data/pictures/venue-photo.png" style="width: 100%; max-width: 400px; height: auto; border-radius: 8px; display: block; margin-left: auto; margin-right: auto;" alt="Venue">
-        </div>
-
-        <!-- Event Details Section -->
-        <div class="info-section">
-          <p
-            style="
-              font-size: 1.1em;
-              font-weight: 200;
-              text-align: center;
-              margin-bottom: 10px;
-              margin-top: 20px;
-            "
+      <!-- Language Selector -->
+      <div class="language-selector">
+        <button class="language-btn" id="language-toggle">
+          <svg
+            class="globe-icon"
+            viewBox="0 0 100 100"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <span id="event-date">19th of September 2026</span> |
-            <span id="event-venue"
-              >Hohenschönberger Weg 3, 23948 Kalkhorst, Germany</span
-            >
-          </p>
-        </div>
-
-        <!-- ========== ACCOMMODATIONS SECTION ========== -->
-        <div class="info-section">
-          <h2 data-i18n="accommodations-title">Accommodations</h2>
-          <p data-i18n="accommodations-text">
-            We've collected nearby accommodations for our guests. Click on the
-            map below to explore the different options available. Each location
-            on the map shows the accommodation name, website, and distance to
-            our venue (Alte Schule). Important: You can also camp at the venue,
-            just let us know in the RSVP form if you plan to do so.
-          </p>
-          <div class="map-container">
-            <iframe src="data/maps/guest_locations_map.html"></iframe>
-          </div>
-        </div>
-
-        <!-- ========== RSVP FORM SECTION ========== -->
-        <div class="rsvp-section">
-          <h2 data-i18n="rsvp-title">RSVP</h2>
-
-          <form id="rsvp-form">
-            <!-- Guest Name -->
-            <label for="guestName" data-i18n="label-guestName">Guest Name</label>
-            <input
-              id="guestName"
-              name="entry.108083471"
-              type="text"
-              placeholder="Enter your name"
-              required
-            />
-
-            <!-- Attending Status -->
-            <label for="attending" data-i18n="label-attending">Will you attend?</label>
-            <select id="attending" name="entry.1418582323" required>
-              <option value="" disabled selected id="opt-select">
-                -- Please choose --
-              </option>
-              <option value="Yes" id="opt-yes">Yes</option>
-              <option value="No" id="opt-no">No</option>
-            </select>
-
-            <!-- Plus One Name -->
-            <label for="plusOne" data-i18n="label-plusOne"
-              >Plus One Name (optional)</label
-            >
-            <input
-              id="plusOne"
-              name="entry.2029894852"
-              type="text"
-              placeholder="Enter guest name"
-            />
-
-            <!-- Number of Children -->
-            <label for="children" data-i18n="label-children">Number of Children</label>
-            <select id="children" name="entry.49562044">
-              <option value="" disabled selected id="opt-select-children">
-                -- Please choose --
-              </option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
-
-            <!-- BBQ Friday Question -->
-            <label for="bbqFriday" data-i18n="label-bbqFriday"
-              >Are you coming to the BBQ on Friday the 18th?</label
-            >
-            <select id="bbqFriday" name="entry.1079352192">
-              <option value="" disabled selected id="opt-select-bbq">
-                -- Please choose --
-              </option>
-              <option value="Yes" id="opt-yes-bbq">Yes</option>
-              <option value="No" id="opt-no-bbq">No</option>
-            </select>
-
-            <!-- Breakfast Sunday Question -->
-            <label for="breakfastSunday" data-i18n="label-breakfastSunday"
-              >Are you coming for breakfast Sunday morning?</label
-            >
-            <select id="breakfastSunday" name="entry.1586547343">
-              <option value="" disabled selected id="opt-select-breakfast">
-                -- Please choose --
-              </option>
-              <option value="Yes" id="opt-yes-breakfast">Yes</option>
-              <option value="No" id="opt-no-breakfast">No</option>
-            </select>
-
-            <!-- Camping Question -->
-            <label for="camping" data-i18n="label-camping"
-              >Are you planning to camp at the venue?</label
-            >
-            <select id="camping" name="entry.1708390104">
-              <option value="" disabled selected id="opt-select-camping">
-                -- Please choose --
-              </option>
-              <option value="Yes" id="opt-yes-camping">Yes</option>
-              <option value="No" id="opt-no-camping">No</option>
-            </select>
-
-            <!-- Submit Button -->
-            <button type="submit" data-i18n="submit-btn">Send RSVP</button>
-          </form>
-
-          <!-- Success Message (hidden by default) -->
-          <p data-i18n="thanks" class="hidden">Thank you! 💕</p>
-        </div>
-
-        <!-- ========== INFO SECTIONS ========== -->
-
-        <!-- Getting There Section -->
-        <div class="info-section">
-          <h2 data-i18n="getting-there-title">Getting There</h2>
-          <p data-i18n="getting-there-text" style="margin-bottom: 25px; font-style: italic; white-space: pre-wrap;"></p>
-        </div>
-
-        <!-- Gifts Section -->
-        <div class="info-section">
-          <h2 data-i18n="gifts-title">Gifts</h2>
-          
-          <!-- Gift Picture -->
-          <img src="data/pictures/kolo water color.png" style="width: 100%; max-width: 500px; height: auto; border-radius: 8px; margin-bottom: 25px; display: block; margin-left: auto; margin-right: auto;">
-
-          <!-- Gift Message -->
-          <p data-i18n="gifts-text" style="white-space: pre-wrap;">
-            Your presence and celebration with us means everything. We're truly happy if you can simply come and celebrate this special day with us. However, if you'd like to contribute a gift, we're also delighted to receive anything that could be useful for our little garden house. We appreciate your thoughtfulness either way!
-          </p>
-        </div>
-
-        <!-- Dress Code Section -->
-        <div class="info-section">
-          <h2 data-i18n="dress-code-title">Dress Code</h2>
-          <p data-i18n="dress-code-text">
-            We're planning an outdoor celebration, so please dress comfortably
-            for the weather. We suggest elegant casual attire. Since we'll be
-            celebrating by the sea, feel free to bring a swimsuit, also because
-            we might have a sauna for those who want to use it. As there is some
-            natural terrain at the venue, we recommend you bring a pair of
-            comfortable shoes.
-          </p>
-        </div>
-
-        <!-- Kids Section -->
-        <div class="info-section">
-          <h2 data-i18n="kids-title">Kids</h2>
-          <p data-i18n="kids-text">
-            Kids are totally welcome at our wedding celebration!
-          </p>
+            <!-- Simple text lines icon -->
+            <rect x="15" y="20" width="70" height="8" rx="2" fill="#000000" />
+            <rect x="15" y="38" width="70" height="8" rx="2" fill="#000000" />
+            <rect x="15" y="56" width="70" height="8" rx="2" fill="#000000" />
+            <rect x="15" y="74" width="50" height="8" rx="2" fill="#000000" />
+          </svg>
+        </button>
+        <div class="language-menu" id="language-menu">
+          <div class="language-option active" data-lang="en">English</div>
+          <div class="language-option" data-lang="de">Deutsch</div>
+          <div class="language-option" data-lang="dk">Dansk</div>
         </div>
       </div>
 
-      <!-- Hidden form for Google Forms submission -->
-      <form
-        id="rsvpForm"
-        action="https://docs.google.com/forms/d/1eV14AgFXLGabdGzHrBHquWLiP-aAkAuaweCw5LsJkDE/formResponse"
-        method="POST"
-        style="display: none"
-      ></form>
+      <!-- Header -->
+      <h1 data-i18n="title">Babette & Felix</h1>
+      <p class="subtitle" data-i18n="subtitle-main">
+        We would love to celebrate with you
+      </p>
 
-      <!-- TRANSLATIONS & LOCALIZATION -->
-      <script>
-        const translations = {
-          en: {
-            title: "Babette & Felix",
-            "subtitle-main": "We would love to celebrate with you",
-            "rsvp-title": "RSVP",
-            "label-guestName": "Guest Name",
-            "label-attending": "Will you attend?",
-            "opt-yes": "Yes",
-            "opt-no": "No",
-            "opt-select": "Please choose...",
-            "opt-select-children": "Please choose...",
-            "label-plusOne": "Plus One Name (optional)",
-            "label-children": "Number of Children (optional)",
-            "label-bbqFriday": "Are you coming to the BBQ on Friday the 18th?",
-            "opt-select-bbq": "Please choose...",
-            "opt-yes-bbq": "Yes",
-            "opt-no-bbq": "No",
-            "label-breakfastSunday":
-              "Are you coming for breakfast Sunday morning?",
-            "opt-select-breakfast": "Please choose...",
-            "opt-yes-breakfast": "Yes",
-            "opt-no-breakfast": "No",
-            "label-camping": "Are you planning to camp at the venue?",
-            "opt-select-camping": "Please choose...",
-            "opt-yes-camping": "Yes",
-            "opt-no-camping": "No",
-            "submit-btn": "Send RSVP",
-            thanks: "Thank you! 💕",
-            "accommodations-title": "Accommodations",
-            "accommodations-text":
-              "We've collected nearby accommodations for our guests. Click on the map below to explore the different options available. Each location on the map shows the accommodation name, website, and distance to our venue (Alte Schule).",
-            "dress-code-title": "Dress Code",
-            "dress-code-text":
-              "We're planning an outdoor celebration, so please dress comfortably for the weather. We suggest elegant casual attire. Since we'll be celebrating by the sea, feel free to bring a swimsuit, also because we might have a sauna for those who want to use it.",
-            "getting-there-title": "Getting There",
-            "getting-there-text":
-              "By car: Coming from Berlin, the drive takes about three hours and covers roughly 225 km. From Hamburg, the drive is much shorter at about 1 hour and 10 minutes. From Copenhagen, driving takes around seven hours depending on traffic and border crossings.\n\nBy train: Kalkhorst does not have a long-distance train station, so travel involves a combination of train and local transport. From Berlin, trains run to Lübeck or Wismar via major hubs such as Hamburg. Total travel time is usually five hours or more. From Hamburg, regional trains run frequently to Lübeck, taking about 45 minutes. From Lübeck, continue by regional bus or a short regional train connection toward Schönberg or Grevesmühlen, then on to Kalkhorst. Expect a total travel time of around three to four hours. From Copenhagen, take a train to Hamburg, then continue to Lübeck and onward by regional transport. This journey typically takes seven to nine hours depending on connections.\n\nBy plane: The most convenient airport is Hamburg Airport, which is about 80 km from Kalkhorst. From there, you can rent a car for a direct drive of about 1 hour, or take a train via Hamburg Central Station to Lübeck and continue by bus or taxi.",
-            "gifts-title": "Gifts",
-            "gifts-text": "Your presence and celebration with us means everything. We're truly happy if you can simply come and celebrate this special day with us. However, if you'd like to contribute a gift, we're also delighted to receive anything that could be useful for our little garden house. We appreciate your thoughtfulness either way!",
-            "kids-title": "Kids",
-            "kids-text": "Kids are totally welcome at our wedding celebration!",
-            "photo-text": "Hi everyone,\n\nI'm Paula, the best thing Babette and Felix have made so far!\nAs their wedding planning skills are quite...improvable, I want to give you a heads up that you are invited to their wedding on September 9, 2026 in Warnkenhagen (Germany)!\n\nMore info to come, but if you want to be sure to have an accommodation close by, we've collected a list of available apartments/hotels. So feel free to book already.\nAnd please fill out the RSVP form below to let us know if you'll be joining us on this special day. We also plan a BBQ night on the day before and breakfast the day after the wedding. We'd love to see you there!\n\nWe look forward to sharing this moment with you!\n\nPaula, Babette & Felix",
-          },
-          de: {
-            title: "Babette & Felix",
-            "subtitle-main": "Wir würden uns freuen, mit dir zu feiern",
-            "rsvp-title": "RSVP",
-            "label-guestName": "Dein Name",
-            "label-attending": "Kommst du?",
-            "opt-yes": "Ja",
-            "opt-no": "Nein",
-            "opt-select": "Bitte wählen...",
-            "opt-select-children": "Bitte wählen...",
-            "label-plusOne": "Hast du ein +1? (optional)",
-            "label-children": "Anzahl der Kinder (optional)",
-            "label-bbqFriday": "Kommst du zum BBQ am Freitag, den 18.?",
-            "opt-select-bbq": "Bitte wählen...",
-            "opt-yes-bbq": "Ja",
-            "opt-no-bbq": "Nein",
-            "label-breakfastSunday": "Kommst du zum Frühstück Sonntagmorgen?",
-            "opt-select-breakfast": "Bitte wählen...",
-            "opt-yes-breakfast": "Ja",
-            "opt-no-breakfast": "Nein",
-            "label-camping": "Wirst du auf dem Gelände campen?",
-            "opt-select-camping": "Bitte wählen...",
-            "opt-yes-camping": "Ja",
-            "opt-no-camping": "Nein",
-            "submit-btn": "RSVP absenden",
-            thanks: "Danke! 💕",
-            "accommodations-title": "Unterkunftsoptionen",
-            "accommodations-text":
-              "Wir haben eine Auswahl an Unterkünften für unsere Gäste zusammengestellt. Klicken Sie auf die Karte unten, um die verschiedenen verfügbaren Optionen zu erkunden. Jeder Standort auf der Karte zeigt den Namen der Unterkunft, die Website und die Entfernung zu unserem Veranstaltungsort (Alte Schule).",
-            "dress-code-title": "Kleiderordnung",
-            "dress-code-text":
-              "Wir planen eine Feier im Freien, also zieht euch bitte wettergerecht und bequem an. Wir empfehlen einen elegant-lässigen Stil. Da wir am Meer feiern, bringt gerne Badesachen mit – auch, weil es vielleicht eine Sauna für alle gibt, die Lust haben. Da es vor Ort etwas natürliches Gelände gibt, empfehlen wir außerdem bequeme Schuhe.",
-            "getting-there-title": "Anreise",
-            "getting-there-text":
-              "Mit dem Auto: Von Berlin aus dauert die Fahrt etwa drei Stunden und führt über eine Strecke von rund 225 km. Von Hamburg ist die Fahrt viel kürzer, etwa 1 Stunde und 10 Minuten. Von Kopenhagen dauert die Fahrt je nach Verkehr und Grenzübergängen etwa sieben Stunden.\n\nMit dem Zug: Kalkhorst hat keinen Fernbahnhof, daher kombiniert man Zug- und Nahverkehr. Von Berlin fahren Züge nach Lübeck oder Wismar über Drehkreuze wie Hamburg. Die Reisedauer beträgt normalerweise fünf Stunden oder mehr. Von Hamburg fahren Regionalbahnen häufig nach Lübeck und brauchen etwa 45 Minuten. Von Lübeck weiterer regionaler Bus oder eine kurze Zugverbindung nach Schönberg oder Grevesmühlen, dann nach Kalkhorst. Erwarten Sie eine Gesamtreisedauer von etwa drei bis vier Stunden. Von Kopenhagen: Zug nach Hamburg, dann weiter nach Lübeck und per Nahverkehr. Diese Reise dauert typischerweise sieben bis neun Stunden je nach Verbindungen.\n\nMit dem Flugzeug: Der praktischste Flughafen ist Hamburg Airport, etwa 80 km von Kalkhorst entfernt. Von dort können Sie ein Auto mieten für eine direkte Fahrt von etwa 1 Stunde oder einen Zug vom Hamburger Hauptbahnhof nach Lübeck nehmen und dann weiter per Bus oder Taxi fahren.",
-            "gifts-title": "Geschenke",
-            "gifts-text": "Deine Anwesenheit und das Feiern mit uns bedeuten uns alles. Wir sind sehr glücklich, wenn du einfach mit uns diesen besonderen Tag feierst. Wenn du aber gerne ein Geschenk machen möchtest, freuen wir uns auch über alles, was für unser kleines Gartenhaus nützlich ist. Wir schätzen dein Geschenk in jedem Fall!",
-            "kids-title": "Kinder",
-            "kids-text":
-              "Kinder sind bei unserer Hochzeitsfeier sehr willkommen!",
-            "photo-text": "Hallo zusammen,\n\nIch bin Paula, das beste, das Babette und Felix bisher gemacht haben!\nDa ihre Hochzeitsplanungsfähigkeiten eher...verbesserungsbedürftig sind, wollte ich euch einen Hinweis geben: Ihr seid zur Hochzeit von Babette und Felix am 9. September 2026 in Warnkenhagen (Deutschland) eingeladen!\n\nMehr Informationen folgen, aber wenn ihr sichergehen möchtet, eine Unterkunft in der Nähe zu haben, haben wir eine Liste mit verfügbaren Apartments/Hotels zusammengestellt. Also gerne schon buchen.\nUnd bitte füllt das RSVP-Formular unten aus, um uns zu sagen, ob ihr dabei seid. Wir planen auch einen BBQ-Abend am Tag vor der Hochzeit und Frühstück am Tag danach. Wir würden euch gerne dort sehen!\n\nWir freuen uns, diesen Moment mit euch zu teilen!\n\nPaula, Babette & Felix",
-          },
-          dk: {
-            title: "Babette & Felix",
-            "subtitle-main": "Vi ville gerne fejre med dig",
-            "rsvp-title": "RSVP",
-            "label-guestName": "Dit navn",
-            "label-attending": "Kommer du?",
-            "opt-yes": "Ja",
-            "opt-no": "Nej",
-            "opt-select": "Vælg venligst...",
-            "opt-select-children": "Vælg venligst...",
-            "label-plusOne": "Navn på din ledsager (valgfrit)",
-            "label-children": "Antal børn (valgfrit)",
-            "label-bbqFriday": "Kommer du til BBQ'en på fredag den 18.?",
-            "opt-select-bbq": "Vælg venligst...",
-            "opt-yes-bbq": "Ja",
-            "opt-no-bbq": "Nej",
-            "label-breakfastSunday": "Kommer du til morgenmad søndag morgen?",
-            "opt-select-breakfast": "Vælg venligst...",
-            "opt-yes-breakfast": "Ja",
-            "opt-no-breakfast": "Nej",
-            "label-camping": "Planlægger du at campe på stedet?",
-            "opt-select-camping": "Vælg venligst...",
-            "opt-yes-camping": "Ja",
-            "opt-no-camping": "Nej",
-            "submit-btn": "Send RSVP",
-            thanks: "Tak! 💕",
-            "accommodations-title": "Indkvartering",
-            "accommodations-text":
-              "Vi har samlet et udvalg af indkvarteringssteder for vores gæster. Klik på kortet nedenfor for at udforske de forskellige muligheder. Hvert sted på kortet viser navn på indkvarteringen, hjemmeside og afstand til vores lokation (Alte Schule).",
-            "dress-code-title": "Dresscode",
-            "dress-code-text":
-              "Vi planlægger en udendørs fejring, så klæd jer gerne komfortabelt efter vejret. Vi foreslår elegant casual. Da vi skal fejre det ved havet, er I meget velkomne til at tage badetøj med – også fordi der måske er en sauna for dem, der har lyst. Da der er lidt naturterræn på stedet, anbefaler vi også et par gode, komfortable sko.",
-            "getting-there-title": "Sådan Kommer Du Der",
-            "getting-there-text":
-              "Med bil: Fra Berlin tager køreturen cirka tre timer og dækker omkring 225 km. Fra Hamburg er køreturen meget kortere, omkring 1 time og 10 minutter. Fra København tager køreturen omkring syv timer alt efter trafik og grænseovergange.\n\nMed tog: Kalkhorst har ingen fjernbanestationer, så rejsen består af en kombination af tog og lokal transport. Fra Berlin kører tog til Lübeck eller Wismar via større byer som Hamburg. Samlet rejsetid er normalt fem timer eller mere. Fra Hamburg kører regionaltog hyppigt til Lübeck og bruger omkring 45 minutter. Fra Lübeck fortsætter du med regional bus, taxa eller en kort regional togforbindelse mod Schönberg eller Grevesmühlen, derefter til Kalkhorst. Forvent en samlet rejsetid på omkring tre til fire timer. Fra København: Tag tog til Hamburg, derefter videre til Lübeck og videre med lokal transport. Denne rejse tager typisk syv til ni timer alt efter forbindelser.\n\nMed fly: Den mest bekvemme lufthavn er Hamburg Airport, omkring 80 km fra Kalkhorst. Derfra kan du leje en bil for en direkte køretur på omkring 1 time, eller tage tog fra Hamburgs hovedbanegård til Lübeck og fortsætte med bus eller taxa.",
-            "gifts-title": "Gaver",
-            "gifts-text": "Din tilstedeværelse og at fejre sammen med os betyder alt for os. Vi er meget glade, hvis du bare kan komme og fejre denne specielle dag med os. Hvis du gerne vil give en gave, er vi også meget glad for alt, der kunne være brugbart til vores lille haver hus. Vi værdsætter din vendelighed på enhver måde!",
-            "kids-title": "Børn",
-            "kids-text": "Børn er meget velkomne til vores bryllupsfest!",
-            "photo-text": "Hej alle sammen,\n\nJeg er Paula, det bedste, som Babette og Felix hidtil har lavet!\nDa deres brylluppplanlegnningsevner er ganske forbedringsbehov, ville jeg give jer en heads-up om, at i er inviteret til deres bryllup den 9. september 2026 i Warnkenhagen (Tyskland)!\n\nMere information kommer snart, men hvis i vil være sikre på at have indkvartering i nærheden, har vi samlet en liste over tilgængelige lejligheder/hoteller. Så gerne book allerede.\nOg udfyld venligst RSVP-formularen nedenfor for at lade os vide, om i deltager på denne specielle dag. Vi planlægger også en BBQ-aften dagen før og morgenmad dagen efter brylluppet. Vi ville gerne se jer der!\n\nVi glæder os til at dele dette øjeblik med jer!\n\nPaula, Babette & Felix",
-          },
-        };
+      <!-- Photo at top -->
+      <div class="photo-section">
+        <img
+          id="invitation-photo"
+          src="data/pictures/invitation-photo.jpg"
+          alt="Wedding Photo"
+        />
+      </div>
 
-        /**
-         * Apply language translations to the page
-         */
-        function applyLanguage(lang) {
-          const t = translations[lang] || translations.en;
+      <!-- Text placeholder -->
+      <div class="info-section" style="margin-top: 30px; margin-bottom: 30px">
+        <p
+          data-i18n="photo-text"
+          style="
+            font-size: 1em;
+            font-weight: 300;
+            text-align: center;
+            line-height: 1.8;
+          "
+        ></p>
+      </div>
 
-          // Update all elements with data-i18n attribute
-          document.querySelectorAll('[data-i18n]').forEach((element) => {
-            const key = element.getAttribute('data-i18n');
-            if (t[key]) {
-              // For photo-text and getting-there-text, replace line breaks with <br> for proper display
-              if (key === 'photo-text' || key === 'getting-there-text') {
-                element.innerHTML = t[key].replace(/\n/g, '<br>');
-              } else {
-                element.textContent = t[key];
-              }
+      <!-- Markdown intro content -->
+      <div id="intro-content" class="intro-section"></div>
+
+      <!-- Venue Picture -->
+      <div class="photo-section" style="margin-bottom: 20px">
+        <img
+          src="data/pictures/venue-photo.png"
+          style="
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+          "
+          alt="Venue"
+        />
+      </div>
+
+      <!-- Event Details Section -->
+      <div class="info-section">
+        <p
+          style="
+            font-size: 1.1em;
+            font-weight: 200;
+            text-align: center;
+            margin-bottom: 10px;
+            margin-top: 20px;
+          "
+        >
+          <span id="event-date">19th of September 2026</span> |
+          <span id="event-venue"
+            >Hohenschönberger Weg 3, 23948 Kalkhorst, Germany</span
+          >
+        </p>
+      </div>
+
+      <!-- ========== ACCOMMODATIONS SECTION ========== -->
+      <div class="info-section">
+        <h2 data-i18n="accommodations-title">Accommodations</h2>
+        <p data-i18n="accommodations-text">
+          We've collected nearby accommodations for our guests. Click on the map
+          below to explore the different options available. Each location on the
+          map shows the accommodation name, website, and distance to our venue
+          (Alte Schule). Important: You can also camp at the venue, just let us
+          know in the RSVP form if you plan to do so.
+        </p>
+        <div class="map-container">
+          <iframe src="data/maps/guest_locations_map.html"></iframe>
+        </div>
+      </div>
+
+      <!-- ========== RSVP FORM SECTION ========== -->
+      <div class="rsvp-section">
+        <h2 data-i18n="rsvp-title">RSVP</h2>
+
+        <form id="rsvp-form">
+          <!-- Guest Name -->
+          <label for="guestName" data-i18n="label-guestName">Guest Name</label>
+          <input
+            id="guestName"
+            name="entry.108083471"
+            type="text"
+            placeholder="Enter your name"
+            required
+          />
+
+          <!-- Attending Status -->
+          <label for="attending" data-i18n="label-attending"
+            >Will you attend?</label
+          >
+          <select id="attending" name="entry.1418582323" required>
+            <option value="" disabled selected id="opt-select">
+              -- Please choose --
+            </option>
+            <option value="Yes" id="opt-yes">Yes</option>
+            <option value="No" id="opt-no">No</option>
+          </select>
+
+          <!-- Plus One Name -->
+          <label for="plusOne" data-i18n="label-plusOne"
+            >Plus One Name (optional)</label
+          >
+          <input
+            id="plusOne"
+            name="entry.2029894852"
+            type="text"
+            placeholder="Enter guest name"
+          />
+
+          <!-- Number of Children -->
+          <label for="children" data-i18n="label-children"
+            >Number of Children</label
+          >
+          <select id="children" name="entry.49562044">
+            <option value="" disabled selected id="opt-select-children">
+              -- Please choose --
+            </option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+
+          <!-- BBQ Friday Question -->
+          <label for="bbqFriday" data-i18n="label-bbqFriday"
+            >Are you coming to the BBQ on Friday the 18th?</label
+          >
+          <select id="bbqFriday" name="entry.1079352192">
+            <option value="" disabled selected id="opt-select-bbq">
+              -- Please choose --
+            </option>
+            <option value="Yes" id="opt-yes-bbq">Yes</option>
+            <option value="No" id="opt-no-bbq">No</option>
+          </select>
+
+          <!-- Breakfast Sunday Question -->
+          <label for="breakfastSunday" data-i18n="label-breakfastSunday"
+            >Are you coming for breakfast Sunday morning?</label
+          >
+          <select id="breakfastSunday" name="entry.1586547343">
+            <option value="" disabled selected id="opt-select-breakfast">
+              -- Please choose --
+            </option>
+            <option value="Yes" id="opt-yes-breakfast">Yes</option>
+            <option value="No" id="opt-no-breakfast">No</option>
+          </select>
+
+          <!-- Camping Question -->
+          <label for="camping" data-i18n="label-camping"
+            >Are you planning to camp at the venue?</label
+          >
+          <select id="camping" name="entry.1708390104">
+            <option value="" disabled selected id="opt-select-camping">
+              -- Please choose --
+            </option>
+            <option value="Yes" id="opt-yes-camping">Yes</option>
+            <option value="No" id="opt-no-camping">No</option>
+          </select>
+
+          <!-- Submit Button -->
+          <button type="submit" data-i18n="submit-btn">Send RSVP</button>
+        </form>
+
+        <!-- Success Message (hidden by default) -->
+        <p data-i18n="thanks" class="hidden">Thank you! 💕</p>
+      </div>
+
+      <!-- ========== INFO SECTIONS ========== -->
+
+      <!-- Getting There Section -->
+      <div class="info-section">
+        <h2 data-i18n="getting-there-title">Getting There</h2>
+        <p
+          data-i18n="getting-there-text"
+          style="margin-bottom: 25px; font-style: italic; white-space: pre-wrap"
+        ></p>
+      </div>
+
+      <!-- Gifts Section -->
+      <div class="info-section">
+        <h2 data-i18n="gifts-title">Gifts</h2>
+
+        <!-- Gift Picture -->
+        <img
+          src="data/pictures/kolo water color.png"
+          style="
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+          "
+        />
+
+        <!-- Gift Message -->
+        <p data-i18n="gifts-text" style="white-space: pre-wrap">
+          Your presence and celebration with us means everything. We're truly
+          happy if you can simply come and celebrate this special day with us.
+          However, if you'd like to contribute a gift, we're also delighted to
+          receive anything that could be useful for our little garden house. We
+          appreciate your thoughtfulness either way!
+        </p>
+      </div>
+
+      <!-- Dress Code Section -->
+      <div class="info-section">
+        <h2 data-i18n="dress-code-title">Dress Code</h2>
+        <p data-i18n="dress-code-text">
+          We're planning an outdoor celebration, so please dress comfortably for
+          the weather. We suggest elegant casual attire. Since we'll be
+          celebrating by the sea, feel free to bring a swimsuit, also because we
+          might have a sauna for those who want to use it. As there is some
+          natural terrain at the venue, we recommend you bring a pair of
+          comfortable shoes.
+        </p>
+      </div>
+
+      <!-- Kids Section -->
+      <div class="info-section">
+        <h2 data-i18n="kids-title">Kids</h2>
+        <p data-i18n="kids-text">
+          Kids are totally welcome at our wedding celebration!
+        </p>
+      </div>
+    </div>
+
+    <!-- Hidden form for Google Forms submission -->
+    <form
+      id="rsvpForm"
+      action="https://docs.google.com/forms/d/1eV14AgFXLGabdGzHrBHquWLiP-aAkAuaweCw5LsJkDE/formResponse"
+      method="POST"
+      style="display: none"
+    ></form>
+
+    <!-- TRANSLATIONS & LOCALIZATION -->
+    <script>
+      const translations = {
+        en: {
+          title: "Babette & Felix",
+          "subtitle-main": "We would love to celebrate with you",
+          "rsvp-title": "RSVP",
+          "label-guestName": "Guest Name",
+          "label-attending": "Will you attend?",
+          "opt-yes": "Yes",
+          "opt-no": "No",
+          "opt-select": "Please choose...",
+          "opt-select-children": "Please choose...",
+          "label-plusOne": "Plus One Name (optional)",
+          "label-children": "Number of Children (optional)",
+          "label-bbqFriday": "Are you coming to the BBQ on Friday the 18th?",
+          "opt-select-bbq": "Please choose...",
+          "opt-yes-bbq": "Yes",
+          "opt-no-bbq": "No",
+          "label-breakfastSunday":
+            "Are you coming for breakfast Sunday morning?",
+          "opt-select-breakfast": "Please choose...",
+          "opt-yes-breakfast": "Yes",
+          "opt-no-breakfast": "No",
+          "label-camping": "Are you planning to camp at the venue?",
+          "opt-select-camping": "Please choose...",
+          "opt-yes-camping": "Yes",
+          "opt-no-camping": "No",
+          "submit-btn": "Send RSVP",
+          thanks: "Thank you! 💕",
+          "accommodations-title": "Accommodations",
+          "accommodations-text":
+            "We've collected nearby accommodations for our guests. Click on the map below to explore the different options available. Each location on the map shows the accommodation name, website, and distance to our venue (Alte Schule).",
+          "dress-code-title": "Dress Code",
+          "dress-code-text":
+            "We're planning an outdoor celebration, so please dress comfortably for the weather. We suggest elegant casual attire. Since we'll be celebrating by the sea, feel free to bring a swimsuit, also because we might have a sauna for those who want to use it.",
+          "getting-there-title": "Getting There",
+          "getting-there-text":
+            "By car: Coming from Berlin, the drive takes about three hours and covers roughly 225 km. From Hamburg, the drive is much shorter at about 1 hour and 10 minutes. From Copenhagen, driving takes around seven hours depending on traffic and border crossings.\n\nBy train: Kalkhorst does not have a long-distance train station, so travel involves a combination of train and local transport. From Berlin, trains run to Lübeck or Wismar via major hubs such as Hamburg. Total travel time is usually five hours or more. From Hamburg, regional trains run frequently to Lübeck, taking about 45 minutes. From Lübeck, continue by regional bus or a short regional train connection toward Schönberg or Grevesmühlen, then on to Kalkhorst. Expect a total travel time of around three to four hours. From Copenhagen, take a train to Hamburg, then continue to Lübeck and onward by regional transport. This journey typically takes seven to nine hours depending on connections.\n\nBy plane: The most convenient airport is Hamburg Airport, which is about 80 km from Kalkhorst. From there, you can rent a car for a direct drive of about 1 hour, or take a train via Hamburg Central Station to Lübeck and continue by bus or taxi.",
+          "gifts-title": "Gifts",
+          "gifts-text":
+            "Your presence and celebration with us means everything. We're truly happy if you can simply come and celebrate this special day with us. However, if you'd like to contribute a gift, we're also delighted to receive anything that could be useful for our little garden house. We appreciate your thoughtfulness either way!",
+          "kids-title": "Kids",
+          "kids-text": "Kids are totally welcome at our wedding celebration!",
+          "photo-text":
+            "Hi everyone,\n\nI'm Paula, the best thing Babette and Felix have made so far!\nAs their wedding planning skills are quite...improvable, I want to give you a heads up that you are invited to their wedding on September 9, 2026 in Warnkenhagen (Germany)!\n\nMore info to come, but if you want to be sure to have an accommodation close by, we've collected a list of available apartments/hotels. So feel free to book already.\nAnd please fill out the RSVP form below to let us know if you'll be joining us on this special day. We also plan a BBQ night on the day before and breakfast the day after the wedding. We'd love to see you there!\n\nWe look forward to sharing this moment with you!\n\nPaula, Babette & Felix",
+        },
+        de: {
+          title: "Babette & Felix",
+          "subtitle-main": "Wir würden uns freuen, mit dir zu feiern",
+          "rsvp-title": "RSVP",
+          "label-guestName": "Dein Name",
+          "label-attending": "Kommst du?",
+          "opt-yes": "Ja",
+          "opt-no": "Nein",
+          "opt-select": "Bitte wählen...",
+          "opt-select-children": "Bitte wählen...",
+          "label-plusOne": "Hast du ein +1? (optional)",
+          "label-children": "Anzahl der Kinder (optional)",
+          "label-bbqFriday": "Kommst du zum BBQ am Freitag, den 18.?",
+          "opt-select-bbq": "Bitte wählen...",
+          "opt-yes-bbq": "Ja",
+          "opt-no-bbq": "Nein",
+          "label-breakfastSunday": "Kommst du zum Frühstück Sonntagmorgen?",
+          "opt-select-breakfast": "Bitte wählen...",
+          "opt-yes-breakfast": "Ja",
+          "opt-no-breakfast": "Nein",
+          "label-camping": "Wirst du auf dem Gelände campen?",
+          "opt-select-camping": "Bitte wählen...",
+          "opt-yes-camping": "Ja",
+          "opt-no-camping": "Nein",
+          "submit-btn": "RSVP absenden",
+          thanks: "Danke! 💕",
+          "accommodations-title": "Unterkunftsoptionen",
+          "accommodations-text":
+            "Wir haben eine Auswahl an Unterkünften für unsere Gäste zusammengestellt. Klicken Sie auf die Karte unten, um die verschiedenen verfügbaren Optionen zu erkunden. Jeder Standort auf der Karte zeigt den Namen der Unterkunft, die Website und die Entfernung zu unserem Veranstaltungsort (Alte Schule).",
+          "dress-code-title": "Kleiderordnung",
+          "dress-code-text":
+            "Wir planen eine Feier im Freien, also zieht euch bitte wettergerecht und bequem an. Wir empfehlen einen elegant-lässigen Stil. Da wir am Meer feiern, bringt gerne Badesachen mit – auch, weil es vielleicht eine Sauna für alle gibt, die Lust haben. Da es vor Ort etwas natürliches Gelände gibt, empfehlen wir außerdem bequeme Schuhe.",
+          "getting-there-title": "Anreise",
+          "getting-there-text":
+            "Mit dem Auto: Von Berlin aus dauert die Fahrt etwa drei Stunden und führt über eine Strecke von rund 225 km. Von Hamburg ist die Fahrt viel kürzer, etwa 1 Stunde und 10 Minuten. Von Kopenhagen dauert die Fahrt je nach Verkehr und Grenzübergängen etwa sieben Stunden.\n\nMit dem Zug: Kalkhorst hat keinen Fernbahnhof, daher kombiniert man Zug- und Nahverkehr. Von Berlin fahren Züge nach Lübeck oder Wismar über Drehkreuze wie Hamburg. Die Reisedauer beträgt normalerweise fünf Stunden oder mehr. Von Hamburg fahren Regionalbahnen häufig nach Lübeck und brauchen etwa 45 Minuten. Von Lübeck weiterer regionaler Bus oder eine kurze Zugverbindung nach Schönberg oder Grevesmühlen, dann nach Kalkhorst. Erwarten Sie eine Gesamtreisedauer von etwa drei bis vier Stunden. Von Kopenhagen: Zug nach Hamburg, dann weiter nach Lübeck und per Nahverkehr. Diese Reise dauert typischerweise sieben bis neun Stunden je nach Verbindungen.\n\nMit dem Flugzeug: Der praktischste Flughafen ist Hamburg Airport, etwa 80 km von Kalkhorst entfernt. Von dort können Sie ein Auto mieten für eine direkte Fahrt von etwa 1 Stunde oder einen Zug vom Hamburger Hauptbahnhof nach Lübeck nehmen und dann weiter per Bus oder Taxi fahren.",
+          "gifts-title": "Geschenke",
+          "gifts-text":
+            "Deine Anwesenheit und das Feiern mit uns bedeuten uns alles. Wir sind sehr glücklich, wenn du einfach mit uns diesen besonderen Tag feierst. Wenn du aber gerne ein Geschenk machen möchtest, freuen wir uns auch über alles, was für unser kleines Gartenhaus nützlich ist. Wir schätzen dein Geschenk in jedem Fall!",
+          "kids-title": "Kinder",
+          "kids-text":
+            "Kinder sind bei unserer Hochzeitsfeier sehr willkommen!",
+          "photo-text":
+            "Hallo zusammen,\n\nIch bin Paula, das beste, das Babette und Felix bisher gemacht haben!\nDa ihre Hochzeitsplanungsfähigkeiten eher...verbesserungsbedürftig sind, wollte ich euch einen Hinweis geben: Ihr seid zur Hochzeit von Babette und Felix am 9. September 2026 in Warnkenhagen (Deutschland) eingeladen!\n\nMehr Informationen folgen, aber wenn ihr sichergehen möchtet, eine Unterkunft in der Nähe zu haben, haben wir eine Liste mit verfügbaren Apartments/Hotels zusammengestellt. Also gerne schon buchen.\nUnd bitte füllt das RSVP-Formular unten aus, um uns zu sagen, ob ihr dabei seid. Wir planen auch einen BBQ-Abend am Tag vor der Hochzeit und Frühstück am Tag danach. Wir würden euch gerne dort sehen!\n\nWir freuen uns, diesen Moment mit euch zu teilen!\n\nPaula, Babette & Felix",
+        },
+        dk: {
+          title: "Babette & Felix",
+          "subtitle-main": "Vi ville gerne fejre med dig",
+          "rsvp-title": "RSVP",
+          "label-guestName": "Dit navn",
+          "label-attending": "Kommer du?",
+          "opt-yes": "Ja",
+          "opt-no": "Nej",
+          "opt-select": "Vælg venligst...",
+          "opt-select-children": "Vælg venligst...",
+          "label-plusOne": "Navn på din ledsager (valgfrit)",
+          "label-children": "Antal børn (valgfrit)",
+          "label-bbqFriday": "Kommer du til BBQ'en på fredag den 18.?",
+          "opt-select-bbq": "Vælg venligst...",
+          "opt-yes-bbq": "Ja",
+          "opt-no-bbq": "Nej",
+          "label-breakfastSunday": "Kommer du til morgenmad søndag morgen?",
+          "opt-select-breakfast": "Vælg venligst...",
+          "opt-yes-breakfast": "Ja",
+          "opt-no-breakfast": "Nej",
+          "label-camping": "Planlægger du at campe på stedet?",
+          "opt-select-camping": "Vælg venligst...",
+          "opt-yes-camping": "Ja",
+          "opt-no-camping": "Nej",
+          "submit-btn": "Send RSVP",
+          thanks: "Tak! 💕",
+          "accommodations-title": "Indkvartering",
+          "accommodations-text":
+            "Vi har samlet et udvalg af indkvarteringssteder for vores gæster. Klik på kortet nedenfor for at udforske de forskellige muligheder. Hvert sted på kortet viser navn på indkvarteringen, hjemmeside og afstand til vores lokation (Alte Schule).",
+          "dress-code-title": "Dresscode",
+          "dress-code-text":
+            "Vi planlægger en udendørs fejring, så klæd jer gerne komfortabelt efter vejret. Vi foreslår elegant casual. Da vi skal fejre det ved havet, er I meget velkomne til at tage badetøj med – også fordi der måske er en sauna for dem, der har lyst. Da der er lidt naturterræn på stedet, anbefaler vi også et par gode, komfortable sko.",
+          "getting-there-title": "Sådan Kommer Du Der",
+          "getting-there-text":
+            "Med bil: Fra Berlin tager køreturen cirka tre timer og dækker omkring 225 km. Fra Hamburg er køreturen meget kortere, omkring 1 time og 10 minutter. Fra København tager køreturen omkring syv timer alt efter trafik og grænseovergange.\n\nMed tog: Kalkhorst har ingen fjernbanestationer, så rejsen består af en kombination af tog og lokal transport. Fra Berlin kører tog til Lübeck eller Wismar via større byer som Hamburg. Samlet rejsetid er normalt fem timer eller mere. Fra Hamburg kører regionaltog hyppigt til Lübeck og bruger omkring 45 minutter. Fra Lübeck fortsætter du med regional bus, taxa eller en kort regional togforbindelse mod Schönberg eller Grevesmühlen, derefter til Kalkhorst. Forvent en samlet rejsetid på omkring tre til fire timer. Fra København: Tag tog til Hamburg, derefter videre til Lübeck og videre med lokal transport. Denne rejse tager typisk syv til ni timer alt efter forbindelser.\n\nMed fly: Den mest bekvemme lufthavn er Hamburg Airport, omkring 80 km fra Kalkhorst. Derfra kan du leje en bil for en direkte køretur på omkring 1 time, eller tage tog fra Hamburgs hovedbanegård til Lübeck og fortsætte med bus eller taxa.",
+          "gifts-title": "Gaver",
+          "gifts-text":
+            "Din tilstedeværelse og at fejre sammen med os betyder alt for os. Vi er meget glade, hvis du bare kan komme og fejre denne specielle dag med os. Hvis du gerne vil give en gave, er vi også meget glad for alt, der kunne være brugbart til vores lille haver hus. Vi værdsætter din vendelighed på enhver måde!",
+          "kids-title": "Børn",
+          "kids-text": "Børn er meget velkomne til vores bryllupsfest!",
+          "photo-text":
+            "Hej alle sammen,\n\nJeg er Paula, det bedste, som Babette og Felix hidtil har lavet!\nDa deres brylluppplanlegnningsevner er ganske forbedringsbehov, ville jeg give jer en heads-up om, at i er inviteret til deres bryllup den 9. september 2026 i Warnkenhagen (Tyskland)!\n\nMere information kommer snart, men hvis i vil være sikre på at have indkvartering i nærheden, har vi samlet en liste over tilgængelige lejligheder/hoteller. Så gerne book allerede.\nOg udfyld venligst RSVP-formularen nedenfor for at lade os vide, om i deltager på denne specielle dag. Vi planlægger også en BBQ-aften dagen før og morgenmad dagen efter brylluppet. Vi ville gerne se jer der!\n\nVi glæder os til at dele dette øjeblik med jer!\n\nPaula, Babette & Felix",
+        },
+      };
+
+      /**
+       * Apply language translations to the page
+       */
+      function applyLanguage(lang) {
+        const t = translations[lang] || translations.en;
+
+        // Update all elements with data-i18n attribute
+        document.querySelectorAll("[data-i18n]").forEach((element) => {
+          const key = element.getAttribute("data-i18n");
+          if (t[key]) {
+            // For photo-text and getting-there-text, replace line breaks with <br> for proper display
+            if (key === "photo-text" || key === "getting-there-text") {
+              element.innerHTML = t[key].replace(/\n/g, "<br>");
+            } else {
+              element.textContent = t[key];
             }
-          });
+          }
+        });
+      }
+
+      /**
+       * Initialize language on page load
+       */
+      (function initializeLanguage() {
+        let lang =
+          localStorage.getItem("selectedLanguage") ||
+          localStorage.getItem("language");
+
+        // If not saved, detect from browser language
+        if (!lang) {
+          const userLang = (
+            navigator.language ||
+            navigator.userLanguage ||
+            "en"
+          ).toLowerCase();
+          lang = "en";
+          if (userLang.startsWith("de")) lang = "de";
+          else if (userLang.startsWith("da")) lang = "dk";
         }
 
-        /**
-         * Initialize language on page load
-         */
-        (function initializeLanguage() {
-          let lang =
-            localStorage.getItem("selectedLanguage") ||
-            localStorage.getItem("language");
+        applyLanguage(lang);
+        updateLanguageSelectorUI(lang);
+      })();
 
-          // If not saved, detect from browser language
-          if (!lang) {
-            const userLang = (
-              navigator.language ||
-              navigator.userLanguage ||
-              "en"
-            ).toLowerCase();
-            lang = "en";
-            if (userLang.startsWith("de")) lang = "de";
-            else if (userLang.startsWith("da")) lang = "dk";
+      /**
+       * Language selector functionality
+       */
+      function updateLanguageSelectorUI(lang) {
+        document.querySelectorAll(".language-option").forEach((option) => {
+          option.classList.remove("active");
+          if (option.dataset.lang === lang) {
+            option.classList.add("active");
           }
+        });
+      }
 
+      document
+        .getElementById("language-toggle")
+        .addEventListener("click", () => {
+          const menu = document.getElementById("language-menu");
+          menu.classList.toggle("active");
+        });
+
+      document.querySelectorAll(".language-option").forEach((option) => {
+        option.addEventListener("click", () => {
+          const lang = option.dataset.lang;
+          localStorage.setItem("selectedLanguage", lang);
           applyLanguage(lang);
           updateLanguageSelectorUI(lang);
-        })();
+          document.getElementById("language-menu").classList.remove("active");
+        });
+      });
 
-        /**
-         * Language selector functionality
-         */
-        function updateLanguageSelectorUI(lang) {
-          document.querySelectorAll('.language-option').forEach((option) => {
-            option.classList.remove('active');
-            if (option.dataset.lang === lang) {
-              option.classList.add('active');
-            }
-          });
+      // Close menu when clicking outside
+      document.addEventListener("click", (e) => {
+        const selector = document.querySelector(".language-selector");
+        if (!selector.contains(e.target)) {
+          document.getElementById("language-menu").classList.remove("active");
         }
+      });
+    </script>
 
-        document.getElementById('language-toggle').addEventListener('click', () => {
-          const menu = document.getElementById('language-menu');
-          menu.classList.toggle('active');
-        });
-
-        document.querySelectorAll('.language-option').forEach((option) => {
-          option.addEventListener('click', () => {
-            const lang = option.dataset.lang;
-            localStorage.setItem('selectedLanguage', lang);
-            applyLanguage(lang);
-            updateLanguageSelectorUI(lang);
-            document.getElementById('language-menu').classList.remove('active');
-          });
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-          const selector = document.querySelector('.language-selector');
-          if (!selector.contains(e.target)) {
-            document.getElementById('language-menu').classList.remove('active');
-          }
-        });
-      </script>
-
-      <!-- FORM LOGIC -->
-      <script>
-        /**
-         * Toggle visibility of additional fields
-         * Shows all fields after the name field when guest enters their name
-         */
-        function toggleAdditionalFields() {
-          const guestNameInput = document.getElementById("guestName");
-          const nameFilled =
-            guestNameInput && guestNameInput.value.trim() !== "";
-
-          // Elements to toggle (all except name field)
-          const fieldIds = [
-            "attending",
-            "plusOne",
-            "children",
-            "bbqFriday",
-            "breakfastSunday",
-            "camping",
-            "submit-btn",
-          ];
-          const labelIds = [
-            'label[for="attending"]',
-            'label[for="plusOne"]',
-            'label[for="children"]',
-            'label[for="bbqFriday"]',
-            'label[for="breakfastSunday"]',
-            'label[for="camping"]',
-          ];
-
-          // Helper function to set visibility
-          const setVisible = (visible) => {
-            fieldIds.forEach((id) => {
-              const field = document.getElementById(id);
-              if (field) field.style.display = visible ? "block" : "none";
-            });
-
-            labelIds.forEach((selector) => {
-              const label = document.querySelector(selector);
-              if (label) label.style.display = visible ? "block" : "none";
-            });
-          };
-
-          // Show all fields when name is filled
-          setVisible(nameFilled);
-        }
-
-        // Attach event listeners for dynamic form behavior
+    <!-- FORM LOGIC -->
+    <script>
+      /**
+       * Toggle visibility of additional fields
+       * Shows all fields after the name field when guest enters their name
+       */
+      function toggleAdditionalFields() {
         const guestNameInput = document.getElementById("guestName");
+        const nameFilled = guestNameInput && guestNameInput.value.trim() !== "";
 
-        if (guestNameInput) {
-          guestNameInput.addEventListener("input", toggleAdditionalFields);
-        }
+        // Elements to toggle (all except name field)
+        const fieldIds = [
+          "attending",
+          "plusOne",
+          "children",
+          "bbqFriday",
+          "breakfastSunday",
+          "camping",
+          "submit-btn",
+        ];
+        const labelIds = [
+          'label[for="attending"]',
+          'label[for="plusOne"]',
+          'label[for="children"]',
+          'label[for="bbqFriday"]',
+          'label[for="breakfastSunday"]',
+          'label[for="camping"]',
+        ];
 
-        // Initialize: hide all fields except name on page load
-        (function initializeFormVisibility() {
-          const fieldIds = [
-            "attending",
-            "plusOne",
-            "children",
-            "bbqFriday",
-            "breakfastSunday",
-            "camping",
-            "submit-btn",
-          ];
-          const labelIds = [
-            'label[for="attending"]',
-            'label[for="plusOne"]',
-            'label[for="children"]',
-            'label[for="bbqFriday"]',
-            'label[for="breakfastSunday"]',
-            'label[for="camping"]',
-          ];
-
+        // Helper function to set visibility
+        const setVisible = (visible) => {
           fieldIds.forEach((id) => {
             const field = document.getElementById(id);
-            if (field) field.style.display = "none";
+            if (field) field.style.display = visible ? "block" : "none";
           });
 
           labelIds.forEach((selector) => {
             const label = document.querySelector(selector);
-            if (label) label.style.display = "none";
+            if (label) label.style.display = visible ? "block" : "none";
           });
-        })();
+        };
 
-        /**
-         * Form submission
-         */
-        const form = document.getElementById("rsvp-form");
-        if (form) {
-          form.addEventListener("submit", (e) => {
-            e.preventDefault();
+        // Show all fields when name is filled
+        setVisible(nameFilled);
+      }
 
-            const visibleForm = form;
-            const hiddenForm = document.getElementById("rsvpForm");
-            const guestName = document.getElementById("guestName").value;
-            console.log("Form submitted with guest name:", guestName);
+      // Attach event listeners for dynamic form behavior
+      const guestNameInput = document.getElementById("guestName");
 
-            const formData = new FormData(visibleForm);
-            const googleFormUrl = hiddenForm?.action || null;
+      if (guestNameInput) {
+        guestNameInput.addEventListener("input", toggleAdditionalFields);
+      }
 
-            console.log("Form data entries:");
-            for (let [key, value] of formData.entries()) {
-              console.log(`  ${key}: ${value}`);
-            }
+      // Initialize: hide all fields except name on page load
+      (function initializeFormVisibility() {
+        const fieldIds = [
+          "attending",
+          "plusOne",
+          "children",
+          "bbqFriday",
+          "breakfastSunday",
+          "camping",
+          "submit-btn",
+        ];
+        const labelIds = [
+          'label[for="attending"]',
+          'label[for="plusOne"]',
+          'label[for="children"]',
+          'label[for="bbqFriday"]',
+          'label[for="breakfastSunday"]',
+          'label[for="camping"]',
+        ];
 
-            // Submit to Google Forms (no-cors to avoid CORS errors with third-party forms)
-            if (googleFormUrl) {
-              fetch(googleFormUrl, {
-                method: "POST",
-                mode: "no-cors",
-                body: formData,
-              }).finally(() => {
-                // Show thank you message
-                document.getElementById("rsvp-form").style.display = "none";
-                document.getElementById("thanks").style.display = "block";
-                document.getElementById("thanks").classList.remove("hidden");
-              });
-            } else {
-              // Fallback if no external form configured
+        fieldIds.forEach((id) => {
+          const field = document.getElementById(id);
+          if (field) field.style.display = "none";
+        });
+
+        labelIds.forEach((selector) => {
+          const label = document.querySelector(selector);
+          if (label) label.style.display = "none";
+        });
+      })();
+
+      /**
+       * Form submission
+       */
+      const form = document.getElementById("rsvp-form");
+      if (form) {
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          const visibleForm = form;
+          const hiddenForm = document.getElementById("rsvpForm");
+          const guestName = document.getElementById("guestName").value;
+          console.log("Form submitted with guest name:", guestName);
+
+          const formData = new FormData(visibleForm);
+          const googleFormUrl = hiddenForm?.action || null;
+
+          console.log("Form data entries:");
+          for (let [key, value] of formData.entries()) {
+            console.log(`  ${key}: ${value}`);
+          }
+
+          // Submit to Google Forms (no-cors to avoid CORS errors with third-party forms)
+          if (googleFormUrl) {
+            fetch(googleFormUrl, {
+              method: "POST",
+              mode: "no-cors",
+              body: formData,
+            }).finally(() => {
+              // Show thank you message
               document.getElementById("rsvp-form").style.display = "none";
               document.getElementById("thanks").style.display = "block";
               document.getElementById("thanks").classList.remove("hidden");
-            }
-          });
-        }
-      </script>
-    </body>
+            });
+          } else {
+            // Fallback if no external form configured
+            document.getElementById("rsvp-form").style.display = "none";
+            document.getElementById("thanks").style.display = "block";
+            document.getElementById("thanks").classList.remove("hidden");
+          }
+        });
+      }
+    </script>
+  </body>
 </html>
