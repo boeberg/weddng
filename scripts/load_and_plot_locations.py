@@ -297,7 +297,7 @@ def create_map(df, output_file=None):
         
         # Add website link if available
         if website:
-            popup_html += f"Website: <a href='{website}' target='_blank'>{website}</a><br>"
+            popup_html += f"<a href='{website}' target='_blank'>{website}</a><br>"
         
         # Add distance to Alte Schule if available
         if pd.notna(distance):
@@ -306,15 +306,7 @@ def create_map(df, output_file=None):
         # Add prive level range if available
         if prive_level:
             popup_html += f"Price Range: {prive_level}<br>"
-        
-        # Create tooltip with multiple lines - each field on separate row
-        # Note: Website is NOT shown in tooltip (only on popup)
-        tooltip_html = f"<b>{unterkunft}</b><br>"
-        if prive_level:
-            tooltip_html += f"Price Range: {prive_level}<br>"
-        if pd.notna(distance):
-            tooltip_html += f"Distance to Alte Schule: {distance:.0f}m"
-        
+         
         # Determine marker color based on Unterkunft name
         if unterkunft == "Alte Schule":
             color = 'red'
@@ -329,7 +321,6 @@ def create_map(df, output_file=None):
         folium.Marker(
             location=[lat, lon],
             popup=folium.Popup(popup_html, max_width=300),
-            tooltip=tooltip_html,
             icon=folium.Icon(color=color, icon=icon)
         ).add_to(map_obj)
 
