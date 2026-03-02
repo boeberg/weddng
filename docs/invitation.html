@@ -235,7 +235,12 @@
     <div class="container">
       <!-- Language Selector -->
       <div class="language-selector">
-        <button class="language-btn" id="language-toggle">
+        <button
+          class="language-btn"
+          id="language-toggle"
+          type="button"
+          title="Select language"
+        >
           <svg
             class="globe-icon"
             viewBox="0 0 100 100"
@@ -261,17 +266,23 @@
         We would love to celebrate with you
       </p>
 
-      <!-- Photo at top -->
-      <div class="photo-section">
+      <!-- Photo with Intro Text -->
+      <div class="info-section" style="margin-top: 30px; margin-bottom: 30px">
         <img
           id="invitation-photo"
           src="data/pictures/invitation-photo.jpg"
           alt="Wedding Photo"
+          style="
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+          "
         />
-      </div>
-
-      <!-- Text placeholder -->
-      <div class="info-section" style="margin-top: 30px; margin-bottom: 30px">
         <p
           data-i18n="photo-text"
           style="
@@ -290,7 +301,13 @@
       <div class="photo-section" style="margin-bottom: 20px">
         <img
           src="data/pictures/venue-photo.png"
-          style="
+          class="venue-photo"
+          alt="Venue"
+          title="Venue"
+        />
+        <style>
+          /* ...existing styles... */
+          .venue-photo {
             width: 100%;
             max-width: 400px;
             height: auto;
@@ -298,9 +315,8 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
-          "
-          alt="Venue"
-        />
+          }
+        </style>
       </div>
 
       <!-- Event Details Section -->
@@ -428,7 +444,7 @@
         </form>
 
         <!-- Success Message (hidden by default) -->
-        <p data-i18n="thanks" class="hidden">Thank you! 💕</p>
+        <p id="thanks" data-i18n="thanks" class="hidden">Thank you! 💕</p>
       </div>
 
       <!-- ========== INFO SECTIONS ========== -->
@@ -506,7 +522,7 @@
       const translations = {
         en: {
           title: "Babette & Felix",
-          "subtitle-main": "We would love to celebrate with you",
+          "subtitle-main": "We would love to celebrate with you!",
           "rsvp-title": "RSVP",
           "label-guestName": "Guest Name",
           "label-attending": "Will you attend?",
@@ -530,7 +546,7 @@
           "opt-yes-camping": "Yes",
           "opt-no-camping": "No",
           "submit-btn": "Send RSVP",
-          thanks: "Thank you! 💕",
+          thanks: "Thanks! 💕",
           "accommodations-title": "Accommodations",
           "accommodations-text":
             "We've collected nearby accommodations for our guests. Click on the map below to explore the different options available. Each location on the map shows the accommodation name, website, and distance to our venue (Alte Schule).",
@@ -544,13 +560,14 @@
           "gifts-text":
             "Your presence and celebration with us means everything. We're truly happy if you can simply come and celebrate this special day with us. However, if you'd like to contribute a gift, we're also delighted to receive anything that could be useful for our little garden house. We appreciate your thoughtfulness either way!",
           "kids-title": "Kids",
-          "kids-text": "Kids are totally welcome at our wedding celebration!",
+          "kids-text":
+            "Kids are totally welcome at our wedding celebration! XOXO Paula",
           "photo-text":
-            "Hi everyone,\n\nI'm Paula, the best thing Babette and Felix have made so far!\nAs their wedding planning skills are quite...improvable, I want to give you a heads up that you are invited to their wedding on September 9, 2026 in Warnkenhagen (Germany)!\n\nMore info to come, but if you want to be sure to have an accommodation close by, we've collected a list of available apartments/hotels. So feel free to book already.\nAnd please fill out the RSVP form below to let us know if you'll be joining us on this special day. We also plan a BBQ night on the day before and breakfast the day after the wedding. We'd love to see you there!\n\nWe look forward to sharing this moment with you!\n\nPaula, Babette & Felix",
+            "Hi everyone,\n\nI'm Paula, the best thing Babette and Felix have made so far!\nTheir wedding planning skills are quite improvable, but we would love to celebrate with you on September 9, 2026 in Warnkenhagen (Germany)!\n\nYou can also camp at the venue. If you want to be sure to have an accommodation close by, we've collected a list of available apartments/hotels. So feel free to book already.\nAnd please fill out the RSVP form below to let us know if you'll be joining us on this special day. We also plan a BBQ night on the day before and breakfast the day after the wedding.\n\nIf you want to contribute with an activity or speech or anything else, please send a mail to Lisanne Koch (lisanne.koch@example.com). \n\nWe look forward to sharing this moment with you!\n\nPaula, Babette & Felix",
         },
         de: {
           title: "Babette & Felix",
-          "subtitle-main": "Möchten am 19 September mit dir feiern",
+          "subtitle-main": "Möchten am 19. September mit dir feiern!",
           "rsvp-title": "RSVP",
           "label-guestName": "Dein Name",
           "label-attending": "Kommst du?",
@@ -573,28 +590,28 @@
           "opt-yes-camping": "Ja",
           "opt-no-camping": "Nein",
           "submit-btn": "RSVP absenden",
-          thanks: "Danke! ",
+          thanks: "Danke! 💕",
           "accommodations-title": "Unterkunftsoptionen",
           "accommodations-text":
-            "Die Alte Schule liegt im Klützer Winkel. Wenn ihr nicht auf dem Sportplatz campen wollt, empfehlen wir, dass ihr euch eine Ferienwohnung nehmt. In dieser Karte haben wir eine Auswahl an Unterkünften zusammengestellt. Klick auf die Marker für weitere Details.",
+            "Die Alte Schule liegt im Klützer Winkel. Ihr könnt gerne auf dem Gelande der alten Schule campen, aber falls nicht, dann empfehlen wir, dass ihr euch eine Ferienwohnung nehmt. In dieser Karte haben wir eine Auswahl an Unterkünften zusammengestellt. Klick auf die Marker für weitere Details.",
           "dress-code-title": "Kleiderordnung",
           "dress-code-text":
-            "Wir planen eine Feier im Freien, also zieht euch bitte wettergerecht und bequem an. Wir empfehlen einen elegant-lässigen Stil. Da wir am Meer feiern, bringt gerne Badesachen mit – auch, weil es vielleicht eine Sauna für alle gibt, die Lust haben. Da es vor Ort etwas natürliches Gelände gibt, empfehlen wir außerdem bequeme Schuhe.",
+            "Wir planen eine Feier im Freien, also nehmt euch bitte auch warme Sachen mit. Kommt wie ihr wollt, wir fahren wahrscheinlich einen elegant-lässigen Stil. Da wir am Meer feiern, bringt gerne Badesachen mit – auch, weil es vielleicht eine Sauna für alle gibt, die Lust haben. Da es vor Ort etwas natürliches Gelände gibt, empfehlen wir außerdem bequeme Schuhe.",
           "getting-there-title": "Anreise",
           "getting-there-text":
-            "Mit dem Auto: Von Berlin aus dauert die Fahrt etwa drei Stunden und führt über eine Strecke von rund 225 km. Von Hamburg ist die Fahrt viel kürzer, etwa 1 Stunde und 10 Minuten. Von Kopenhagen dauert die Fahrt je nach Verkehr und Grenzübergängen etwa sieben Stunden.\n\nMit dem Zug: Kalkhorst hat keinen Fernbahnhof, daher kombiniert man Zug- und Nahverkehr. Von Berlin fahren Züge nach Lübeck oder Wismar über Drehkreuze wie Hamburg. Die Reisedauer beträgt normalerweise fünf Stunden oder mehr. Von Hamburg fahren Regionalbahnen häufig nach Lübeck und brauchen etwa 45 Minuten. Von Lübeck weiterer regionaler Bus oder eine kurze Zugverbindung nach Schönberg oder Grevesmühlen, dann nach Kalkhorst. Erwarten Sie eine Gesamtreisedauer von etwa drei bis vier Stunden. Von Kopenhagen: Zug nach Hamburg, dann weiter nach Lübeck und per Nahverkehr. Diese Reise dauert typischerweise sieben bis neun Stunden je nach Verbindungen.\n\nMit dem Flugzeug: Der praktischste Flughafen ist Hamburg Airport, etwa 80 km von Kalkhorst entfernt. Von dort können Sie ein Auto mieten für eine direkte Fahrt von etwa 1 Stunde oder einen Zug vom Hamburger Hauptbahnhof nach Lübeck nehmen und dann weiter per Bus oder Taxi fahren.",
+            "Mit dem Auto: Von Berlin aus dauert die Fahrt etwa drei Stunden und führt über eine Strecke von rund 225 km. Von Hamburg ist die Fahrt viel kürzer, etwa 1 Stunde und 10 Minuten. Von Kopenhagen dauert die Fahrt je nach Verkehr und Grenzübergängen etwa sieben Stunden.\n\nMit dem Zug: Kalkhorst hat keinen Fernbahnhof, daher kombiniert man Zug- und Nahverkehr. Von Berlin fahren Züge nach Lübeck oder Wismar über Drehkreuze wie Hamburg. Die Reisedauer beträgt normalerweise fünf Stunden oder mehr. Von Hamburg fahren Regionalbahnen häufig nach Lübeck und brauchen etwa 45 Minuten. Von Lübeck weiterer regionaler Bus oder eine kurze Zugverbindung nach Schönberg oder Grevesmühlen, dann nach Kalkhorst. Erwartet eine Gesamtreisedauer von etwa drei bis vier Stunden. Von Kopenhagen: Zug nach Hamburg, dann weiter nach Lübeck und per Nahverkehr. Diese Reise dauert typischerweise sieben bis neun Stunden je nach Verbindungen.\n\nMit dem Flugzeug: Der praktischste Flughafen ist Hamburg, etwa 80 km von Kalkhorst entfernt. Von dort könnt ihr ein Auto mieten für eine direkte Fahrt von etwa 1 Stunde oder einen Zug vom Hamburger Hauptbahnhof nach Lübeck nehmen und dann weiter per Bus oder Taxi fahren.",
           "gifts-title": "Geschenke",
           "gifts-text":
-            "Deine Anwesenheit und das Feiern mit uns bedeuten uns alles. Wir sind sehr glücklich, wenn du einfach mit uns diesen besonderen Tag feierst. Wenn du aber gerne ein Geschenk machen möchtest, freuen wir uns auch über alles, was für unser kleines Gartenhaus nützlich ist. Wir schätzen dein Geschenk in jedem Fall!",
+            "Eure Anwesenheit und das Feiern mit uns bedeuten uns alles. Wir sind sehr glücklich, wenn ihr einfach mit uns diesen besonderen Tag feiert. Wenn ihr aber gerne ein Geschenk machen möchtet, freuen wir uns auch über alles, was für unser kleines Gartenhaus nützlich ist. Wir schätzen euer Geschenk in jedem Fall!",
           "kids-title": "Kinder",
           "kids-text":
-            "Kinder sind bei unserer Hochzeitsfeier sehr willkommen!",
+            "Kinder sind bei unserer Hochzeitsfeier sehr willkommen! XOXO Paula",
           "photo-text":
-            "Hallo!\n\nIch bin Paula, das Beste, das Babette und Felix bisher zusammen gemacht haben.\nDafür, dass ich das bin, ist in meinem Leben ziemlich viel ungeplant und verpeilert – aber am Ende trotzdem ganz nett.\nDamit die Hochzeit der beiden nicht an der Planung scheitert, klären wir auf dieser Website die wichtige Planung.\nWir feiern im Klützer Winkel in der Alten Schule Warnkenhagen am 19. September 2026. Bis dahin ist es ja noch ein Bisschen hin.\nWir würden gerne wissen, ob ihr kommt – füllt dazu bitte das ‚RSVP' aus. Wenn ihr kommt und nicht auf dem Sportplatz campen wollt, sollten wir möglichst schnell eine Unterkunft finden. Damit diese ganze Logistik ein bisschen Spaß macht, gibt es am Ende des RSVP eine Überraschung.\nWir würden euch gerne dort sehen!\n\nWir freuen uns, diesen Moment mit euch zu teilen!\n\nPaula, Babette & Felix",
+            "Hallo!\n\nIch bin Paula, das Beste, das Babette und Felix bisher zusammen gemacht haben.\nDafür, dass ich das bin, ist in meinem Leben ziemlich viel ungeplant und verpeilert – aber am Ende trotzdem ganz nett.\nDamit die Hochzeit der beiden nicht an der Planung scheitert, klären wir auf dieser Website alles Wichtige.\nWir feiern im Klützer Winkel in der Alten Schule Warnkenhagen am 19. September 2026. Bis dahin ist es ja noch ein Bisschen hin.\nWir würden gerne wissen, ob ihr kommt – füllt dazu bitte das ‚RSVP' aus. Wenn ihr kommt und nicht auf dem Sportplatz campen wollt, solltet ihr möglichst schnell eine Unterkunft finden.\nFalls ihr mit einer Aktivität, Rede oder etwas Anderem beitragen wollt, schreibt bitte Lisanne Koch (lisanne.koch@example.com).\n\nWir freuen uns, diesen Moment mit euch zu teilen!\n\nPaula, Babette & Felix",
         },
         dk: {
           title: "Babette & Felix",
-          "subtitle-main": "Vi ville gerne fejre med dig",
+          "subtitle-main": "Vi ville gerne fejre med dig!",
           "rsvp-title": "RSVP",
           "label-guestName": "Dit navn",
           "label-attending": "Kommer du?",
@@ -631,9 +648,10 @@
           "gifts-text":
             "Din tilstedeværelse og at fejre sammen med os betyder alt for os. Vi er meget glade, hvis du bare kan komme og fejre denne specielle dag med os. Hvis du gerne vil give en gave, er vi også meget glad for alt, der kunne være brugbart til vores lille haver hus. Vi værdsætter din vendelighed på enhver måde!",
           "kids-title": "Børn",
-          "kids-text": "Børn er meget velkomne til vores bryllupsfest!",
+          "kids-text":
+            "Børn er meget velkomne til vores bryllupsfest! XOXO Paula",
           "photo-text":
-            "Hej alle sammen,\n\nJeg er Paula, det bedste, som Babette og Felix hidtil har lavet!\nDa deres brylluppplanlegnningsevner er ganske forbedringsbehov, ville jeg give jer en heads-up om, at i er inviteret til deres bryllup den 9. september 2026 i Warnkenhagen (Tyskland)!\n\nMere information kommer snart, men hvis i vil være sikre på at have indkvartering i nærheden, har vi samlet en liste over tilgængelige lejligheder/hoteller. Så gerne book allerede.\nOg udfyld venligst RSVP-formularen nedenfor for at lade os vide, om i deltager på denne specielle dag. Vi planlægger også en BBQ-aften dagen før og morgenmad dagen efter brylluppet. Vi ville gerne se jer der!\n\nVi glæder os til at dele dette øjeblik med jer!\n\nPaula, Babette & Felix",
+            "Hej alle sammen,\n\nJeg er Paula, det bedste, som Babette og Felix hidtil har lavet!\nDeres planlægningsevner kunne være bedre, men vi ville glæde os at se jer til deres bryllup den 9. september 2026 i Warnkenhagen (Tyskland)!\n\nDem som vil kan telte på stedet (der er badeværelse). Men hvis i vil være sikre på at have indkvartering i nærheden, har vi samlet en liste over tilgængelige lejligheder/hoteller. Så book gerne snart.\nOg udfyld venligst RSVP-formularen nedenfor for at lade os vide, om i kommer. Vi planlægger også en BBQ-aften dagen før og morgenmad dagen efter brylluppet.\nHvis i vil byde ind med en aktivitet, tale eller noget andet, skriv til Lisanne Koch (lisanne.koch@example.com).\n\nVi glæder os til at dele dette øjeblik med jer!\n\nPaula, Babette & Felix",
         },
       };
 
@@ -722,16 +740,29 @@
     <!-- FORM LOGIC -->
     <script>
       /**
-       * Toggle visibility of additional fields
-       * Shows all fields after the name field when guest enters their name
+       * Toggle visibility of fields based on user's attending selection
+       * Shows attending field after name is filled
+       * Shows additional fields only if user selects "Yes"
        */
-      function toggleAdditionalFields() {
+      function toggleAttendingField() {
         const guestNameInput = document.getElementById("guestName");
+        const attendingField = document.getElementById("attending");
+        const attendingLabel = document.querySelector('label[for="attending"]');
         const nameFilled = guestNameInput && guestNameInput.value.trim() !== "";
 
-        // Elements to toggle (all except name field)
-        const fieldIds = [
-          "attending",
+        // Show attending field when name is filled
+        if (attendingField)
+          attendingField.style.display = nameFilled ? "block" : "none";
+        if (attendingLabel)
+          attendingLabel.style.display = nameFilled ? "block" : "none";
+      }
+
+      function toggleAdditionalFields() {
+        const attendingSelect = document.getElementById("attending");
+        const isAttending = attendingSelect && attendingSelect.value === "Yes";
+
+        // Fields to show only if attending is "Yes"
+        const conditionalFieldIds = [
           "plusOne",
           "children",
           "bbqFriday",
@@ -739,8 +770,7 @@
           "camping",
           "submit-btn",
         ];
-        const labelIds = [
-          'label[for="attending"]',
+        const conditionalLabelIds = [
           'label[for="plusOne"]',
           'label[for="children"]',
           'label[for="bbqFriday"]',
@@ -748,28 +778,27 @@
           'label[for="camping"]',
         ];
 
-        // Helper function to set visibility
-        const setVisible = (visible) => {
-          fieldIds.forEach((id) => {
-            const field = document.getElementById(id);
-            if (field) field.style.display = visible ? "block" : "none";
-          });
+        conditionalFieldIds.forEach((id) => {
+          const field = document.getElementById(id);
+          if (field) field.style.display = isAttending ? "block" : "none";
+        });
 
-          labelIds.forEach((selector) => {
-            const label = document.querySelector(selector);
-            if (label) label.style.display = visible ? "block" : "none";
-          });
-        };
-
-        // Show all fields when name is filled
-        setVisible(nameFilled);
+        conditionalLabelIds.forEach((selector) => {
+          const label = document.querySelector(selector);
+          if (label) label.style.display = isAttending ? "block" : "none";
+        });
       }
 
       // Attach event listeners for dynamic form behavior
       const guestNameInput = document.getElementById("guestName");
+      const attendingSelect = document.getElementById("attending");
 
       if (guestNameInput) {
-        guestNameInput.addEventListener("input", toggleAdditionalFields);
+        guestNameInput.addEventListener("input", toggleAttendingField);
+      }
+
+      if (attendingSelect) {
+        attendingSelect.addEventListener("change", toggleAdditionalFields);
       }
 
       // Initialize: hide all fields except name on page load
