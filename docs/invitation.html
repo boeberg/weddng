@@ -261,6 +261,18 @@
       </div>
 
       <!-- Header -->
+      <p
+        style="
+          font-size: 1.2em;
+          font-weight: 300;
+          text-align: center;
+          margin-bottom: 10px;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+        "
+      >
+        Wedding
+      </p>
       <h1 data-i18n="title">Babette & Felix</h1>
       <p class="subtitle" data-i18n="subtitle-main">
         We would love to celebrate with you
@@ -439,6 +451,18 @@
             <option value="No" id="opt-no-camping">No</option>
           </select>
 
+          <!-- Dietary Preference Question -->
+          <label for="dietary" data-i18n="label-dietary"
+            >What is your dietary preference?</label
+          >
+          <select id="dietary" name="entry.976374406">
+            <option value="" disabled selected id="opt-select-dietary">
+              -- Please choose --
+            </option>
+            <option value="Meat" id="opt-meat">Meat</option>
+            <option value="Vegetarian" id="opt-vegetarian">Vegetarian</option>
+          </select>
+
           <!-- Submit Button -->
           <button type="submit" data-i18n="submit-btn">Send RSVP</button>
         </form>
@@ -448,6 +472,15 @@
       </div>
 
       <!-- ========== INFO SECTIONS ========== -->
+
+      <!-- On the Day Section -->
+      <div class="info-section">
+        <h2 data-i18n="on-the-day-title">On the Day</h2>
+        <p data-i18n="on-the-day-text">
+          Well, we are still planning, but expect that we start around 1 or 2
+          pm. More info to come!
+        </p>
+      </div>
 
       <!-- Getting There Section -->
       <div class="info-section">
@@ -545,14 +578,21 @@
           "opt-select-camping": "Please choose...",
           "opt-yes-camping": "Yes",
           "opt-no-camping": "No",
+          "label-dietary": "What is your dietary preference?",
+          "opt-select-dietary": "Please choose...",
+          "opt-meat": "Meat",
+          "opt-vegetarian": "Vegetarian",
           "submit-btn": "Send RSVP",
           thanks: "Thanks! 💕",
           "accommodations-title": "Accommodations",
           "accommodations-text":
-            "We've collected nearby accommodations for our guests. Click on the map below to explore the different options available. Each location on the map shows the accommodation name, website, and distance to our venue (Alte Schule).",
+            "We've collected nearby accommodations. Click on the map below to explore the different options available. Each location on the map shows the accommodation name, website, and distance to our venue (Alte Schule).\n\n You can also camp at the venue, there's a bathroom available.",
           "dress-code-title": "Dress Code",
           "dress-code-text":
             "We're planning an outdoor celebration, so please dress comfortably for the weather. We suggest elegant casual attire. Since we'll be celebrating by the sea, feel free to bring a swimsuit, also because we might have a sauna for those who want to use it.",
+          "on-the-day-title": "On the Day",
+          "on-the-day-text":
+            "Well, we are still planning, but expect that we start around 1 or 2 pm. More info to come!",
           "getting-there-title": "Getting There",
           "getting-there-text":
             "By car: Coming from Berlin, the drive takes about three hours and covers roughly 225 km. From Hamburg, the drive is much shorter at about 1 hour and 10 minutes. From Copenhagen, driving takes around seven hours depending on traffic and border crossings.\n\nBy train: Kalkhorst does not have a long-distance train station, so travel involves a combination of train and local transport. From Berlin, trains run to Lübeck or Wismar via major hubs such as Hamburg. Total travel time is usually five hours or more. From Hamburg, regional trains run frequently to Lübeck, taking about 45 minutes. From Lübeck, continue by regional bus or a short regional train connection toward Schönberg or Grevesmühlen, then on to Kalkhorst. Expect a total travel time of around three to four hours. From Copenhagen, take a train to Hamburg, then continue to Lübeck and onward by regional transport. This journey typically takes seven to nine hours depending on connections.\n\nBy plane: The most convenient airport is Hamburg Airport, which is about 80 km from Kalkhorst. From there, you can rent a car for a direct drive of about 1 hour, or take a train via Hamburg Central Station to Lübeck and continue by bus or taxi.",
@@ -563,7 +603,7 @@
           "kids-text":
             "Kids are totally welcome at our wedding celebration! XOXO Paula",
           "photo-text":
-            "Hi everyone,\n\nI'm Paula, the best thing Babette and Felix have made so far!\nTheir wedding planning skills are quite improvable, but we would love to celebrate with you on September 9, 2026 in Warnkenhagen (Germany)!\n\nYou can also camp at the venue. If you want to be sure to have an accommodation close by, we've collected a list of available apartments/hotels. So feel free to book already.\nAnd please fill out the RSVP form below to let us know if you'll be joining us on this special day. We also plan a BBQ night on the day before and breakfast the day after the wedding.\n\nIf you want to contribute with an activity or speech or anything else, please send a mail to Lisanne Koch (lisanne.koch@example.com). \n\nWe look forward to sharing this moment with you!\n\nPaula, Babette & Felix",
+            "Hi everyone,\n\nI'm Paula, the best thing Babette and Felix have made so far!\nTheir wedding planning skills are quite improvable, but we would love to celebrate with you on September 9, 2026 in Warnkenhagen (Germany)!\n\nPlease fill out the RSVP form below to let us know if you'll be joining us on this special day. We also plan a BBQ night on the day before and breakfast the day after the wedding.\n\nIf you want to contribute with an activity or speech or anything else, please send a mail to Lisanne Koch (lisanne.koch@example.com). \n\nWe look forward to sharing this moment with you!\n\nPaula, Babette & Felix",
         },
         de: {
           title: "Babette & Felix",
@@ -589,14 +629,21 @@
           "opt-select-camping": "Bitte wählen...",
           "opt-yes-camping": "Ja",
           "opt-no-camping": "Nein",
+          "label-dietary": "Was isst du gerne?",
+          "opt-select-dietary": "Bitte wählen...",
+          "opt-meat": "Fleisch",
+          "opt-vegetarian": "Vegetarisch",
           "submit-btn": "RSVP absenden",
           thanks: "Danke! 💕",
           "accommodations-title": "Unterkunftsoptionen",
           "accommodations-text":
-            "Die Alte Schule liegt im Klützer Winkel. Ihr könnt gerne auf dem Gelande der alten Schule campen, aber falls nicht, dann empfehlen wir, dass ihr euch eine Ferienwohnung nehmt. In dieser Karte haben wir eine Auswahl an Unterkünften zusammengestellt. Klick auf die Marker für weitere Details.",
+            "Die Alte Schule liegt im Klützer Winkel. Ihr könnt gerne auf dem Gelande der alten Schule campen, es gibt dort ein Badezimmer und fliessendes Wasser. Aber falls nicht, dann empfehlen wir, dass ihr euch eine Ferienwohnung nehmt. In dieser Karte haben wir eine Auswahl an Unterkünften zusammengestellt. Klick auf die Marker für weitere Details.",
           "dress-code-title": "Kleiderordnung",
           "dress-code-text":
             "Wir planen eine Feier im Freien, also nehmt euch bitte auch warme Sachen mit. Kommt wie ihr wollt, wir fahren wahrscheinlich einen elegant-lässigen Stil. Da wir am Meer feiern, bringt gerne Badesachen mit – auch, weil es vielleicht eine Sauna für alle gibt, die Lust haben. Da es vor Ort etwas natürliches Gelände gibt, empfehlen wir außerdem bequeme Schuhe.",
+          "on-the-day-title": "Am Hochzeitstag",
+          "on-the-day-text":
+            "Naja, wir planen noch, aber erwartet, dass wir um 13 oder 14 Uhr beginnen. Mehr Infos folgen!",
           "getting-there-title": "Anreise",
           "getting-there-text":
             "Mit dem Auto: Von Berlin aus dauert die Fahrt etwa drei Stunden und führt über eine Strecke von rund 225 km. Von Hamburg ist die Fahrt viel kürzer, etwa 1 Stunde und 10 Minuten. Von Kopenhagen dauert die Fahrt je nach Verkehr und Grenzübergängen etwa sieben Stunden.\n\nMit dem Zug: Kalkhorst hat keinen Fernbahnhof, daher kombiniert man Zug- und Nahverkehr. Von Berlin fahren Züge nach Lübeck oder Wismar über Drehkreuze wie Hamburg. Die Reisedauer beträgt normalerweise fünf Stunden oder mehr. Von Hamburg fahren Regionalbahnen häufig nach Lübeck und brauchen etwa 45 Minuten. Von Lübeck weiterer regionaler Bus oder eine kurze Zugverbindung nach Schönberg oder Grevesmühlen, dann nach Kalkhorst. Erwartet eine Gesamtreisedauer von etwa drei bis vier Stunden. Von Kopenhagen: Zug nach Hamburg, dann weiter nach Lübeck und per Nahverkehr. Diese Reise dauert typischerweise sieben bis neun Stunden je nach Verbindungen.\n\nMit dem Flugzeug: Der praktischste Flughafen ist Hamburg, etwa 80 km von Kalkhorst entfernt. Von dort könnt ihr ein Auto mieten für eine direkte Fahrt von etwa 1 Stunde oder einen Zug vom Hamburger Hauptbahnhof nach Lübeck nehmen und dann weiter per Bus oder Taxi fahren.",
@@ -607,7 +654,7 @@
           "kids-text":
             "Kinder sind bei unserer Hochzeitsfeier sehr willkommen! XOXO Paula",
           "photo-text":
-            "Hallo!\n\nIch bin Paula, das Beste, das Babette und Felix bisher zusammen gemacht haben.\nDafür, dass ich das bin, ist in meinem Leben ziemlich viel ungeplant und verpeilert – aber am Ende trotzdem ganz nett.\nDamit die Hochzeit der beiden nicht an der Planung scheitert, klären wir auf dieser Website alles Wichtige.\nWir feiern im Klützer Winkel in der Alten Schule Warnkenhagen am 19. September 2026. Bis dahin ist es ja noch ein Bisschen hin.\nWir würden gerne wissen, ob ihr kommt – füllt dazu bitte das ‚RSVP' aus. Wenn ihr kommt und nicht auf dem Sportplatz campen wollt, solltet ihr möglichst schnell eine Unterkunft finden.\nFalls ihr mit einer Aktivität, Rede oder etwas Anderem beitragen wollt, schreibt bitte Lisanne Koch (lisanne.koch@example.com).\n\nWir freuen uns, diesen Moment mit euch zu teilen!\n\nPaula, Babette & Felix",
+            "Hallo!\n\nIch bin Paula, das Beste, das Babette und Felix bisher zusammen gemacht haben.\nDafür, dass ich das bin, ist in meinem Leben ziemlich viel ungeplant und verpeilert – aber am Ende trotzdem ganz nett.\nDamit die Hochzeit der beiden nicht an der Planung scheitert, klären wir auf dieser Website alles Wichtige.\nWir feiern im Klützer Winkel in der Alten Schule Warnkenhagen am 19. September 2026. Bis dahin ist es ja noch ein Bisschen hin.\nWir würden gerne wissen, ob ihr kommt – füllt dazu bitte das ‚RSVP' aus. Ihr solltet möglichst schnell eine Unterkunft finden.\nFalls ihr mit einer Aktivität, Rede oder etwas Anderem beitragen wollt, schreibt bitte Lisanne Koch (lisanne.koch@example.com).\n\nWir freuen uns, diesen Moment mit euch zu teilen!\n\nPaula, Babette & Felix",
         },
         dk: {
           title: "Babette & Felix",
@@ -633,6 +680,10 @@
           "opt-select-camping": "Vælg venligst...",
           "opt-yes-camping": "Ja",
           "opt-no-camping": "Nej",
+          "label-dietary": "Hvad er dine præferencer når det kommer til mad?",
+          "opt-select-dietary": "Vælg venligst...",
+          "opt-meat": "Kød",
+          "opt-vegetarian": "Vegetarisk",
           "submit-btn": "Send RSVP",
           thanks: "Tak! 💕",
           "accommodations-title": "Indkvartering",
@@ -641,6 +692,9 @@
           "dress-code-title": "Dresscode",
           "dress-code-text":
             "Vi planlægger en udendørs fejring, så klæd jer gerne komfortabelt efter vejret. Vi foreslår elegant casual. Da vi skal fejre det ved havet, er I meget velkomne til at tage badetøj med – også fordi der måske er en sauna for dem, der har lyst. Da der er lidt naturterræn på stedet, anbefaler vi også et par gode, komfortable sko.",
+          "on-the-day-title": "På selve dagen",
+          "on-the-day-text":
+            "Nå, vi planlægger stadig, men forvent ca. kl. 13 eller 14. Mere info kommer!",
           "getting-there-title": "Sådan Kommer Du Der",
           "getting-there-text":
             "Med bil: Fra Berlin tager køreturen cirka tre timer og dækker omkring 225 km. Fra Hamburg er køreturen meget kortere, omkring 1 time og 10 minutter. Fra København tager køreturen omkring syv timer alt efter trafik og grænseovergange.\n\nMed tog: Kalkhorst har ingen fjernbanestationer, så rejsen består af en kombination af tog og lokal transport. Fra Berlin kører tog til Lübeck eller Wismar via større byer som Hamburg. Samlet rejsetid er normalt fem timer eller mere. Fra Hamburg kører regionaltog hyppigt til Lübeck og bruger omkring 45 minutter. Fra Lübeck fortsætter du med regional bus, taxa eller en kort regional togforbindelse mod Schönberg eller Grevesmühlen, derefter til Kalkhorst. Forvent en samlet rejsetid på omkring tre til fire timer. Fra København: Tag tog til Hamburg, derefter videre til Lübeck og videre med lokal transport. Denne rejse tager typisk syv til ni timer alt efter forbindelser.\n\nMed fly: Den mest bekvemme lufthavn er Hamburg Airport, omkring 80 km fra Kalkhorst. Derfra kan du leje en bil for en direkte køretur på omkring 1 time, eller tage tog fra Hamburgs hovedbanegård til Lübeck og fortsætte med bus eller taxa.",
@@ -768,6 +822,7 @@
           "bbqFriday",
           "breakfastSunday",
           "camping",
+          "dietary",
           "submit-btn",
         ];
         const conditionalLabelIds = [
@@ -776,6 +831,7 @@
           'label[for="bbqFriday"]',
           'label[for="breakfastSunday"]',
           'label[for="camping"]',
+          'label[for="dietary"]',
         ];
 
         conditionalFieldIds.forEach((id) => {
@@ -810,6 +866,7 @@
           "bbqFriday",
           "breakfastSunday",
           "camping",
+          "dietary",
           "submit-btn",
         ];
         const labelIds = [
@@ -819,6 +876,7 @@
           'label[for="bbqFriday"]',
           'label[for="breakfastSunday"]',
           'label[for="camping"]',
+          'label[for="dietary"]',
         ];
 
         fieldIds.forEach((id) => {
