@@ -43,9 +43,8 @@
       }
 
       .intro-section {
-        margin-bottom: 40px;
-        padding: 20px 0;
-        border-bottom: 1px solid #cccccc;
+        margin-bottom: 10px;
+        padding: 10px 0;
         text-align: center;
       }
 
@@ -282,17 +281,19 @@
       <div class="info-section" style="margin-top: 30px; margin-bottom: 30px">
         <img
           id="invitation-photo"
-          src="data/pictures/invitation-photo.jpg"
+          src="data/pictures/invitation-photo.jpg?v=2"
           alt="Wedding Photo"
           style="
             width: 100%;
-            max-width: 500px;
+            max-width: 560px;
             height: auto;
-            border-radius: 8px;
-            margin-bottom: 20px;
+            border-radius: 12px;
+            margin-bottom: 24px;
             display: block;
             margin-left: auto;
             margin-right: auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12),
+              0 2px 6px rgba(0, 0, 0, 0.06);
           "
         />
         <p
@@ -308,6 +309,27 @@
 
       <!-- Markdown intro content -->
       <div id="intro-content" class="intro-section"></div>
+
+      <!-- On the Day Section -->
+      <div class="info-section">
+        <h2 data-i18n="on-the-day-title">On the Day</h2>
+        <p
+          data-i18n="on-the-day-text"
+          style="white-space: pre-wrap; text-align: left"
+        ></p>
+      </div>
+
+      <!-- Dress Code Section -->
+      <div class="info-section">
+        <h2 data-i18n="dress-code-title">Dress Code</h2>
+        <p data-i18n="dress-code-text">
+          We'll be celebrating in a tent, and since it's September and we're
+          close to the sea, the evening may turn chilly, so bring a warm layer
+          to keep cozy. We suggest elegant casual attire, and as there's some
+          natural terrain at the venue, it's also a good idea to bring a pair
+          of comfortable shoes to change into later.
+        </p>
+      </div>
 
       <!-- Venue Picture -->
       <div class="photo-section" style="margin-bottom: 20px">
@@ -346,6 +368,35 @@
           <span id="event-venue"
             >Hohenschönberger Weg 3, 23948 Kalkhorst, Germany</span
           >
+        </p>
+      </div>
+
+      <!-- Gifts Section -->
+      <div class="info-section">
+        <h2 data-i18n="gifts-title">Gifts</h2>
+
+        <!-- Gift Picture -->
+        <img
+          src="data/pictures/kolo water color.png"
+          style="
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+          "
+        />
+
+        <!-- Gift Message -->
+        <p data-i18n="gifts-text" style="white-space: pre-wrap">
+          Your presence and celebration with us means everything. We're truly
+          happy if you can simply come and celebrate this special day with us.
+          However, if you'd like to contribute a gift, we're also delighted to
+          receive anything that could be useful for our little garden house. We
+          appreciate your thoughtfulness either way!
         </p>
       </div>
 
@@ -473,15 +524,6 @@
 
       <!-- ========== INFO SECTIONS ========== -->
 
-      <!-- On the Day Section -->
-      <div class="info-section">
-        <h2 data-i18n="on-the-day-title">On the Day</h2>
-        <p data-i18n="on-the-day-text">
-          Well, we are still planning, but expect that we start around 1 or 2
-          pm. More info to come!
-        </p>
-      </div>
-
       <!-- Getting There Section -->
       <div class="info-section">
         <h2 data-i18n="getting-there-title">Getting There</h2>
@@ -489,48 +531,6 @@
           data-i18n="getting-there-text"
           style="margin-bottom: 25px; font-style: italic; white-space: pre-wrap"
         ></p>
-      </div>
-
-      <!-- Gifts Section -->
-      <div class="info-section">
-        <h2 data-i18n="gifts-title">Gifts</h2>
-
-        <!-- Gift Picture -->
-        <img
-          src="data/pictures/kolo water color.png"
-          style="
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 25px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-          "
-        />
-
-        <!-- Gift Message -->
-        <p data-i18n="gifts-text" style="white-space: pre-wrap">
-          Your presence and celebration with us means everything. We're truly
-          happy if you can simply come and celebrate this special day with us.
-          However, if you'd like to contribute a gift, we're also delighted to
-          receive anything that could be useful for our little garden house. We
-          appreciate your thoughtfulness either way!
-        </p>
-      </div>
-
-      <!-- Dress Code Section -->
-      <div class="info-section">
-        <h2 data-i18n="dress-code-title">Dress Code</h2>
-        <p data-i18n="dress-code-text">
-          We're planning an outdoor celebration, so please dress comfortably for
-          the weather. We suggest elegant casual attire. Since we'll be
-          celebrating by the sea, feel free to bring a swimsuit, also because we
-          might have a sauna for those who want to use it. As there is some
-          natural terrain at the venue, we recommend you bring a pair of
-          comfortable shoes.
-        </p>
       </div>
 
       <!-- Kids Section -->
@@ -589,21 +589,21 @@
             "We've collected nearby accommodations. Click on the map below to explore the different options available. Each location on the map shows the accommodation name, website, and distance to our venue (Alte Schule).\n\n You can also camp at the venue, there's a bathroom available.",
           "dress-code-title": "Dress Code",
           "dress-code-text":
-            "We're planning an outdoor celebration, so please dress comfortably for the weather. We suggest elegant casual attire. Since we'll be celebrating by the sea, feel free to bring a swimsuit, also because we might have a sauna for those who want to use it.",
+            "We'll be celebrating in a tent, and since it's September and we're close to the sea, the evening may turn chilly, so bring a warm layer to keep cozy. We suggest elegant casual attire, and as there's some natural terrain at the venue, it's also a good idea to bring a pair of comfortable shoes to change into later.",
           "on-the-day-title": "On the Day",
           "on-the-day-text":
-            "Well, we are still planning, but expect that we start around 1 or 2 pm. More info to come!",
+            "13:00 — Ceremony at Dorfkirche Elmenhorst (<a href=\"https://www.google.com/maps/search/?api=1&query=Dorfkirche+Elmenhorst+Dorfstra%C3%9Fe+53+23948+Kalkhorst\" target=\"_blank\" rel=\"noopener\">Dorfstraße 53, 23948 Kalkhorst-Elmenhorst</a>). Please arrive about 10 minutes early so we can start on time.\n\n14:00 — Head to the venue (about 1.6 km away). Feel free to walk over together or drive if you like. We recommend bringing flat shoes for the walk — you can always change once you arrive at the venue. We will greet everyone at the venue, not at the church.\n\n14:15 — Reception with bubbles and snacks.\n\n18:00 — Dinner.\n\n20:30 — Cake, coffee and tea.\n\n21:00 — Party - open end.\n\n00:00 — Midnight snack.\n\n00:00–01:00 — A shuttle bus will be running for those who want a ride home. We're also working on organising a later bus.",
           "getting-there-title": "Getting There",
           "getting-there-text":
             "By car: Coming from Berlin, the drive takes about three hours and covers roughly 225 km. From Hamburg, the drive is much shorter at about 1 hour and 10 minutes. From Copenhagen, driving takes around seven hours depending on traffic and border crossings.\n\nBy train: Kalkhorst does not have a long-distance train station, so travel involves a combination of train and local transport. From Berlin, trains run to Lübeck or Wismar via major hubs such as Hamburg. Total travel time is usually five hours or more. From Hamburg, regional trains run frequently to Lübeck, taking about 45 minutes. From Lübeck, continue by regional bus or a short regional train connection toward Schönberg or Grevesmühlen, then on to Kalkhorst. Expect a total travel time of around three to four hours. From Copenhagen, take a train to Hamburg, then continue to Lübeck and onward by regional transport. This journey typically takes seven to nine hours depending on connections.\n\nBy plane: The most convenient airport is Hamburg Airport, which is about 80 km from Kalkhorst. From there, you can rent a car for a direct drive of about 1 hour, or take a train via Hamburg Central Station to Lübeck and continue by bus or taxi.",
           "gifts-title": "Gifts",
           "gifts-text":
-            "Your presence and celebration with us means everything. We're truly happy if you can simply come and celebrate this special day with us. However, if you'd like to contribute a gift, we're also delighted to receive anything that could be useful for our little garden house. We appreciate your thoughtfulness either way!",
+            "Honestly, please don't feel like you need to bring anything — just having you there with us is more than enough.\n\nIf you'd still love to give us something, what we'd cherish most is time together: a shared experience of some kind, something for our garden house, an evening of Paula-sitting, or something we could do together or enjoy in our next stop Strasbourg, or back home in Copenhagen.",
           "kids-title": "Kids",
           "kids-text":
             "Kids are totally welcome at our wedding celebration! XOXO Paula",
           "photo-text":
-            "Hi everyone,\n\nI'm Paula, the best thing Babette and Felix have made so far!\nTheir wedding planning skills are quite improvable, but we would love to celebrate with you on September 19, 2026 in Warnkenhagen (Germany)!\n\nPlease fill out the RSVP form below to let us know if you'll be joining us on this special day. We also plan a BBQ night on the day before and breakfast the day after the wedding.\n\nIf you want to contribute with an activity or speech or anything else, please send a mail to Lisanne Koch (lisanne.koch@posteo.de). \n\nWe look forward to sharing this moment with you!\n\nPaula, Babette & Felix",
+            "Hi everyone,\n\nIt was a long summer with wedding planning and life planning in general but we're getting closer.\nSee some updates below and if you have any questions let us know!\n\nIf you want to contribute with an activity or speech or anything else, please send a mail to Lisanne Koch (lisanne.koch@posteo.de).\n\nWe look forward to sharing this moment with you!\n\nPaula, Babette & Felix",
         },
         de: {
           title: "Babette & Felix",
@@ -640,21 +640,21 @@
             "Die Alte Schule liegt im Klützer Winkel. Ihr könnt gerne auf dem Gelande der alten Schule campen, es gibt dort ein Badezimmer und fliessendes Wasser. Aber falls nicht, dann empfehlen wir, dass ihr euch eine Ferienwohnung nehmt. In dieser Karte haben wir eine Auswahl an Unterkünften zusammengestellt. Klick auf die Marker für weitere Details.",
           "dress-code-title": "Kleiderordnung",
           "dress-code-text":
-            "Wir planen eine Feier im Freien, also nehmt euch bitte auch warme Sachen mit. Kommt wie ihr wollt, wir fahren wahrscheinlich einen elegant-lässigen Stil. Da wir am Meer feiern, bringt gerne Badesachen mit – auch, weil es vielleicht eine Sauna für alle gibt, die Lust haben. Da es vor Ort etwas natürliches Gelände gibt, empfehlen wir außerdem bequeme Schuhe.",
+            "Wir feiern in einem Zelt, und September is was es ist und wir sind in der Nähe vom Meer, daher kann es abends kühl werden. Bringt also gerne eine warme Schicht zum Wohlfühlen mit. Wir schlagen einen elegant-lässigen Stil vor, und da es vor Ort etwas natürliches Gelände gibt, empfiehlt es sich außerdem, ein Paar bequeme Schuhe zum Wechseln dabeizuhaben.",
           "on-the-day-title": "Am Hochzeitstag",
           "on-the-day-text":
-            "Naja, wir planen noch, aber erwartet, dass wir um 13 oder 14 Uhr beginnen. Mehr Infos folgen!",
+            "13:00 — Trauung in der Dorfkirche Elmenhorst (<a href=\"https://www.google.com/maps/search/?api=1&query=Dorfkirche+Elmenhorst+Dorfstra%C3%9Fe+53+23948+Kalkhorst\" target=\"_blank\" rel=\"noopener\">Dorfstraße 53, 23948 Kalkhorst-Elmenhorst</a>). Bitte seid etwa 10 Minuten früher da, damit wir pünktlich beginnen können.\n\n14:00 — Auf zur alten Schule wo die Hochzeit stattfindet (ca. 1,6 km entfernt). Ihr könnt gerne gehen oder mit dem Auto fahren. Wir empfehlen für den Weg flache Schuhe — ihr könnt die Schuhe ja später wechseln. Wir begrüßen alle an der Schule, nicht an der Kirche.\n\n14:15 — Sektempfang.\n\n18:00 — Abendessen.\n\n20:30 — Kuchen, Kaffee und Tee.\n\n21:00 — Party - open end.\n\n00:00 — Mitternachtssnack.\n\n00:00–01:00 — Für alle, die möchten, fährt ein Shuttlebus nach Hause. Wir arbeiten auch an einem späteren Bus.",
           "getting-there-title": "Anreise",
           "getting-there-text":
             "Mit dem Auto: Von Berlin aus dauert die Fahrt etwa drei Stunden und führt über eine Strecke von rund 225 km. Von Hamburg ist die Fahrt viel kürzer, etwa 1 Stunde und 10 Minuten. Von Kopenhagen dauert die Fahrt je nach Verkehr und Grenzübergängen etwa sieben Stunden.\n\nMit dem Zug: Kalkhorst hat keinen Fernbahnhof, daher kombiniert man Zug- und Nahverkehr. Von Berlin fahren Züge nach Lübeck oder Wismar über Drehkreuze wie Hamburg. Die Reisedauer beträgt normalerweise fünf Stunden oder mehr. Von Hamburg fahren Regionalbahnen häufig nach Lübeck und brauchen etwa 45 Minuten. Von Lübeck weiterer regionaler Bus oder eine kurze Zugverbindung nach Schönberg oder Grevesmühlen, dann nach Kalkhorst. Erwartet eine Gesamtreisedauer von etwa drei bis vier Stunden. Von Kopenhagen: Zug nach Hamburg, dann weiter nach Lübeck und per Nahverkehr. Diese Reise dauert typischerweise sieben bis neun Stunden je nach Verbindungen.\n\nMit dem Flugzeug: Der praktischste Flughafen ist Hamburg, etwa 80 km von Kalkhorst entfernt. Von dort könnt ihr ein Auto mieten für eine direkte Fahrt von etwa 1 Stunde oder einen Zug vom Hamburger Hauptbahnhof nach Lübeck nehmen und dann weiter per Bus oder Taxi fahren.",
           "gifts-title": "Geschenke",
           "gifts-text":
-            "Eure Anwesenheit und das Feiern mit uns bedeuten uns alles. Wir sind sehr glücklich, wenn ihr einfach mit uns diesen besonderen Tag feiert. Wenn ihr aber gerne ein Geschenk machen möchtet, freuen wir uns auch über alles, was für unser kleines Gartenhaus nützlich ist. Wir schätzen euer Geschenk in jedem Fall!",
+            "Ehrlich, ihr müsst wirklich nichts mitbringen. Dass ihr dabei seid, ist für uns schon das Schönste.\n\nWenn ihr uns trotzdem gerne eine Freude machen wollt, freuen wir uns am meisten über gemeinsame Zeit: eine Aktivität zusammen, etwas für unseren Kolo (Schrebergarten), einen Abend Paula-Sitten, oder etwas, das wir gemeinsam machen können oder in unserer nächsten Station Straßburg oder zu Hause in Kopenhagen erleben können.",
           "kids-title": "Kinder",
           "kids-text":
             "Kinder sind bei unserer Hochzeitsfeier sehr willkommen! XOXO Paula",
           "photo-text":
-            "Hallo!\n\nIch bin Paula, das Beste, das Babette und Felix bisher zusammen gemacht haben.\nDafür, dass ich das bin, ist in meinem Leben ziemlich viel ungeplant und verpeilert – aber am Ende trotzdem ganz nett.\nDamit die Hochzeit der beiden nicht an der Planung scheitert, klären wir auf dieser Website alles Wichtige.\nWir feiern im Klützer Winkel in der Alten Schule Warnkenhagen am 19. September 2026. Bis dahin ist es ja noch ein bisschen hin.\n.Wir würden gerne wissen, ob ihr kommt – gebt uns bitte kurz Bescheid, indem ihr eure Infos unter   Rückmeldung (RSVP), ob ihr dabei seid. \n Ihr solltet möglichst schnell eine Unterkunft finden.\nFalls ihr eine Aktivität, Rede oder etwas Anderem beitragen wollt, schreibt bitte Lisanne Koch (lisanne.koch@posteo.de).\n\nWir freuen uns, diesen Moment mit euch zu teilen!\n\nPaula, Babette & Felix",
+            "Hallo zusammen,\n\nEs war ein langer Sommer mit Hochzeitsplanung und Lebensplanung usw., aber wir kommen näher.\nSchaut euch unten die Updates an und meldet euch, wenn ihr Fragen habt!\n\nFalls ihr eine Aktivität, Rede oder etwas Anderes beitragen wollt, schreibt bitte Lisanne Koch (lisanne.koch@posteo.de).\n\nWir freuen uns, diesen Moment mit euch zu teilen!\n\nPaula, Babette & Felix",
         },
         dk: {
           title: "Babette & Felix",
@@ -691,21 +691,21 @@
             "Vi har samlet et udvalg af indkvarteringssteder for vores gæster. Klik på kortet nedenfor for at udforske de forskellige muligheder. Hvert sted på kortet viser navn på indkvarteringen, hjemmeside og afstand til vores lokation (Alte Schule).",
           "dress-code-title": "Dresscode",
           "dress-code-text":
-            "Vi planlægger en udendørs fejring, så klæd jer gerne komfortabelt efter vejret. Vi foreslår elegant casual. Da vi skal fejre det ved havet, er I meget velkomne til at tage badetøj med – også fordi der måske er en sauna for dem, der har lyst. Da der er lidt naturterræn på stedet, anbefaler vi også et par gode, komfortable sko.",
+            "Vi fejrer i et telt, og da det er september og vi er tæt på havet, kan aftenen blive kold — så tag gerne et varmt lag med. Vi foreslår elegant casual, og da der er lidt naturterræn på stedet, er det også en god idé at have et par komfortable sko med at skifte til senere.",
           "on-the-day-title": "På selve dagen",
           "on-the-day-text":
-            "Nå, vi planlægger stadig, men forvent ca. kl. 13 eller 14. Mere info kommer!",
+            "13:00 — Vielse i Dorfkirche Elmenhorst (<a href=\"https://www.google.com/maps/search/?api=1&query=Dorfkirche+Elmenhorst+Dorfstra%C3%9Fe+53+23948+Kalkhorst\" target=\"_blank\" rel=\"noopener\">Dorfstraße 53, 23948 Kalkhorst-Elmenhorst</a>). Mød gerne op ca. 10 minutter før, så vi kan starte til tiden.\n\n14:00 — Herefter går turen videre til festlokalet, som ligger ca. 1,6 km væk. I bestemmer selv, om I vil gå eller tage bilen. Husk et par flade sko til gåturen, så kan I altid skifte, når I når frem. Vi tager først imod jer ved festlokalet, så mød os dér.\n\n14:15 — Reception med bobler og snacks.\n\n18:00 — Middag.\n\n20:30 — Kage, kaffe og te.\n\n21:00 — Fest - open end.\n\n00:00 — Natmad.\n\n00:00–01:00 — For dem, der har lyst, kører en shuttlebus hjem. Vi arbejder også på en senere bus.",
           "getting-there-title": "Sådan Kommer Du Der",
           "getting-there-text":
             "Med bil: Fra Berlin tager køreturen cirka tre timer og dækker omkring 225 km. Fra Hamburg er køreturen meget kortere, omkring 1 time og 10 minutter. Fra København tager køreturen omkring syv timer alt efter trafik og grænseovergange.\n\nMed tog: Kalkhorst har ingen fjernbanestationer, så rejsen består af en kombination af tog og lokal transport. Fra Berlin kører tog til Lübeck eller Wismar via større byer som Hamburg. Samlet rejsetid er normalt fem timer eller mere. Fra Hamburg kører regionaltog hyppigt til Lübeck og bruger omkring 45 minutter. Fra Lübeck fortsætter du med regional bus, taxa eller en kort regional togforbindelse mod Schönberg eller Grevesmühlen, derefter til Kalkhorst. Forvent en samlet rejsetid på omkring tre til fire timer. Fra København: Tag tog til Hamburg, derefter videre til Lübeck og videre med lokal transport. Denne rejse tager typisk syv til ni timer alt efter forbindelser.\n\nMed fly: Den mest bekvemme lufthavn er Hamburg Airport, omkring 80 km fra Kalkhorst. Derfra kan du leje en bil for en direkte køretur på omkring 1 time, eller tage tog fra Hamburgs hovedbanegård til Lübeck og fortsætte med bus eller taxa.",
           "gifts-title": "Gaver",
           "gifts-text":
-            "Vi er meget glade, hvis du bare kan komme og fejre denne specielle dag med os! Hvis du gerne vil give en gave, er vi også meget glad for alt, der kunne være brugbart til vores lille kolo(nihave).",
+            "Ærligt talt — I skal virkelig ikke tage noget med. At I er der, er mere end nok for os.\n\nHvis I alligevel gerne vil give os noget, holder vi mest af tid sammen: en fælles oplevelse, noget til vores kolonihave, en aften med Paula-sitning, eller noget vi kan lave sammen eller nyde i vores næste stop Strasbourg eller hjemme i København.",
           "kids-title": "Børn",
           "kids-text":
             "Børn er meget velkomne til vores bryllupsfest! XOXO Paula",
           "photo-text":
-            "Hej alle sammen,\n\nJeg er Paula, det bedste, som Babette og Felix hidtil har lavet!\nDeres planlægningsevner kunne være bedre, men vi ville glæde os at se jer til deres bryllup den 19. september 2026 i Warnkenhagen (Tyskland)!\n\nDem som vil kan telte på stedet (der er badeværelse). Men hvis i vil være sikre på at have indkvartering i nærheden, har vi samlet en liste over tilgængelige lejligheder/hoteller. Så book gerne snart.\nOg udfyld venligst RSVP-formularen nedenfor for at lade os vide, om i kommer. Vi planlægger også en BBQ-aften dagen før og morgenmad dagen efter brylluppet.\nHvis i vil byde ind med en aktivitet, tale eller noget andet, skriv til Lisanne Koch (lisanne.koch@posteo.de).\n\nVi glæder os til at dele dette øjeblik med jer!\n\nPaula, Babette & Felix",
+            "Hej alle sammen,\n\nDet har været en lang sommer med bryllupsplanlægning, men vi nærmer os.\nSe opdateringerne nedenfor, og sig endelig til, hvis I har spørgsmål!\n\nHvis I vil byde ind med en aktivitet, tale eller noget andet, skriv til Lisanne Koch (lisanne.koch@posteo.de).\n\nVi glæder os til at se jer!\n\nPaula, Babette & Felix",
         },
       };
 
@@ -719,8 +719,12 @@
         document.querySelectorAll("[data-i18n]").forEach((element) => {
           const key = element.getAttribute("data-i18n");
           if (t[key]) {
-            // For photo-text and getting-there-text, replace line breaks with <br> for proper display
-            if (key === "photo-text" || key === "getting-there-text") {
+            // For rich-text entries, replace line breaks with <br> and allow embedded HTML (e.g. links)
+            if (
+              key === "photo-text" ||
+              key === "getting-there-text" ||
+              key === "on-the-day-text"
+            ) {
               element.innerHTML = t[key].replace(/\n/g, "<br>");
             } else {
               element.textContent = t[key];
